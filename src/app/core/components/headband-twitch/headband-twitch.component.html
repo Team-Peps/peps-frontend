@@ -1,0 +1,33 @@
+@if(isShown) {
+	<div class="w-full bg-peps-purple flex items-center justify-between px-6 md:py-3 relative h-22 md:h-14">
+		<div class="absolute left-1/2 transform -translate-x-1/2 text-center font-semibold text-lg flex items-center gap-1 sm:gap-4 flex-col sm:flex-row">
+			<span class="font-extrabold text-nowrap sm:text-wrap">UN MATCH EST EN COURS, REJOINS NOUS !</span>
+			<a
+				class="flex flex-row items-center gap-2 border py-1 px-2 font-bold cursor-pointer bg-peps-purple hover:bg-peps-purple-hover"
+				[href]="link" target="_blank">
+				<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M4.49972 0L1.64258 2.85714V13.1429H5.07115V16L7.92829 13.1429H10.214L15.3569 8V0H4.49972ZM14.214 7.42857L11.9283 9.71429H9.64258L7.64258 11.7143V9.71429H5.07115V1.14286H14.214V7.42857Z" fill="#F9ECEA"/>
+					<path d="M12.5003 3.14258H11.3574V6.57115H12.5003V3.14258Z" fill="#F9ECEA"/>
+					<path d="M9.3577 3.14258H8.21484V6.57115H9.3577V3.14258Z" fill="#F9ECEA"/>
+				</svg>
+				REGARDER
+			</a>
+		</div>
+
+		<button
+			class="cursor-pointer ml-auto"
+			(click)="close()"
+		>
+			<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<g clip-path="url(#clip0_1194_486)">
+					<path d="M15.8045 0.195191C15.6795 0.0702103 15.51 0 15.3332 0C15.1564 0 14.9869 0.0702103 14.8619 0.195191L7.99986 7.05719L1.13786 0.195191C1.01284 0.0702103 0.8433 0 0.666524 0C0.489748 0 0.320209 0.0702103 0.195191 0.195191V0.195191C0.0702103 0.320209 0 0.489748 0 0.666524C0 0.8433 0.0702103 1.01284 0.195191 1.13786L7.05719 7.99986L0.195191 14.8619C0.0702103 14.9869 0 15.1564 0 15.3332C0 15.51 0.0702103 15.6795 0.195191 15.8045V15.8045C0.320209 15.9295 0.489748 15.9997 0.666524 15.9997C0.8433 15.9997 1.01284 15.9295 1.13786 15.8045L7.99986 8.94252L14.8619 15.8045C14.9869 15.9295 15.1564 15.9997 15.3332 15.9997C15.51 15.9997 15.6795 15.9295 15.8045 15.8045C15.9295 15.6795 15.9997 15.51 15.9997 15.3332C15.9997 15.1564 15.9295 14.9869 15.8045 14.8619L8.94252 7.99986L15.8045 1.13786C15.9295 1.01284 15.9997 0.8433 15.9997 0.666524C15.9997 0.489748 15.9295 0.320209 15.8045 0.195191V0.195191Z" fill="#F9ECEA"/>
+				</g>
+				<defs>
+					<clipPath id="clip0_1194_486">
+						<rect width="16" height="16" fill="white"/>
+					</clipPath>
+				</defs>
+			</svg>
+		</button>
+	</div>
+}

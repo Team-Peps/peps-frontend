@@ -1,0 +1,58 @@
+<div class="relative w-full overflow-hidden">
+	<div #sliderTrack class="flex w-full  transition-transform duration-500 ease-in-out">
+		@for (item of items; track item) {
+			<picture class="w-screen h-auto flex-shrink-0">
+				<source [srcset]="item.images.lg" media="(min-width: 1024px)">
+				<source [srcset]="item.images.lg" media="(min-width: 768px)">
+				<img [src]="item.images.sm" class="w-full h-auto object-cover" alt="Image responsive" />
+			</picture>
+		}
+	</div>
+
+	<div class="absolute bottom-6 lg:bottom-20 w-full flex justify-center px-4">
+
+		<div class="flex flex-col gap-4 w-full max-w-screen-lg">
+
+			<div class="flex justify-center">
+				<button
+					class="uppercase text-peps-dark-700 bg-peps-gold py-2 px-3 cursor-pointer hover:bg-peps-yellow transition-colors duration-300"
+					(click)="prevSlide()"
+				>
+					<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M14.1326 16.9422C13.8826 16.6922 13.7422 16.3531 13.7422 15.9996C13.7422 15.646 13.8826 15.3069 14.1326 15.0569L20.2459 8.94223C20.4888 8.69076 20.6232 8.35396 20.6201 8.00436C20.6171 7.65477 20.4769 7.32035 20.2296 7.07314C19.9824 6.82593 19.648 6.68571 19.2984 6.68267C18.9488 6.67963 18.612 6.81402 18.3606 7.0569L12.2512 13.1716C11.5013 13.9217 11.0801 14.9389 11.0801 15.9996C11.0801 17.0602 11.5013 18.0775 12.2512 18.8276L18.3659 24.9422C18.6174 25.1851 18.9542 25.3195 19.3038 25.3165C19.6534 25.3134 19.9878 25.1732 20.235 24.926C20.4822 24.6788 20.6224 24.3444 20.6255 23.9948C20.6285 23.6452 20.4941 23.3084 20.2512 23.0569L14.1326 16.9422Z" fill="#131415"/>
+					</svg>
+				</button>
+
+				<a
+					class="uppercase border-x border-x-peps-dark-700 text-peps-dark-700 bg-peps-gold p-3 cursor-pointer hover:bg-peps-yellow transition-colors duration-300"
+					[href]="items[currentIndex].link"
+				>
+					En savoir plus
+				</a>
+
+				<button
+					class="uppercase text-peps-dark-700 bg-peps-gold py-2 px-3 cursor-pointer hover:bg-peps-yellow transition-colors duration-300"
+					(click)="nextSlide()"
+				>
+					<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M20.5328 13.1719L14.4142 7.05722C14.1603 6.82767 13.8279 6.70454 13.4857 6.71333C13.1436 6.72212 12.8179 6.86214 12.5761 7.10442C12.3344 7.34669 12.195 7.67266 12.187 8.01483C12.1789 8.357 12.3028 8.68916 12.5328 8.94255L18.6475 15.0572C18.8975 15.3073 19.0379 15.6463 19.0379 15.9999C19.0379 16.3534 18.8975 16.6925 18.6475 16.9426L12.5328 23.0572C12.2828 23.3074 12.1425 23.6467 12.1426 24.0004C12.1427 24.3541 12.2833 24.6932 12.5335 24.9432C12.7837 25.1932 13.123 25.3336 13.4767 25.3335C13.8303 25.3334 14.1695 25.1927 14.4195 24.9426L20.5328 18.8279C21.2827 18.0778 21.704 17.0605 21.704 15.9999C21.704 14.9392 21.2827 13.922 20.5328 13.1719V13.1719Z" fill="#131415"/>
+					</svg>
+				</button>
+			</div>
+
+			<div class="flex flex-row gap-2 justify-center items-center mt-2">
+				@for (item of items; track item.index) {
+					<div
+						class="h-2 bg-peps-dark-200 rounded-full transition-all duration-300 cursor-pointer ease-in-out"
+						[ngClass]="{'w-8 scale-110': currentIndex === item.index, 'w-2 scale-100' : currentIndex !== item.index}"
+						(click)="goToSlide(item.index)"
+					></div>
+
+				}
+			</div>
+
+		</div>
+
+	</div>
+</div>
+

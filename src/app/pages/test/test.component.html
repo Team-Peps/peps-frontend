@@ -1,0 +1,52 @@
+<peps-slider
+	[items]="itemsSlider"
+></peps-slider>
+<div class="flex flex-col gap-4 items-center">
+
+	<peps-button [text]="'Tout voir'" (click)="{}"></peps-button>
+	<peps-button-small [text]="'Lire la suite'" (click)="{}"></peps-button-small>
+	<peps-button-small [text]="'Lire la suite'" (click)="{}" type="dark"></peps-button-small>
+	<peps-button-simple [text]="'Club'" (click)="{}"></peps-button-simple>
+
+	<peps-news-card></peps-news-card>
+
+	<peps-dropdown-button
+		text="Equipes"
+		[items]="items"
+	></peps-dropdown-button>
+	<peps-checkbox
+		[checked]="checked"
+		(change)="toggleCheck()"
+		[image]="'assets/icons/Overwatch_2_logo.svg'"
+	></peps-checkbox>
+	<peps-checkbox
+		[checked]="checked"
+		(change)="toggleCheck()"
+		[image]="'assets/icons/Marvel_Rivals_logo.svg'"
+	></peps-checkbox>
+	<peps-toggle
+		(checkedChange)="toggleCheck()"
+	></peps-toggle>
+	<peps-logo
+		[width]="48"
+		[height]="48"
+		(click)="toggleCheck()"
+	></peps-logo>
+	<peps-match-row></peps-match-row>
+
+	<div>
+
+		<peps-max-button
+			[onClickOverwatch]="toggleCheck"
+			[onClickMarvelRivals]="toggleCheck"
+		></peps-max-button>
+	</div>
+
+	<peps-title
+		title="Matchs"
+	></peps-title>
+	<peps-title
+		title="réseaux"
+		subtitle="Sur les"
+	></peps-title>
+</div>
