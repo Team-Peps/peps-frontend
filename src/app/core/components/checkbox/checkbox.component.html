@@ -1,0 +1,18 @@
+<label class="inline-flex items-center gap-2 cursor-pointer select-none">
+	<input
+		type="checkbox"
+		[checked]="checked"
+		(change)="toggleCheck()"
+		class="hidden"
+	/>
+	<img [ngSrc]="image" [alt]="imageAlt" height="24" width="24" />
+	<div
+		class="w-6 h-6 border border-peps-dark-500 rounded-sm flex items-center justify-center transition-colors"
+	>
+		@if (checked) {
+			<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+			</svg>
+		}
+	</div>
+</label>

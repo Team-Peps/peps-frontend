@@ -1,0 +1,59 @@
+<div class="relative inline-block text-left group">
+	<button
+		class="text-peps-dark-200 py-2 cursor-pointer hover:text-peps-gold transition-colors duration-300 flex items-center gap-2"
+		(click)="handleClick()"
+	>
+		<span>{{ text | uppercase }}</span>
+
+		<svg
+			class="w-4 h-4 transition-transform duration-200 fill-current"
+			[ngClass]="{'rotate-180' : isOpen && isMobile, 'group-hover:rotate-180' : !isMobile}"
+			viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+			<path d="M1.2759 0H8.7239C8.85573 2.81495e-05 8.9846 0.0391426 9.09421 0.112399C9.20381 0.185655 9.28924 0.289764 9.33969 0.411564C9.39013 0.533364 9.40333 0.667385 9.37762 0.796687C9.35191 0.925989 9.28844 1.04477 9.19523 1.138L5.47123 4.862C5.34621 4.98698 5.17668 5.05719 4.9999 5.05719C4.82312 5.05719 4.65358 4.98698 4.52857 4.862L0.804566 1.138C0.71136 1.04477 0.647889 0.925989 0.622177 0.796687C0.596466 0.667385 0.609668 0.533364 0.660114 0.411564C0.710561 0.289764 0.795987 0.185655 0.905594 0.112399C1.0152 0.0391426 1.14407 2.81495e-05 1.2759 0Z"/>
+		</svg>
+	</button>
+
+	@if (isMobile && isOpen) {
+		<div
+			class="z-20 bg-peps-dark-700 transition duration-200 w-max min-w-full"
+			[ngClass]="{'absolute': !isMobileNavbar}"
+		>
+			<ul >
+				@for (item of items; track item.label) {
+					<li>
+						<button
+							(click)="select(item.action)"
+							class="flex items-center gap-2 px-4 py-4 w-full text-left cursor-pointer whitespace-nowrap hover:bg-peps-dark-500 transition-colors duration-300"
+						>
+							@if (item.image) {
+								<img [src]="item.image" alt="{{ item.label }}" class="w-5 h-5">
+							}
+							{{ item.label | uppercase }}
+						</button>
+					</li>
+				}
+			</ul>
+		</div>
+	}
+
+	<div
+		class="absolute z-20 bg-peps-dark-700 invisible opacity-0 group-hover:opacity-100 group-hover:visible transition duration-200 w-max min-w-full hidden lg:block"
+	>
+		<ul >
+			@for (item of items; track item.label) {
+				<li>
+					<button
+						(click)="select(item.action)"
+						class="flex items-center gap-2 px-4 py-4 w-full text-left cursor-pointer whitespace-nowrap hover:bg-peps-dark-500 transition-colors duration-300"
+					>
+						@if (item.image) {
+							<img [src]="item.image" alt="{{ item.label }}" class="w-5 h-5">
+						}
+						{{ item.label | uppercase }}
+					</button>
+				</li>
+			}
+		</ul>
+	</div>
+
+</div>

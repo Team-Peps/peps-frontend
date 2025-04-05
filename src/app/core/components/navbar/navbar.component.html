@@ -1,0 +1,145 @@
+<nav class="fixed bg-gradient-to-b from-peps-dark-700 to-transparent w-full z-50 top-0">
+	<peps-headband-twitch
+		link="https://www.twitch.tv/fefegg"
+	></peps-headband-twitch>
+	<div class="mx-auto">
+
+		<div class="relative flex h-20 items-center justify-between">
+
+			<div class="absolute inset-y-0 left-0 flex items-center lg:hidden">
+
+				<button
+					type="button"
+					class="relative inline-flex items-center justify-center rounded-md p-2 ml-4 cursor-pointer"
+					(click)="toggleMobileMenu()"
+					aria-controls="mobile-menu" aria-expanded="false">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+					</svg>
+				</button>
+			</div>
+
+			<div class="flex flex-1 items-center justify-center lg:items-stretch lg:justify-start">
+				<div class="flex shrink-0 items-center pl-2">
+					<img
+						src="/assets/team_peps_logo.png"
+						alt="Logo Team Peps"
+						class="h-[72px]"
+					/>
+				</div>
+				<div class="hidden lg:ml-6 lg:flex items-center">
+					<div class="flex items-center gap-4 text-xl">
+						<peps-dropdown-button
+							text="Equipes"
+							[items]="itemsDropdownGames"
+						></peps-dropdown-button>
+						<peps-button-simple
+							text="Club"
+						></peps-button-simple>
+						<peps-button-simple
+							text="Matchs"
+						></peps-button-simple>
+						<peps-button-simple
+							text="Actu"
+						></peps-button-simple>
+						<peps-button-simple
+							text="Ambassadeurs"
+						></peps-button-simple>
+						<peps-button-simple
+							text="Partenaires"
+						></peps-button-simple>
+						<peps-button-simple
+							text="Nous soutenir"
+						></peps-button-simple>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="absolute inset-y-0 right-0 flex items-center lg:static lg:inset-auto lg:ml-6 lg:pr-0">
+
+				<div class="relative ml-3 flex flex-row gap-4 items-center">
+
+					<peps-dropdown-button
+						text="FR"
+						[items]="itemsDropdownLang"
+						class=""
+					></peps-dropdown-button>
+
+					<button
+						class="text-peps-dark-700 bg-peps-gold py-1 px-4 cursor-pointer hover:bg-peps-yellow transition-colors duration-300 hidden lg:block"
+					>CONNEXION</button>
+					<button
+						class="text-peps-dark-700 bg-peps-dark-200 rounded-sm py-1 px-3 cursor-pointer transition-colors duration-300 hidden lg:block"
+					>K</button>
+
+					<div class="bg-[url(/assets/images/merch_btn.png)] flex w-28 h-20 bg-cover bg-center relative cursor-pointer">
+						<a
+							class="text-2xl text-peps-dark-700 translate-y-1/4 translate-x-2/4"
+							target="_blank"
+							href="https://google.com"
+						>MERCH</a>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+		<div
+			class="fixed w-full h-full inset-y-0 left-0 bg-peps-dark-700 z-[100] lg:hidden transform transition-transform duration-300 ease-in-out"
+			[ngClass]="{'translate-x-0': isMobileMenuOpen, '-translate-x-full': !isMobileMenuOpen}"
+			id="mobile-menu">
+			<div class="flex flex-row justify-between items-center pr-6">
+
+				<button
+					type="button"
+					class="relative inline-flex items-center justify-center rounded-md p-2 pt-4 ml-4 cursor-pointer"
+					(click)="toggleMobileMenu()"
+					aria-controls="mobile-menu" aria-expanded="false">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+					</svg>
+				</button>
+				<div>
+					<button
+						class="text-peps-dark-700 bg-peps-gold py-1 px-4 cursor-pointer hover:bg-peps-yellow transition-colors duration-300"
+					>CONNEXION</button>
+					<button
+						class="text-peps-dark-700 bg-peps-dark-200 rounded-sm py-1 px-3 cursor-pointer transition-colors duration-300"
+					>K</button>
+				</div>
+
+			</div>
+			<div class="flex flex-col gap-4 text-2xl px-12 py-6">
+				<peps-dropdown-button
+					text="Equipes"
+					[items]="itemsDropdownGames"
+					[isMobileNavbar]="true"
+				></peps-dropdown-button>
+				<peps-button-simple
+					text="Club"
+				></peps-button-simple>
+				<peps-button-simple
+					text="Matchs"
+				></peps-button-simple>
+				<peps-button-simple
+					text="Actu"
+				></peps-button-simple>
+				<peps-button-simple
+					text="Ambassadeurs"
+				></peps-button-simple>
+				<peps-button-simple
+					text="Partenaires"
+				></peps-button-simple>
+				<peps-button-simple
+					text="Nous soutenir"
+				></peps-button-simple>
+
+			</div>
+		</div>
+
+</nav>

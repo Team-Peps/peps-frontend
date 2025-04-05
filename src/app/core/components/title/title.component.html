@@ -1,0 +1,11 @@
+<div class="relative text-center flex items-center">
+	<img src="/assets/icons/title_image.svg" alt="Title image" class="w-32 top-0 left-0 z-0"/>
+	@if(subtitle) {
+		<h2 class="text-5xl z-50 absolute left-9 top-2 text-left text-nowrap">{{ subtitle | uppercase }}</h2>
+		<h1 class="text-8xl z-50 absolute left-9 top-14 text-left text-nowrap">{{ title | uppercase }}</h1>
+
+	} @else {
+		<h1 class="text-8xl z-50 absolute left-9 top-7 text-left text-nowrap">{{ title | uppercase }}</h1>
+
+	}
+</div>
