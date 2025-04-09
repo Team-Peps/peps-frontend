@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'peps-max-button',
@@ -7,7 +8,16 @@ import {Component, Input} from '@angular/core';
 })
 export class MaxButtonComponent {
 
-	@Input() onClickOverwatch: any = () => {};
-	@Input() onClickMarvelRivals: any = () => {};
+	constructor(
+		private readonly router: Router,
+	) {}
+
+	toOverwatch() {
+		this.router.navigate(['/rosters/overwatch']);
+	}
+
+	toMarvelRivals() {
+		this.router.navigate(['/rosters/marvel-rivals']);
+	}
 
 }

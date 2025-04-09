@@ -13,6 +13,7 @@ export class CheckboxComponent {
 	@Input() checked: boolean = false;
 	@Input() image: string = '';
 	@Input() imageAlt: string = '';
+
 	@Output() onCheckChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
 	toggleCheck() {

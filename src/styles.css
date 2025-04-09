@@ -53,5 +53,7 @@
 	--color-peps-text-9: #EDEDED;
 	--color-peps-text-10: #FFFFFF;
 
+	--breakpoint-xs: 20rem;
+	--breakpoint-3xl: 120rem;
 
 }
