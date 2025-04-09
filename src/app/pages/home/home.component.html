@@ -1,1 +1,114 @@
-Homepage
+<peps-slider
+	[items]="itemsSlider"
+></peps-slider>
+<div class="flex flex-col pb-20">
+
+	<div class="relative bg-[url(/assets/images/background_roster_homepage.png)] bg-no-repeat bg-cover bg-top w-full -top-20 xs:-top-22 sm:-top-28 md:-top-30 lg:-top-32 xl:-top-36 2xl:-top-48 3xl:-top-56 pt-30 pointer-events-none">
+		<div class="relative flex flex-col gap-8 md:items-center">
+			<img src="/assets/images/title.svg" alt="" class="w-3/4 md:w-2/4 lg:w-2/5 xl:w-2/6 2xl:w-1/5 ml-4">
+			<peps-max-button class="pointer-events-auto z-20"></peps-max-button>
+		</div>
+	</div>
+	<div class="flex flex-col gap-16 justify-center ">
+		<div class="flex flex-col md:flex-row justify-around items-center gap-4">
+			<peps-title
+				subtitle="Prochains"
+				title="Matchs"
+			></peps-title>
+			<div class="border border-peps-dark-600 flex flex-col gap-2 py-3 px-6">
+				<span class="text-base tracking-tight text-center font-dinpro-medium">FILTRES</span>
+				<div class="flex flex-row gap-2 items-center justify-center">
+					<peps-checkbox
+						[checked]="true"
+						(change)="toggleGame(Game.OVERWATCH, $event)"
+						image="assets/icons/Overwatch_2_logo.svg"
+					></peps-checkbox>
+					<peps-checkbox
+						[checked]="true"
+						(change)="toggleGame(Game.MARVEL_RIVALS, $event)"
+						image="assets/icons/Marvel_Rivals_logo.svg"
+					></peps-checkbox>
+				</div>
+			</div>
+		</div>
+		<div class="flex flex-col gap-7">
+
+			@for (groupByDate of filteredMatches; track groupByDate.date) {
+
+				<div class="flex flex-col md:flex-row justify-center gap-4">
+
+					<div class="flex flex-col justify-center items-center gap-1">
+
+						<div class="bg-[url(/assets/icons/dateMatch.svg)] h-32 w-32 bg-contain bg-no-repeat flex flex-col justify-center items-center text-2xl text-peps-gold">
+							<span>{{ groupByDate.date | date:'EEEE' | uppercase}}</span>
+							<span>{{ groupByDate.date | date:'d MMM' | uppercase}}</span>
+							@if (isToday(groupByDate.date)) {
+								<span class="px-1 py-0.5 bg-peps-gold text-peps-dark-700 text-sm">AUJOURD'HUI</span>
+							}
+						</div>
+
+						<div class="hidden md:block">
+							@if(groupByDate.matches.length > 1) {
+								<svg width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="2.5" cy="2.5" r="2.5" fill="#313437"/>
+								</svg>
+								@for(i of groupByDate.matches.length -1 | range; track i) {
+									<svg width="2" height="93" viewBox="0 0 2 93" fill="none" xmlns="http://www.w3.org/2000/svg"  class="translate-x-[1px]">
+										<path d="M1.30078 0L1.30078 93" stroke="#313437"/>
+									</svg>
+								}
+								<svg width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="2.5" cy="2.5" r="2.5" fill="#313437"/>
+								</svg>
+							}
+						</div>
+					</div>
+
+					<div class="flex flex-col gap-2">
+						@for (match of groupByDate.matches; track match.id) {
+							<peps-match-row
+								[match]="match"
+							></peps-match-row>
+						}
+					</div>
+
+
+				</div>
+
+			}
+
+		</div>
+		<div class="flex justify-center">
+			<peps-button
+				text="Tout voir"
+				(click)="toMatches()"
+			></peps-button>
+		</div>
+		<div class="flex flex-col gap-10">
+			<div class="md:px-24">
+				<peps-title
+					subtitle="Les"
+					title="Actus"
+				></peps-title>
+			</div>
+
+			<div class="flex flex-row gap-12 justify-center items-center flex-wrap">
+
+				@for(article of articles; track article.id) {
+					<peps-news-card
+						[article]="article"
+					></peps-news-card>
+				}
+			</div>
+
+		</div>
+
+		<div class="flex justify-center">
+			<peps-button
+				text="Tout voir"
+				(click)="toNews()"
+			></peps-button>
+		</div>
+	</div>
+
+</div>

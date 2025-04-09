@@ -13,7 +13,7 @@ import {TitleComponent} from '../../core/components/title/title.component';
 import {MatchRowComponent} from '../../core/components/match-row/match-row.component';
 import {NewsCardComponent} from '../../core/components/news-card/news-card.component';
 import {SliderComponent} from '../../core/components/slider/slider.component';
-import { Game } from '../../core/model/game';
+import { Game } from '../../models/game';
 
 @Component({
   selector: 'app-test',

@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'peps-headband-twitch',
@@ -8,6 +8,7 @@ import {Component, Input} from '@angular/core';
 export class HeadbandTwitchComponent {
 
 	@Input() link: string = '';
+	@Output() closeHeadband: EventEmitter<boolean> = new EventEmitter<boolean>();
 	isShown = true;
 
 	close() {

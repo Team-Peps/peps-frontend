@@ -1,11 +1,9 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {NgClass, NgStyle} from '@angular/common';
 
 @Component({
   selector: 'peps-toggle',
 	imports: [
-		NgClass,
-		NgStyle
+
 	],
   templateUrl: './toggle.component.html',
 })
