@@ -7,6 +7,7 @@ import {PageSelectorComponent} from '../../core/components/page-selector/page-se
 import {CheckboxComponent} from '../../core/components/checkbox/checkbox.component';
 import {ArticleType} from '../../models/articleType';
 import {ToastService} from '../../services/toast.service';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-news',
@@ -22,7 +23,8 @@ export class NewsComponent implements OnInit {
 
 	constructor(
 		private readonly articleService: ArticleService,
-		private readonly toastService: ToastService
+		private readonly toastService: ToastService,
+		private readonly titleService: Title,
 	) {}
 
 	protected readonly ArticleType = ArticleType;
@@ -34,6 +36,8 @@ export class NewsComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.loadArticles();
+		this.titleService.setTitle('Team Peps - Les Actus');
+		window.scrollTo({ top: 0, behavior: 'smooth' });
 	}
 
 	loadArticles(): void {

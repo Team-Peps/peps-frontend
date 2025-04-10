@@ -1,6 +1,6 @@
 <div class="w-80 h-[550px] mx-auto">
 	<div class="w-full">
-		<img [src]="minioBaseUrl + article?.imageKey" alt="" class="w-[354px] h-[354px]">
+		<img [src]="minioBaseUrl + article?.thumbnailImageKey" alt="" class="w-[354px] h-[354px]">
 	</div>
 
 	<div class="relative">
@@ -9,6 +9,7 @@
 			<p class="text-peps-dark-200 font-notosans text-base leading-[100%]">{{ article?.shortContent }}</p>
 			<peps-button-small
 				text="Lire la suite"
+				[link]="'/news/'+article!.id"
 			></peps-button-small>
 		</div>
 	</div>

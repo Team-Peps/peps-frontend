@@ -14,6 +14,7 @@ import {ArticleService} from '../../services/article.service';
 import {ArticleTiny} from '../../models/article';
 import {NewsCardComponent} from '../../core/components/news-card/news-card.component';
 import {RangePipe} from '../../pipes/range.pipe';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -38,6 +39,7 @@ export class HomeComponent implements OnInit {
 		private readonly matchService: MatchService,
 		private readonly router: Router,
 		private readonly articleService: ArticleService,
+		private readonly titleService: Title,
 	) {}
 
 	protected readonly Game = Game;
@@ -56,6 +58,7 @@ export class HomeComponent implements OnInit {
 	];
 
 	ngOnInit(): void {
+		this.titleService.setTitle('Team Peps');
 		this.loadMatches();
 		this.loadRecentArticles();
     }
