@@ -3,7 +3,6 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import {provideHttpClient} from '@angular/common/http';
-import {DATE_PIPE_DEFAULT_OPTIONS} from '@angular/common';
 
 export const appConfig: ApplicationConfig = {
 	providers: [

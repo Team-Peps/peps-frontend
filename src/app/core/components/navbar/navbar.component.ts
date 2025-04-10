@@ -73,4 +73,14 @@ export class NavbarComponent implements OnInit {
 			document.body.style.overflow = '';
 		}
 	}
+
+	resetMobileMenu() {
+		this.isMobileMenuOpen = false;
+		document.body.style.overflow = '';
+	}
+
+	toNews() {
+		this.router.navigate(['/news']);
+		this.resetMobileMenu();
+	}
 }

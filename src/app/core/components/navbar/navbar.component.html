@@ -48,6 +48,7 @@
 						></peps-button-simple>
 						<peps-button-simple
 							text="Actu"
+							(click)="toNews()"
 						></peps-button-simple>
 						<peps-button-simple
 							text="Ambassadeurs"
@@ -70,7 +71,6 @@
 					<peps-dropdown-button
 						text="FR"
 						[items]="itemsDropdownLang"
-						class=""
 					></peps-dropdown-button>
 
 					<button
@@ -135,6 +135,7 @@
 				></peps-button-simple>
 				<peps-button-simple
 					text="Actu"
+					(click)="toNews()"
 				></peps-button-simple>
 				<peps-button-simple
 					text="Ambassadeurs"

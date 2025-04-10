@@ -27,7 +27,8 @@ import {RangePipe} from '../../pipes/range.pipe';
 		UpperCasePipe,
 		ButtonComponent,
 		NewsCardComponent,
-		RangePipe
+		RangePipe,
+		CheckboxComponent
 	],
   templateUrl: './home.component.html',
 })
@@ -97,9 +98,7 @@ export class HomeComponent implements OnInit {
 			.filter(group => group.matches.length > 0);
 	}
 
-	toggleGame(game: string, event: Event): void {
-		const target = event.target as HTMLInputElement;
-		const isChecked = target.checked;
+	toggleGame(game: Game, isChecked: boolean): void {
 		if(isChecked) {
 			this.selectedGames.push(game);
 		} else {
