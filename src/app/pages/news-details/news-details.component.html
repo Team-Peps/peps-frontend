@@ -1,0 +1,41 @@
+<div class="flex flex-col pb-20">
+	<div class="relative">
+		<div class="relative w-full ">
+			<img [src]="minioBaseUrl + article?.imageKey" class="w-full h-auto object-cover" alt="Image responsive" />
+
+			<div class="absolute -bottom-35 xs:-bottom-15 z-10 uppercase w-full">
+				<div class="mx-auto w-3/5 flex flex-col">
+					<img [src]="getImageByArticleType(article?.articleType!)" alt="Article type image" class="w-8 md:w-16">
+					<span class="text-2xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">{{ article?.title }}</span>
+					<span class="text-[32px]">{{ article?.createdAt | date:'dd MMM YYYY'}}</span>
+				</div>
+			</div>
+
+		</div>
+		<img src="/assets/images/separator_team_peps.png" alt="" class="w-full absolute -bottom-5 sm:-bottom-8 md:-bottom-15 xl:-bottom-20 object-center ">
+	</div>
+	<div class="pt-38 xs:pt-28 w-10/12 mx-auto font-notosans" [innerHTML]="safeHtml"></div>
+	<div class="mx-auto flex flex-col md:flex-row gap-8 justify-center mt-20 items-center">
+		<peps-button-small
+			text="Voir toutes les actus"
+			[link]="'/news'"
+		></peps-button-small>
+		<button
+			(click)="toastService.show('Cette fonctionnalité n\'est pas encore disponible', 'info')"
+			class="uppercase bg-peps-discord hover:bg-peps-discord-hover cursor-pointer py-3 px-8 flex flex-row gap-1">
+			<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<g clip-path="url(#clip0_1194_1185)">
+					<path d="M20.817 4.15509C19.2873 3.4532 17.647 2.93609 15.9319 2.63991C15.9007 2.6342 15.8695 2.64848 15.8534 2.67705C15.6424 3.05227 15.4087 3.54177 15.2451 3.92651C13.4004 3.65034 11.5652 3.65034 9.75832 3.92651C9.59465 3.53321 9.35248 3.05227 9.14057 2.67705C9.12448 2.64944 9.09328 2.63515 9.06205 2.63991C7.34791 2.93514 5.70756 3.45226 4.17693 4.15509C4.16368 4.1608 4.15233 4.17033 4.14479 4.1827C1.03339 8.83106 0.18105 13.3652 0.59918 17.8431C0.601072 17.865 0.61337 17.8859 0.630398 17.8992C2.68321 19.4068 4.67171 20.322 6.62328 20.9286C6.65451 20.9382 6.68761 20.9267 6.70748 20.901C7.16913 20.2706 7.58064 19.6058 7.93348 18.9068C7.9543 18.8659 7.93442 18.8173 7.89186 18.8011C7.23913 18.5535 6.6176 18.2516 6.01973 17.9088C5.97244 17.8812 5.96865 17.8135 6.01216 17.7811C6.13797 17.6869 6.26382 17.5888 6.38396 17.4897C6.40569 17.4716 6.43598 17.4678 6.46153 17.4792C10.3893 19.2725 14.6415 19.2725 18.523 17.4792C18.5485 17.4669 18.5788 17.4707 18.6015 17.4888C18.7216 17.5878 18.8475 17.6869 18.9742 17.7811C19.0177 17.8135 19.0149 17.8812 18.9676 17.9088C18.3697 18.2583 17.7482 18.5535 17.0945 18.8002C17.052 18.8163 17.033 18.8659 17.0538 18.9068C17.4143 19.6049 17.8258 20.2696 18.2789 20.9001C18.2978 20.9267 18.3319 20.9382 18.3631 20.9286C20.3241 20.322 22.3126 19.4068 24.3654 17.8992C24.3834 17.8859 24.3948 17.8659 24.3967 17.844C24.8971 12.6671 23.5585 8.17015 20.8482 4.18365C20.8416 4.17033 20.8303 4.1608 20.817 4.15509ZM8.52002 15.1165C7.3375 15.1165 6.36313 14.0308 6.36313 12.6976C6.36313 11.3643 7.3186 10.2786 8.52002 10.2786C9.73087 10.2786 10.6958 11.3738 10.6769 12.6976C10.6769 14.0308 9.72141 15.1165 8.52002 15.1165ZM16.4947 15.1165C15.3123 15.1165 14.3379 14.0308 14.3379 12.6976C14.3379 11.3643 15.2933 10.2786 16.4947 10.2786C17.7056 10.2786 18.6705 11.3738 18.6516 12.6976C18.6516 14.0308 17.7056 15.1165 16.4947 15.1165Z" fill="#F9ECEA"/>
+				</g>
+				<defs>
+					<clipPath id="clip0_1194_1185">
+						<rect width="24" height="24" fill="white" transform="translate(0.5)"/>
+					</clipPath>
+				</defs>
+			</svg>
+			Réagir
+		</button>
+
+	</div>
+</div>
+

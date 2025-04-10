@@ -1,5 +1,5 @@
-<button
+<a
 	class=" group cursor-pointer hover:text-peps-orange transition-colors duration-300 pb-2 border-b-2 hover:border-b-peps-brown"
-	(click)="onClick()"
+	[routerLink]="link"
 	[ngClass]="{'text-peps-gold border-b-peps-gold': type === 'light', 'text-peps-dark-700 border-b-peps-dark-700': type === 'dark'}"
->{{ text | uppercase }}</button>
+>{{ text | uppercase }}</a>

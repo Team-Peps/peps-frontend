@@ -2,7 +2,7 @@ import { environment } from "../../environment/environment";
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {ArticleTiny} from '../models/article';
+import {Article, ArticleTiny} from '../models/article';
 import {Page} from '../models/page';
 
 @Injectable({
@@ -20,5 +20,9 @@ export class ArticleService {
 
 	getArticles(page: number, filter: string[]): Observable<Page<ArticleTiny>> {
 		return this.http.get<Page<ArticleTiny>>(`${environment.backendUrl}/article?page=${page}&filter=${filter}`);
+	}
+
+	getArticle(articleId: string): Observable<Article> {
+		return this.http.get<Article>(`${environment.backendUrl}/article/${articleId}`);
 	}
 }

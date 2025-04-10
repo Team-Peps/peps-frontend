@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import {TestComponent} from './pages/test/test.component';
 import {HomeComponent} from './pages/home/home.component';
 import {NewsComponent} from './pages/news/news.component';
+import {NewsDetailsComponent} from './pages/news-details/news-details.component';
 
 export const routes: Routes = [
 	{
@@ -27,6 +28,15 @@ export const routes: Routes = [
 	},
 	{
 		path: 'news',
-		component: NewsComponent,
+		children: [
+			{
+				path: '',
+				component: NewsComponent,
+			},
+			{
+				path: ':articleId',
+				component: NewsDetailsComponent,
+			}
+		]
 	}
 ];
