@@ -13,6 +13,5 @@ export class ButtonSimpleComponent {
 	constructor() {}
 
 	@Input() text: string = '';
-	@Input() onClick: any = () => {};
 
 }

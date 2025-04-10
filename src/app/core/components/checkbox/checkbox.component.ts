@@ -2,11 +2,11 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
 
 @Component({
-  selector: 'peps-checkbox',
+	selector: 'peps-checkbox',
 	imports: [
 		NgOptimizedImage
 	],
-  templateUrl: './checkbox.component.html',
+	templateUrl: './checkbox.component.html',
 })
 export class CheckboxComponent {
 
@@ -17,8 +17,7 @@ export class CheckboxComponent {
 	@Output() onCheckChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
 	toggleCheck() {
-		this.checked = !this.checked;
-		this.onCheckChange.emit(this.checked);
+		this.onCheckChange.emit(!this.checked);
 	}
 
 }

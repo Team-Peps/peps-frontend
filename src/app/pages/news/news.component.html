@@ -1,0 +1,44 @@
+<div class="flex flex-col gap-10 pt-28">
+	<div class="flex flex-col md:flex-row justify-around items-center gap-4">
+		<peps-title
+			subtitle="Les"
+			title="actus"
+		></peps-title>
+		<div class="border border-peps-dark-600 flex flex-col gap-2 py-3 px-6">
+			<span class="text-base tracking-tight text-center font-dinpro-medium">FILTRES</span>
+			<div class="flex flex-row gap-2 items-center justify-center">
+				<peps-checkbox
+					[checked]="filter.includes(ArticleType.OVERWATCH)"
+					(onCheckChange)="filterArticles(ArticleType.OVERWATCH, $event)"
+					image="assets/icons/Overwatch_2_logo.svg"
+				></peps-checkbox>
+				<peps-checkbox
+					[checked]="filter.includes(ArticleType.MARVEL_RIVALS)"
+					(onCheckChange)="filterArticles(ArticleType.MARVEL_RIVALS, $event)"
+					image="assets/icons/Marvel_Rivals_logo.svg"
+				></peps-checkbox>
+				<peps-checkbox
+					[checked]="filter.includes(ArticleType.TEAM_PEPS)"
+					(onCheckChange)="filterArticles(ArticleType.TEAM_PEPS, $event)"
+					image="assets/icons/Marvel_Rivals_logo.svg"
+				></peps-checkbox>
+			</div>
+		</div>
+	</div>
+	<div class="flex flex-row flex-wrap gap-x-4 gap-y-10 justify-center">
+		@for (article of articles; track article.id) {
+			<div class="w-full sm:w-[48%] lg:w-[25%]">
+				<peps-news-card
+					[article]="article"
+				></peps-news-card>
+			</div>
+		}
+	</div>
+
+	<peps-page-selector
+		[page]="page"
+		[totalPages]="totalPages"
+		(pageChange)="onPageChange($event)"
+	></peps-page-selector>
+
+</div>
