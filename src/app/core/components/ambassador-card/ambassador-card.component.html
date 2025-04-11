@@ -1,0 +1,52 @@
+<div class="flex flex-col mx-auto">
+	<img [src]="minioBaseUrl + ambassador?.imageKey" alt="Photo de {{ ambassador?.name }}">
+	<div class="flex flex-col gap-8 -translate-y-5">
+		<span class="uppercase text-6xl">{{ ambassador?.name }}</span>
+		<span class="text-justify font-notosans">{{ ambassador?.description }}</span>
+
+		<div class="flex flex-row gap-2">
+			@if(ambassador?.tiktokUsername) {
+				<a [href]="'https://www.tiktok.com/@'+ambassador?.tiktokUsername" target="_blank">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M17.0725 0H13.0278V16.3478C13.0278 18.2957 11.4722 19.8957 9.53626 19.8957C7.60034 19.8957 6.04469 18.2957 6.04469 16.3478C6.04469 14.4348 7.56577 12.8695 9.43257 12.8V8.69567C5.31872 8.7652 2 12.1391 2 16.3478C2 20.5913 5.38786 24 9.57085 24C13.7538 24 17.1416 20.5565 17.1416 16.3478V7.9652C18.6627 9.07827 20.5295 9.73913 22.5 9.77393V5.66957C19.4579 5.56522 17.0725 3.06087 17.0725 0Z" fill="#F9ECEA"/>
+					</svg>
+				</a>
+			}
+
+			@if(ambassador?.twitchUsername) {
+				<a [href]="'https://www.twitch.tv/'+ambassador?.twitchUsername" target="_blank">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M6.00056 0L1.71484 4.28571V19.7143H6.8577V24L11.1434 19.7143H14.572L22.2863 12V0H6.00056ZM20.572 11.1429L17.1434 14.5714H13.7148L10.7148 17.5714V14.5714H6.8577V1.71429H20.572V11.1429Z" fill="#F9ECEA"/>
+						<path d="M18.0004 4.71387H16.2861V9.85672H18.0004V4.71387Z" fill="#F9ECEA"/>
+						<path d="M13.2866 4.71387H11.5723V9.85672H13.2866V4.71387Z" fill="#F9ECEA"/>
+					</svg>
+				</a>
+			}
+
+			@if(ambassador?.youtubeUsername) {
+				<a [href]="'https://www.youtube.com/c/'+ambassador?.youtubeUsername" target="_blank">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M23.7609 7.1998C23.7609 7.1998 23.5266 5.54512 22.8047 4.81855C21.8906 3.8623 20.8688 3.85762 20.4 3.80137C17.0438 3.55762 12.0047 3.55762 12.0047 3.55762H11.9953C11.9953 3.55762 6.95625 3.55762 3.6 3.80137C3.13125 3.85762 2.10938 3.8623 1.19531 4.81855C0.473438 5.54512 0.24375 7.1998 0.24375 7.1998C0.24375 7.1998 0 9.14512 0 11.0857V12.9045C0 14.8451 0.239062 16.7904 0.239062 16.7904C0.239062 16.7904 0.473437 18.4451 1.19062 19.1717C2.10469 20.1279 3.30469 20.0951 3.83906 20.1982C5.76094 20.3811 12 20.4373 12 20.4373C12 20.4373 17.0438 20.4279 20.4 20.1889C20.8688 20.1326 21.8906 20.1279 22.8047 19.1717C23.5266 18.4451 23.7609 16.7904 23.7609 16.7904C23.7609 16.7904 24 14.8498 24 12.9045V11.0857C24 9.14512 23.7609 7.1998 23.7609 7.1998ZM9.52031 15.1123V8.36699L16.0031 11.7514L9.52031 15.1123Z" fill="#F9ECEA"/>
+					</svg>
+				</a>
+			}
+
+			@if(ambassador?.twitterXUsername) {
+				<a [href]="'https://www.x.com/'+ambassador?.twitterXUsername" target="_blank">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M18.3263 1.9043H21.6998L14.3297 10.3278L23 21.7903H16.2112L10.894 14.8383L4.80995 21.7903H1.43443L9.31743 12.7804L1 1.9043H7.96111L12.7674 8.25863L18.3263 1.9043ZM17.1423 19.7711H19.0116L6.94539 3.81743H4.93946L17.1423 19.7711Z" fill="#F9ECEA"/>
+					</svg>
+				</a>
+			}
+
+			@if(ambassador?.instagramUsername) {
+				<a [href]="'https://www.instagram.com/'+ambassador?.instagramUsername" target="_blank">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="24" height="24">
+						<path d="M7 2C4.239 2 2 4.239 2 7v10c0 2.761 2.239 5 5 5h10c2.761 0 5-2.239 5-5V7c0-2.761-2.239-5-5-5H7zm0 2h10c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3zm10 1.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
+					</svg>
+				</a>
+			}
+		</div>
+	</div>
+
+</div>

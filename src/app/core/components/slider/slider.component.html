@@ -1,5 +1,5 @@
 <div class="relative w-full overflow-hidden">
-	<div #sliderTrack class="flex w-full  transition-transform duration-500 ease-in-out">
+	<div #sliderTrack class="flex w-full transition-transform duration-500 ease-in-out">
 		@for (item of items; track item) {
 			<picture class="w-screen h-auto flex-shrink-0">
 				<source [srcset]="item.images.lg" media="(min-width: 1024px)">
