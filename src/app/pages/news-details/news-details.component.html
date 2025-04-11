@@ -1,6 +1,6 @@
 <div class="flex flex-col pb-20">
 	<div class="relative">
-		<div class="relative w-full ">
+		<div class="relative w-full">
 			<img [src]="minioBaseUrl + article?.imageKey" class="w-full h-auto object-cover" alt="Image responsive" />
 
 			<div class="absolute -bottom-35 xs:-bottom-15 z-10 uppercase w-full">
@@ -12,7 +12,7 @@
 			</div>
 
 		</div>
-		<img src="/assets/images/separator_team_peps.png" alt="" class="w-full absolute -bottom-5 sm:-bottom-8 md:-bottom-15 xl:-bottom-20 object-center ">
+		<peps-separator></peps-separator>
 	</div>
 	<div class="pt-38 xs:pt-28 w-10/12 mx-auto font-notosans" [innerHTML]="safeHtml"></div>
 	<div class="mx-auto flex flex-col md:flex-row gap-8 justify-center mt-20 items-center">
@@ -20,8 +20,9 @@
 			text="Voir toutes les actus"
 			[link]="'/news'"
 		></peps-button-small>
-		<button
-			(click)="toastService.show('Cette fonctionnalité n\'est pas encore disponible', 'info')"
+		<a
+			href="https://discord.gg/T92qhMUyRV"
+			target="_blank"
 			class="uppercase bg-peps-discord hover:bg-peps-discord-hover cursor-pointer py-3 px-8 flex flex-row gap-1">
 			<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<g clip-path="url(#clip0_1194_1185)">
@@ -34,7 +35,7 @@
 				</defs>
 			</svg>
 			Réagir
-		</button>
+		</a>
 
 	</div>
 </div>

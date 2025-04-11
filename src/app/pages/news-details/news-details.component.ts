@@ -7,12 +7,14 @@ import {environment} from '../../../environment/environment';
 import {DatePipe} from '@angular/common';
 import {ButtonSmallComponent} from '../../core/components/buttons/button-small/button-small.component';
 import {ToastService} from '../../services/toast.service';
+import {SeparatorComponent} from '../../core/components/separator/separator.component';
 
 @Component({
   selector: 'app-news-details',
 	imports: [
 		DatePipe,
-		ButtonSmallComponent
+		ButtonSmallComponent,
+		SeparatorComponent
 	],
   templateUrl: './news-details.component.html',
 })

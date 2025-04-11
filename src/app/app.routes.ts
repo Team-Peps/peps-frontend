@@ -3,6 +3,7 @@ import {TestComponent} from './pages/test/test.component';
 import {HomeComponent} from './pages/home/home.component';
 import {NewsComponent} from './pages/news/news.component';
 import {NewsDetailsComponent} from './pages/news-details/news-details.component';
+import {AmbassadorsComponent} from './pages/ambassadors/ambassadors.component';
 
 export const routes: Routes = [
 	{
@@ -38,5 +39,9 @@ export const routes: Routes = [
 				component: NewsDetailsComponent,
 			}
 		]
+	},
+	{
+		path: 'ambassadors',
+		component: AmbassadorsComponent
 	}
 ];
