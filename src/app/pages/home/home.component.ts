@@ -15,6 +15,7 @@ import {ArticleTiny} from '../../models/article';
 import {NewsCardComponent} from '../../core/components/news-card/news-card.component';
 import {RangePipe} from '../../pipes/range.pipe';
 import {Title} from '@angular/platform-browser';
+import {isToday} from '../../core/utils/matchUtils';
 
 @Component({
   selector: 'app-home',
@@ -43,6 +44,7 @@ export class HomeComponent implements OnInit {
 	) {}
 
 	protected readonly Game = Game;
+	protected readonly isToday = isToday;
 
 	matchsUpcoming: MatchGroupByDate[] = [];
 	filteredMatches: MatchGroupByDate[] = [];
@@ -64,7 +66,7 @@ export class HomeComponent implements OnInit {
     }
 
 	private loadMatches(): void {
-		this.matchService.getUpcomingMatches().subscribe((data: MatchGroupByDate[]) => {
+		this.matchService.get5UpcomingMatches().subscribe((data: MatchGroupByDate[]) => {
 			this.matchsUpcoming = data;
 			this.updateFilteredMatches();
 		});
@@ -74,17 +76,6 @@ export class HomeComponent implements OnInit {
 		this.articleService.getThreeRecentArticles().subscribe((data: ArticleTiny[]) => {
 			this.articles = data;
 		})
-	}
-
-	isToday(matchDateStr: string): boolean {
-		const today = new Date();
-		const matchDate = new Date(matchDateStr);
-
-		return (
-			today.getFullYear() === matchDate.getFullYear() &&
-			today.getMonth() === matchDate.getMonth() &&
-			today.getDate() === matchDate.getDate()
-		);
 	}
 
 	updateFilteredMatches(): void {

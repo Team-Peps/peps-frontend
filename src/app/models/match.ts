@@ -5,8 +5,8 @@ export interface Match {
 	opponent: string;
 	competitionName: string;
 	competitionImageKey: string;
-	score: number;
-	opponentScore: number;
+	score: string;
+	opponentScore: string;
 	opponentImageKey: string;
 	vodUrl: string;
 	streamUrl: string;

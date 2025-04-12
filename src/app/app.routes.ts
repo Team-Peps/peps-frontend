@@ -5,6 +5,7 @@ import {NewsComponent} from './pages/news/news.component';
 import {NewsDetailsComponent} from './pages/news-details/news-details.component';
 import {AmbassadorsComponent} from './pages/ambassadors/ambassadors.component';
 import {PartnersComponent} from './pages/partners/partners.component';
+import {MatchsComponent} from './pages/matchs/matchs.component';
 
 export const routes: Routes = [
 	{
@@ -48,5 +49,9 @@ export const routes: Routes = [
 	{
 		path: 'partners',
 		component: PartnersComponent,
+	},
+	{
+		path: 'matchs',
+		component: MatchsComponent,
 	}
 ];
