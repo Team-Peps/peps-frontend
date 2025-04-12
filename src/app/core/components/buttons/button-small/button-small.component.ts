@@ -17,6 +17,7 @@ export class ButtonSmallComponent {
 
 	@Input() text: string = '';
 	@Input() link: string = '';
+	@Input() hrefLink: string = '';
 	@Input() type: 'light' | 'dark' = 'light';
 
 }

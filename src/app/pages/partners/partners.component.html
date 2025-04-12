@@ -1,0 +1,65 @@
+<div class="flex flex-col gap-24 pt-32 pb-20">
+	<div class="flex flex-col md:flex-row justify-around items-center gap-4">
+		<peps-title
+			subtitle="Nos"
+			title="partenaires"
+		></peps-title>
+		<span class="invisible sm:visible"></span>
+	</div>
+	<div class="flex flex-col gap-x-4 gap-y-20 justify-center">
+		@for(partner of partners; track partner.id; let i = $index) {
+			<div class="w-9/12 mx-auto">
+				<peps-partner-card
+					[partner]="partner"
+					[isEven]="i % 2 === 0"
+				></peps-partner-card>
+			</div>
+		}
+	</div>
+	<div class="w-6/12 mx-auto font-notosans text-justify flex flex-col justify-center gap-20">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur sagittis, nisl nunc egestas nisi, vitae facilisis enim nunc eget nisi. Sed euismod, nisl eget consectetur sagittis, nisl nunc egestas nisi, vitae facilisis enim nunc eget nisi. Sed euismod, nisl eget consectetur sagittis, nisl nunc egestas nisi, vitae facilisis enim nunc eget nisi.
+		</p>
+		<div class="w-full aspect-video rounded-xl overflow-hidden shadow-lg relative">
+			@if (!isPlaying) {
+				<img
+					src="/assets/images/thumbnail_video_sponso.png"
+					alt="Miniature vidéo sponso"
+					class="w-full h-full object-cover cursor-pointer"
+					(click)="play()"
+				/>
+				<div class="absolute inset-0 flex items-center justify-center cursor-pointer group">
+					<div class="w-16 h-16 rounded-full flex items-center justify-center shadow-lg pointer-events-auto cursor-pointer" (click)="play()">
+						<svg width="104" height="105" viewBox="0 0 104 105" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-peps-gold group-hover:text-peps-yellow transition-colors duration-300">
+							<g clip-path="url(#clip0_1194_1710)">
+								<path d="M82.2517 104.621H21.7459C16.0169 104.614 10.5245 102.335 6.47349 98.2839C2.42246 94.2329 0.143581 88.7405 0.136719 83.0115L0.136719 22.5057C0.143581 16.7767 2.42246 11.2843 6.47349 7.23325C10.5245 3.18223 16.0169 0.903347 21.7459 0.896484L82.2517 0.896484C87.9807 0.903347 93.4731 3.18223 97.5241 7.23325C101.575 11.2843 103.854 16.7767 103.861 22.5057V83.0115C103.854 88.7405 101.575 94.2329 97.5241 98.2839C93.4731 102.335 87.9807 104.614 82.2517 104.621ZM21.7459 9.54017C18.3073 9.54017 15.0094 10.9062 12.5779 13.3377C10.1464 15.7692 8.7804 19.067 8.7804 22.5057V83.0115C8.7804 86.4501 10.1464 89.748 12.5779 92.1795C15.0094 94.611 18.3073 95.977 21.7459 95.977H82.2517C85.6904 95.977 88.9882 94.611 91.4197 92.1795C93.8512 89.748 95.2172 86.4501 95.2172 83.0115V22.5057C95.2172 19.067 93.8512 15.7692 91.4197 13.3377C88.9882 10.9062 85.6904 9.54017 82.2517 9.54017H21.7459ZM40.5114 74.3894C38.7097 74.3834 36.9416 73.9018 35.3857 72.9934C33.8486 72.1137 32.5728 70.8414 31.6889 69.3067C30.805 67.772 30.3447 66.03 30.355 64.259V41.2582C30.3536 39.4868 30.818 37.7463 31.7016 36.2111C32.5853 34.6759 33.8572 33.4002 35.3896 32.5118C36.9221 31.6234 38.6612 31.1537 40.4325 31.1497C42.2038 31.1457 43.9451 31.6076 45.4815 32.4891L68.2922 43.8772C69.8766 44.7325 71.2035 45.9961 72.1353 47.5369C73.0671 49.0777 73.5698 50.8396 73.5914 52.6401C73.613 54.4406 73.1527 56.2141 72.2582 57.7768C71.3636 59.3395 70.0674 60.6345 68.5039 61.5276L45.2697 73.1404C43.8206 73.9669 42.1796 74.3977 40.5114 74.3894ZM40.4033 39.8147C40.1651 39.8146 39.9311 39.8772 39.7248 39.9962C39.5006 40.1208 39.3146 40.3042 39.1867 40.5265C39.0588 40.7488 38.9938 41.0017 38.9987 41.2582V64.259C39.0002 64.5116 39.0673 64.7595 39.1936 64.9784C39.3198 65.1972 39.5008 65.3794 39.7188 65.5071C39.9367 65.6349 40.1842 65.7037 40.4368 65.7069C40.6894 65.7101 40.9385 65.6475 41.1596 65.5253L64.3939 53.9082C64.5669 53.7729 64.7045 53.5975 64.7948 53.3973C64.8852 53.197 64.9255 52.9779 64.9125 52.7586C64.9179 52.5015 64.8527 52.2479 64.7239 52.0254C64.5951 51.8029 64.4077 51.62 64.1821 51.4966L41.3887 40.1086C41.0915 39.9262 40.7518 39.8249 40.4033 39.8147Z" fill="currentColor"/>
+							</g>
+							<defs>
+								<clipPath id="clip0_1194_1710">
+									<rect width="103.724" height="103.724" fill="white" transform="translate(0.136719 0.896484)"/>
+								</clipPath>
+							</defs>
+						</svg>
+					</div>
+					<span class="uppercase absolute left-1 md:left-5 bottom-1 md:bottom-5 text-sm md:text-2xl lg:text-5xl font-dinpro">Les arguments du CEO</span>
+				</div>
+			} @else {
+				<iframe
+					class="w-full h-full"
+					[src]="embedUrl"
+					title="Les arguments du CEO - Team Peps"
+					allow="autoplay; encrypted-media"
+					allowfullscreen
+				></iframe>
+			}
+		</div>
+
+	</div>
+
+	<div class="mx-auto flex flex-col md:flex-row gap-8 justify-center items-center">
+		<peps-button
+			text="Nous contacter"
+			(click)="toContactEmail()"
+		></peps-button>
+	</div>
+</div>

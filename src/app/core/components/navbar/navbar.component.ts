@@ -88,4 +88,9 @@ export class NavbarComponent implements OnInit {
 		this.router.navigate(['/ambassadors']);
 		this.resetMobileMenu();
 	}
+
+	toPartners() {
+		this.router.navigate(['/partners']);
+		this.resetMobileMenu();
+	}
 }
