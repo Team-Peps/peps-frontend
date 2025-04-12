@@ -1,5 +1,13 @@
-<a
-	class=" group cursor-pointer hover:text-peps-orange transition-colors duration-300 pb-2 border-b-2 hover:border-b-peps-brown"
-	[routerLink]="link"
-	[ngClass]="{'text-peps-gold border-b-peps-gold': type === 'light', 'text-peps-dark-700 border-b-peps-dark-700': type === 'dark'}"
->{{ text | uppercase }}</a>
+@if (link) {
+	<a
+		class=" group cursor-pointer hover:text-peps-orange transition-colors duration-300 pb-2 border-b-2 hover:border-b-peps-brown"
+		[routerLink]="link"
+		[ngClass]="{'text-peps-gold border-b-peps-gold': type === 'light', 'text-peps-dark-700 border-b-peps-dark-700': type === 'dark'}"
+	>{{ text | uppercase }}</a>
+} @else {
+	<a
+		class=" group cursor-pointer hover:text-peps-orange transition-colors duration-300 pb-2 border-b-2 hover:border-b-peps-brown"
+		[href]="hrefLink"
+		[ngClass]="{'text-peps-gold border-b-peps-gold': type === 'light', 'text-peps-dark-700 border-b-peps-dark-700': type === 'dark'}"
+	>{{ text | uppercase }}</a>
+}

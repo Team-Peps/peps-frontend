@@ -1,0 +1,33 @@
+<div
+	class="flex gap-x-8 flex-col"
+	[ngClass]="{'lg:flex-row-reverse': !isEven, 'lg:flex-row': isEven}"
+>
+	<img [src]="minioBaseUrl + partner?.imageKey" alt="Image du partenaire {{ partner?.name }}" class="w-1/2 mx-auto lg:my-auto">
+	<div class="flex flex-col gap-8">
+		<div class="flex flex-col">
+			<span
+				class="text-8xl uppercase text-left"
+				[ngClass]="{'lg:text-right': !isEven, 'lg:text-left': isEven}"
+			>{{ partner?.name }}</span>
+			<div
+				[ngClass]="{'lg:justify-end': !isEven, 'lg:justify-start': isEven}"
+				class="flex flex-row gap-1 justify-start"
+			>
+				@for (code of partner?.codes; track $index) {
+					<button class="bg-peps-gold hover:bg-peps-yellow transition-colors duration-300 text-peps-dark-700 cursor-pointer px-1 py-0.5" (click)="copyToClipboard(code)">
+						{{ code }}
+					</button>
+				}
+			</div>
+
+		</div>
+
+		<span class="text-xl font-notosans text-justify">{{ partner?.description }}</span>
+		<peps-button-small
+			[ngClass]="{'ml-auto': !isEven, 'mr-auto': isEven}"
+			text="Profiter de l'offre"
+			[hrefLink]="partner!.link"
+		></peps-button-small>
+	</div>
+
+</div>
