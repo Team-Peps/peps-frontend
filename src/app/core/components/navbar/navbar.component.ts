@@ -93,4 +93,9 @@ export class NavbarComponent implements OnInit {
 		this.router.navigate(['/partners']);
 		this.resetMobileMenu();
 	}
+
+	toMatches() {
+		this.router.navigate(['/matchs']);
+		this.resetMobileMenu();
+	}
 }

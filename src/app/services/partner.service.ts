@@ -3,6 +3,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {environment} from '../../environment/environment';
 import {Partner} from '../models/partner';
+import {Cacheable, LocalStorageStrategy} from 'ts-cacheable';
 
 @Injectable({
 	providedIn: 'root'
@@ -13,6 +14,10 @@ export class PartnerService {
 		private http: HttpClient
 	) {	}
 
+	@Cacheable({
+		maxAge: 5 * 24 * 60 * 60 * 1000,
+		storageStrategy: LocalStorageStrategy
+	})
 	getPartners(): Observable<Partner[]> {
 		return this.http.get<Partner[]>(`${environment.backendUrl}/partner/active`);
 	}

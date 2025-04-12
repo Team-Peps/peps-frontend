@@ -1,4 +1,4 @@
-<div class="flex flex-col gap-10 pt-28">
+<div class="flex flex-col gap-10 pt-28 pb-20">
 	<div class="flex flex-col md:flex-row justify-around items-center gap-4">
 		<peps-title
 			subtitle="Les"
@@ -35,10 +35,12 @@
 		}
 	</div>
 
-	<peps-page-selector
-		[page]="page"
-		[totalPages]="totalPages"
-		(pageChange)="onPageChange($event)"
-	></peps-page-selector>
+	@if(totalPages > 1) {
+		<peps-page-selector
+			[page]="page"
+			[totalPages]="totalPages"
+			(pageChange)="onPageChange($event)"
+		></peps-page-selector>
+	}
 
 </div>
