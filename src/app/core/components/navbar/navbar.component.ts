@@ -98,4 +98,9 @@ export class NavbarComponent implements OnInit {
 		this.router.navigate(['/matchs']);
 		this.resetMobileMenu();
 	}
+
+	toClub() {
+		this.router.navigate(['/club']);
+		this.resetMobileMenu();
+	}
 }

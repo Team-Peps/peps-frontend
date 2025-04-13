@@ -1,4 +1,12 @@
-<button
-	class="text-peps-dark-700 bg-peps-gold py-4 px-8 cursor-pointer hover:bg-peps-yellow transition-colors duration-300"
-	(click)="onClick()"
->{{ text | uppercase }}</button>
+@if(link) {
+	<a
+		class="text-peps-dark-700 bg-peps-gold py-4 px-8 cursor-pointer hover:bg-peps-yellow transition-colors duration-300"
+		[routerLink]="link"
+	>{{ text | uppercase }}</a>
+} @else {
+	<a
+		class="text-peps-dark-700 bg-peps-gold py-4 px-8 cursor-pointer hover:bg-peps-yellow transition-colors duration-300"
+		[href]="hrefLink"
+		target="_blank"
+	>{{ text | uppercase }}</a>
+}
