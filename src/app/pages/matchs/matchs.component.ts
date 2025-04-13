@@ -10,6 +10,7 @@ import {RangePipe} from '../../pipes/range.pipe';
 import {isToday} from '../../core/utils/matchUtils';
 import {MatchGroupByDate} from '../../models/match';
 import {PageSelectorComponent} from '../../core/components/page-selector/page-selector.component';
+import {NoUpcomingMatchComponent} from '../../core/components/no-upcoming-match/no-upcoming-match.component';
 
 @Component({
   selector: 'app-matchs',
@@ -22,7 +23,8 @@ import {PageSelectorComponent} from '../../core/components/page-selector/page-se
 		MatchRowComponent,
 		RangePipe,
 		UpperCasePipe,
-		PageSelectorComponent
+		PageSelectorComponent,
+		NoUpcomingMatchComponent
 	],
   templateUrl: './matchs.component.html',
 })
