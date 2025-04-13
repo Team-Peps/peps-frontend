@@ -1,0 +1,55 @@
+<div class="flex flex-col pb-20">
+	<div class="relative">
+		<div class="relative w-full z-[-999]">
+			<img src="/assets/images/roster_overwatch_background.png" class="w-full h-auto object-cover" alt="Image responsive" />
+			<div class="absolute flex flex-row gap-10 justify-center w-full bottom-10 sm:bottom-10 md:bottom-10 lg:bottom-20 xl:bottom-30 2xl:bottom-40 3xl:bottom-60">
+
+				<div class="flex flex-col leading-[45px] sm:leading-[110px] text-peps-dark-200 z-10">
+					<img src="/assets/images/max_button_overwatch_2_logo.png" alt="" class="h-[189px]">
+				</div>
+
+			</div>
+
+		</div>
+		<peps-separator></peps-separator>
+
+	</div>
+</div>
+
+<div class="flex flex-col gap-20 mb-20">
+
+	<div class="flex flex-row flex-wrap gap-8 mx-auto justify-center">
+		@for(player of members$ | async; track player.id) {
+			<peps-member-card
+				[member]="player"
+			></peps-member-card>
+		}
+	</div>
+
+	<div class="flex flex-row flex-wrap gap-8 mx-auto justify-center">
+		@for(player of coachesSubstitutes$ | async; track player.id) {
+			<peps-member-card
+				[member]="player"
+			></peps-member-card>
+		}
+	</div>
+
+	<peps-achievement-row
+		[achievements]="achievements"
+	></peps-achievement-row>
+
+	<div class="flex flex-col gap-10">
+
+		<div class="flex flex-col md:flex-row justify-around items-center gap-4">
+			<peps-title
+				subtitle="Prochains"
+				title="Matchs"
+			></peps-title>
+			<span class="visible md:invisible"></span>
+		</div>
+		<peps-upcoming-matchs
+			[matches]="matches"
+		></peps-upcoming-matchs>
+	</div>
+
+</div>

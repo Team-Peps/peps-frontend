@@ -1,0 +1,9 @@
+export enum MemberRole {
+	DAMAGE = 'DAMAGE',
+	TANK = 'TANK',
+	SUPPORT = 'SUPPORT',
+	DUELIST = 'DUELIST',
+	STRATEGIST = 'STRATEGIST',
+	VANGUARD = 'VANGUARD',
+	COACH = 'COACH',
+}
