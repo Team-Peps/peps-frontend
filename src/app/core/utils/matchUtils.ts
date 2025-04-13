@@ -26,5 +26,5 @@ export function isWin(a: string): boolean {
 }
 
 export function isLoose(a: string): boolean {
-	return a.includes('FF');
+	return a.includes('FF') || a.includes('L');
 }
