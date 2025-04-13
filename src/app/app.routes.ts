@@ -7,6 +7,7 @@ import {AmbassadorsComponent} from './pages/ambassadors/ambassadors.component';
 import {PartnersComponent} from './pages/partners/partners.component';
 import {MatchsComponent} from './pages/matchs/matchs.component';
 import {ClubComponent} from './pages/club/club.component';
+import {RosterOverwatchComponent} from './pages/rosters/roster-overwatch/roster-overwatch.component';
 
 export const routes: Routes = [
 	{
@@ -18,11 +19,16 @@ export const routes: Routes = [
 		component: HomeComponent,
 	},
 	{
-		path: 'rosters',
+		path: 'roster',
 		children: [
 			{
+				path: "",
+				redirectTo: "/",
+				pathMatch: "full"
+			},
+			{
 				path: 'overwatch',
-				component: TestComponent,
+				component: RosterOverwatchComponent,
 			},
 			{
 				path: 'marvel-rivals',

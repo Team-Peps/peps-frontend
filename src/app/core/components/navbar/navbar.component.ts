@@ -14,7 +14,6 @@ import {NavigationEnd, Router} from '@angular/router';
 		DropdownButtonComponent,
 		ButtonSimpleComponent,
 		NgClass
-
 	],
   templateUrl: './navbar.component.html',
 })
@@ -36,8 +35,8 @@ export class NavbarComponent implements OnInit {
 	];
 
 	itemsDropdownGames = [
-		{ label: 'Overwatch', action: () => {}, image: 'assets/icons/Overwatch_2_logo.svg' },
-		{ label: 'Marvel Rivals', action: () => {}, image: 'assets/icons/Marvel_Rivals_logo.svg' },
+		{ label: 'Overwatch', action: () => this.toOverwatch(), image: 'assets/icons/Overwatch_2_logo.svg' },
+		{ label: 'Marvel Rivals', action: () => this.toMarvelRivals(), image: 'assets/icons/Marvel_Rivals_logo.svg' },
 	];
 
 	ngOnInit(): void {
@@ -101,6 +100,16 @@ export class NavbarComponent implements OnInit {
 
 	toClub() {
 		this.router.navigate(['/club']);
+		this.resetMobileMenu();
+	}
+
+	toOverwatch() {
+		this.router.navigate(['/roster/overwatch']);
+		this.resetMobileMenu();
+	}
+
+	toMarvelRivals() {
+		this.router.navigate(['/roster/marvel-rivals']);
 		this.resetMobileMenu();
 	}
 }

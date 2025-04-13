@@ -1,0 +1,21 @@
+import {Component, Input} from '@angular/core';
+import {MemberTiny} from '../../../models/member/member';
+import {environment} from '../../../../environment/environment';
+import {determineRoleIcon} from '../../utils/memberUtils';
+import {MemberRole} from '../../../models/member/memberRole';
+
+@Component({
+  selector: 'peps-member-card',
+  imports: [],
+  templateUrl: './member-card.component.html',
+	styleUrls: ['./member-card.component.css'],
+})
+export class MemberCardComponent {
+
+	@Input() member: MemberTiny | null = null;
+
+	minioBaseUrl = environment.minioBaseUrl;
+
+	protected readonly determineRoleIcon = determineRoleIcon;
+	protected readonly MemberRole = MemberRole;
+}

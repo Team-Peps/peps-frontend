@@ -16,6 +16,7 @@ import {NewsCardComponent} from '../../core/components/news-card/news-card.compo
 import {RangePipe} from '../../pipes/range.pipe';
 import {Title} from '@angular/platform-browser';
 import {isToday} from '../../core/utils/matchUtils';
+import {UpcomingMatchsComponent} from '../../core/components/upcoming-matchs/upcoming-matchs.component';
 
 @Component({
   selector: 'app-home',
@@ -30,7 +31,8 @@ import {isToday} from '../../core/utils/matchUtils';
 		ButtonComponent,
 		NewsCardComponent,
 		RangePipe,
-		CheckboxComponent
+		CheckboxComponent,
+		UpcomingMatchsComponent
 	],
   templateUrl: './home.component.html',
 })
@@ -101,11 +103,4 @@ export class HomeComponent implements OnInit {
 		this.updateFilteredMatches();
 	}
 
-	toMatches() {
-		this.router.navigate(['matchs']);
-	}
-
-	toNews() {
-		this.router.navigate(['news']);
-	}
 }
