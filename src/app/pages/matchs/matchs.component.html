@@ -3,7 +3,7 @@
 		<peps-title
 			title="Matchs"
 		></peps-title>
-		<div class="flex flex-col gap-4 p-4 border border-peps-dark-600">
+		<div class="flex flex-col gap-4 p-4 border border-peps-dark-600 bg-peps-dark-700">
 			<span class="uppercase">Retrouve la team peps sur twitch et youtube</span>
 			<div class="flex flex-row gap-4 justify-center">
 				<a
@@ -56,7 +56,7 @@
 		</div>
 	</div>
 	<div class="flex flex-col gap-10">
-		<div class="flex flex-row mx-auto md:hidden">
+		<div class="flex flex-row mx-auto md:hidden bg-peps-dark-700">
 			<button
 				class="uppercase cursor-pointer p-4 relative overflow-hidden text-white transition-colors duration-300"
 				(click)="toggleTypeOfMatch('upcoming')"
@@ -85,7 +85,7 @@
 				></div>
 			</button>
 		</div>
-		<div class="flex flex-row justify-around gap-4 items-center w-10/12 md:w-9/12 lg:w-6/12 mx-auto border-b border-b-peps-dark-600">
+		<div class="flex flex-row justify-around gap-4 items-center w-10/12 md:w-9/12 lg:w-6/12 mx-auto border-b border-b-peps-dark-600 bg-peps-dark-700">
 			<div class="flex flex-row gap-2 items-center justify-center">
 				<peps-checkbox
 					[checked]="selectedGames.includes(Game.OVERWATCH)"
