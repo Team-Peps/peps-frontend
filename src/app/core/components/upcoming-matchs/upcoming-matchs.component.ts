@@ -8,6 +8,7 @@ import {RangePipe} from '../../../pipes/range.pipe';
 import {CheckboxComponent} from '../checkbox/checkbox.component';
 import {TitleComponent} from '../title/title.component';
 import {Game} from '../../../models/game';
+import {NoUpcomingMatchComponent} from '../no-upcoming-match/no-upcoming-match.component';
 
 @Component({
   selector: 'peps-upcoming-matchs',
@@ -18,7 +19,8 @@ import {Game} from '../../../models/game';
 		ButtonComponent,
 		RangePipe,
 		CheckboxComponent,
-		TitleComponent
+		TitleComponent,
+		NoUpcomingMatchComponent
 	],
   templateUrl: './upcoming-matchs.component.html',
 })

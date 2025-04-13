@@ -180,9 +180,11 @@
 
 				</div>
 
+			} @empty {
+				<peps-no-upcoming-match></peps-no-upcoming-match>
 			}
 
-			@if(totalPages > 1) {
+			@if(totalPages > 1 && filteredMatches.length > 0) {
 				<peps-page-selector
 					[page]="page"
 					[totalPages]="totalPages"
