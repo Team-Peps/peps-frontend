@@ -9,6 +9,7 @@ import {MatchsComponent} from './pages/matchs/matchs.component';
 import {ClubComponent} from './pages/club/club.component';
 import {RosterOverwatchComponent} from './pages/rosters/roster-overwatch/roster-overwatch.component';
 import {RosterMarvelRivalsComponent} from './pages/rosters/roster-marvel-rivals/roster-marvel-rivals.component';
+import {NotFoundComponent} from './pages/not-found/not-found.component';
 
 export const routes: Routes = [
 	{
@@ -65,5 +66,13 @@ export const routes: Routes = [
 	{
 		path: 'club',
 		component: ClubComponent,
+	},
+	{
+		path: '**',
+		redirectTo: 'not-found',
+	},
+	{
+		path: 'not-found',
+		component: NotFoundComponent,
 	}
 ];
