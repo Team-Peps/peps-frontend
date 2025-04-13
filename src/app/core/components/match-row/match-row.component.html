@@ -1,119 +1,128 @@
 @if(match) {
-	<div class="flex flex-col md:flex-row bg-peps-dark-600 text-[20px] w-fit m-auto">
+	<div class="flex flex-col md:flex-row text-[20px] w-fit m-auto">
+		<div class="flex flex-col md:flex-row bg-peps-dark-600 w-fit m-auto">
 
-		<div class="flex flex-row">
 
-			<div class="text-white py-4 md:py-7 pr-4 md:px-5 lg:px-8 w-46 md:w-64 lg:w-96 relative z-10">
+			<div class="flex flex-row">
 
-				<div class="flex flex-row items-center justify-end md:justify-between">
-					<div class="relative -top-2 hidden md:block">
-						<img src="/assets/icons/Overwatch_2_logo.svg" alt="" class="w-11 h-11">
-						<span class="absolute -bottom-5">{{ match.datetime | date:'HH:mm': 'Europe/Paris' : 'fr-FR' }}</span>
-					</div>
+				<div class="text-white py-4 md:py-7 pr-4 md:px-5 lg:px-8 w-46 md:w-64 lg:w-[344px] relative z-10">
 
-					<div class="flex flex-row items-center md:gap-4 gap-2">
-						<span class="text-nowrap">TEAM PEPS</span>
-						<peps-logo
-							[width]="41"
-							[height]="48"
-						></peps-logo>
-					</div>
-				</div>
-
-			</div>
-
-			<div class="relative">
-				@if (match.score && isShowingScore) {
-					<div
-						class="absolute translate-y-7 md:translate-y-full z-20 flex flex-col"
-						[ngClass]="{'-left-2 md:-left-3.5': isNumeric(match.score), '-left-4 md:-left-6': !isNumeric(match.score)}"
-					>
-						<span class="text-2xl md:text-3xl text-center">
-							<span
-								[ngClass]="{'text-peps-gold': isSuperiorOf(match.score, match.opponentScore) || isWin(match.score), 'text-peps-text-3': isSuperiorOf(match.opponentScore, match.score) || isLoose(match.score)}"
-							>{{ match.score }}</span> -
-							<span
-								[ngClass]="{'text-peps-gold': isSuperiorOf(match.opponentScore, match.score) || isWin(match.opponentScore), 'text-peps-text-3': isSuperiorOf(match.score, match.opponentScore) || isLoose(match.opponentScore)}"
-							>{{ match.opponentScore }}</span>
-						</span>
-					</div>
-				} @else {
-					<div class="absolute -left-1.5 md:-top-1 translate-y-3 md:translate-y-full z-20 flex flex-col">
-						<span class="text-base md:hidden font-light">{{ match.datetime | date:'HH:mm': 'Europe/Paris' : 'fr-FR' }}</span>
-						<span class="text-2xl md:text-4xl text-center">VS</span>
-					</div>
-				}
-
-				<svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute bottom-0 -left-1.5 z-20">
-					<path d="M12 0L0 20H6L12 0Z" fill="#FDF7BD"/>
-				</svg>
-				<svg width="20" height="31" viewBox="0 0 20 31" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute bottom-0 -left-3 z-10">
-					<path d="M20 0L0 31H10L20 0Z" fill="#EEC932"/>
-				</svg>
-				<svg width="20" height="31" viewBox="0 0 20 31" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 left-3 md:left-4 lg:left-5.5 z-10">
-					<path d="M-1.90735e-06 31L20 1.90735e-06L10 1.03312e-06L-1.90735e-06 31Z" fill="#EEC932"/>
-				</svg>
-				<svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 left-3.5 md:left-4.5 lg:left-6 z-20">
-					<path d="M-1.90735e-06 20L12 1.90735e-06L6 1.38281e-06L-1.90735e-06 20Z" fill="#FDF7BD"/>
-				</svg>
-
-				<div class="bg-peps-dark-500 text-white py-4 md:py-7 pr-6 lg:pr-8 pl-12 [clip-path:polygon(9%_0,100%_0,100%_100%,0%_100%)] w-52 md:w-64 lg:w-86 h-full">
-
-					<div class="flex flex-row items-center justify-between">
-						<div class="flex flex-row items-center gap-1 lg:gap-4">
-							<img [src]="minioBaseUrl + match.opponentImageKey" alt="" class="h-14 w-14">
-							<span class="text-nowrap">{{ match.opponent }}</span>
+					<div class="flex flex-row items-center justify-end md:justify-between">
+						<div class="relative -top-2 hidden md:block">
+							<img src="/assets/icons/Overwatch_2_logo.svg" alt="" class="w-11 h-11">
+							<span class="absolute -bottom-5">{{ match.datetime | date:'HH:mm': 'Europe/Paris' : 'fr-FR' }}</span>
 						</div>
-						<img [src]="minioBaseUrl + match.competitionImageKey" alt="" class="w-10 h-10 invisible md:visible">
+
+						<div class="flex flex-row items-center md:gap-4 gap-2">
+							<span class="text-nowrap">TEAM PEPS</span>
+							<peps-logo
+								[width]="41"
+								[height]="48"
+							></peps-logo>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="relative">
+					@if (match.score && isShowingScore) {
+						<div
+							class="absolute translate-y-7 md:translate-y-full z-20 flex flex-col"
+							[ngClass]="{'-left-2 md:-left-2.5 lg:-left-1.5': isNumeric(match.score), '-left-4 md:-left-4 lg:-left-3.5': !isNumeric(match.score)}"
+						>
+							<span class="text-2xl md:text-[26px] text-center">
+								<span
+									[ngClass]="{'text-peps-gold': isSuperiorOf(match.score, match.opponentScore) || isWin(match.score), 'text-peps-text-3': isSuperiorOf(match.opponentScore, match.score) || isLoose(match.score)}"
+								>{{ match.score }}</span> -
+								<span
+									[ngClass]="{'text-peps-gold': isSuperiorOf(match.opponentScore, match.score) || isWin(match.opponentScore), 'text-peps-text-3': isSuperiorOf(match.score, match.opponentScore) || isLoose(match.opponentScore)}"
+								>{{ match.opponentScore }}</span>
+							</span>
+						</div>
+					} @else {
+						<div class="absolute -left-1.5 md:-top-1 translate-y-3 md:translate-y-full z-20 flex flex-col">
+							<span class="text-base md:hidden font-light">{{ match.datetime | date:'HH:mm': 'Europe/Paris' : 'fr-FR' }}</span>
+							<span class="text-2xl md:text-4xl text-center">VS</span>
+						</div>
+					}
+
+					<svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute bottom-0 -left-1.5 z-20">
+						<path d="M12 0L0 20H6L12 0Z" fill="#FDF7BD"/>
+					</svg>
+					<svg width="20" height="31" viewBox="0 0 20 31" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute bottom-0 -left-3 z-10">
+						<path d="M20 0L0 31H10L20 0Z" fill="#EEC932"/>
+					</svg>
+					<svg width="20" height="31" viewBox="0 0 20 31" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 left-3 md:left-4 lg:left-5.5 z-10">
+						<path d="M-1.90735e-06 31L20 1.90735e-06L10 1.03312e-06L-1.90735e-06 31Z" fill="#EEC932"/>
+					</svg>
+					<svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 left-3.5 md:left-4.5 lg:left-6 z-20">
+						<path d="M-1.90735e-06 20L12 1.90735e-06L6 1.38281e-06L-1.90735e-06 20Z" fill="#FDF7BD"/>
+					</svg>
+
+					<div class="bg-peps-dark-500 text-white py-4 md:py-7 pr-6 lg:pr-8 pl-12 [clip-path:polygon(9%_0,100%_0,100%_100%,0%_100%)] w-52 md:w-64 lg:w-86 h-full">
+
+						<div class="flex flex-row items-center justify-between">
+							<div class="flex flex-row items-center gap-1 lg:gap-4 translate-x-3">
+								<img [src]="minioBaseUrl + match.opponentImageKey" alt="" class="h-14 w-14">
+								<span class="text-nowrap">{{ match.opponent }}</span>
+							</div>
+							<img [src]="minioBaseUrl + match.competitionImageKey" alt="" class="w-10 h-10 invisible md:visible">
+						</div>
+
 					</div>
 
 				</div>
 
 			</div>
 
-		</div>
+			@if(!match.score && match.streamUrl) {
 
-		@if(!match.score && match.streamUrl) {
-
-			@if(isPastDate(match.datetime)) {
-				<a
-					[href]="match.streamUrl"
-					target="_blank"
-					class="md:w-36 bg-peps-purple hover:bg-peps-purple-hover flex items-center justify-center py-4 md:py-7 px-4 cursor-pointer flex-row gap-2 text-peps-dark-200 z-20 transition-colors duration-300">
-					<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M4.49972 0L1.64258 2.85714V13.1429H5.07115V16L7.92829 13.1429H10.214L15.3569 8V0H4.49972ZM14.214 7.42857L11.9283 9.71429H9.64258L7.64258 11.7143V9.71429H5.07115V1.14286H14.214V7.42857Z" fill="currentColor"/>
-						<path d="M12.5003 3.14258H11.3574V6.57115H12.5003V3.14258Z" fill="currentColor"/>
-						<path d="M9.3577 3.14258H8.21484V6.57115H9.3577V3.14258Z" fill="currentColor"/>
-					</svg>
-					<span>REGARDER</span>
-				</a>
-			} @else {
-				<a
-					[href]="match.streamUrl"
-					target="_blank"
-					class="md:w-36 bg-peps-purple hover:bg-peps-purple-hover flex flex-col items-center justify-center py-4 md:py-7 px-4 cursor-pointer  text-peps-dark-200 z-20">
-					<div class="flex flex-row gap-2 items-center">
+				@if(isPastDate(match.datetime)) {
+					<a
+						[href]="match.streamUrl"
+						target="_blank"
+						class="md:w-36 bg-peps-purple hover:bg-peps-purple-hover flex items-center justify-center py-4 md:py-7 px-4 cursor-pointer flex-row gap-2 text-peps-dark-200 z-20 transition-colors duration-300">
 						<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M4.49972 0L1.64258 2.85714V13.1429H5.07115V16L7.92829 13.1429H10.214L15.3569 8V0H4.49972ZM14.214 7.42857L11.9283 9.71429H9.64258L7.64258 11.7143V9.71429H5.07115V1.14286H14.214V7.42857Z" fill="currentColor"/>
 							<path d="M12.5003 3.14258H11.3574V6.57115H12.5003V3.14258Z" fill="currentColor"/>
 							<path d="M9.3577 3.14258H8.21484V6.57115H9.3577V3.14258Z" fill="currentColor"/>
 						</svg>
-						<span>ATTENDRE</span>
-					</div>
-					<span class="text-base font-light text-nowrap">Début dans {{ match.datetime | countdown }}</span>
+						<span>REGARDER</span>
+					</a>
+				} @else {
+					<a
+						[href]="match.streamUrl"
+						target="_blank"
+						class="md:w-36 bg-peps-purple hover:bg-peps-purple-hover flex flex-col items-center justify-center py-4 md:py-7 px-4 cursor-pointer  text-peps-dark-200 z-20">
+						<div class="flex flex-row gap-2 items-center">
+							<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M4.49972 0L1.64258 2.85714V13.1429H5.07115V16L7.92829 13.1429H10.214L15.3569 8V0H4.49972ZM14.214 7.42857L11.9283 9.71429H9.64258L7.64258 11.7143V9.71429H5.07115V1.14286H14.214V7.42857Z" fill="currentColor"/>
+								<path d="M12.5003 3.14258H11.3574V6.57115H12.5003V3.14258Z" fill="currentColor"/>
+								<path d="M9.3577 3.14258H8.21484V6.57115H9.3577V3.14258Z" fill="currentColor"/>
+							</svg>
+							<span>ATTENDRE</span>
+						</div>
+						<span class="text-base font-light text-nowrap">Début dans {{ match.datetime | countdown }}</span>
+					</a>
+				}
+
+			} @else if(match.score && match.vodUrl) {
+				<a
+					[href]="match.vodUrl"
+					target="_blank"
+					class="bg-peps-red hover:bg-peps-red-hover flex items-center justify-center py-4 md:py-7 px-6 cursor-pointer flex-row gap-2 text-peps-dark-200 z-20 transition-colors duration-300">
+					<svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M17.8207 3.39961C17.8207 3.39961 17.6449 2.15859 17.1035 1.61367C16.418 0.896484 15.6516 0.892969 15.3 0.850781C12.7828 0.667969 9.00352 0.667969 9.00352 0.667969H8.99648C8.99648 0.667969 5.21719 0.667969 2.7 0.850781C2.34844 0.892969 1.58203 0.896484 0.896484 1.61367C0.355078 2.15859 0.182812 3.39961 0.182812 3.39961C0.182812 3.39961 0 4.85859 0 6.31406V7.67812C0 9.13359 0.179297 10.5926 0.179297 10.5926C0.179297 10.5926 0.355078 11.8336 0.892969 12.3785C1.57852 13.0957 2.47852 13.0711 2.8793 13.1484C4.3207 13.2855 9 13.3277 9 13.3277C9 13.3277 12.7828 13.3207 15.3 13.1414C15.6516 13.0992 16.418 13.0957 17.1035 12.3785C17.6449 11.8336 17.8207 10.5926 17.8207 10.5926C17.8207 10.5926 18 9.13711 18 7.67812V6.31406C18 4.85859 17.8207 3.39961 17.8207 3.39961ZM7.14023 9.33398V4.275L12.0023 6.81328L7.14023 9.33398Z" fill="#F9ECEA"/>
+					</svg>
+					<span>REVOIR</span>
 				</a>
 			}
 
-		} @else if(match.score && match.vodUrl) {
-			<a
-				[href]="match.vodUrl"
-				target="_blank"
-				class="bg-peps-red hover:bg-peps-red-hover flex items-center justify-center py-4 md:py-7 px-6 cursor-pointer flex-row gap-2 text-peps-dark-200 z-20 transition-colors duration-300">
-				<svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M17.8207 3.39961C17.8207 3.39961 17.6449 2.15859 17.1035 1.61367C16.418 0.896484 15.6516 0.892969 15.3 0.850781C12.7828 0.667969 9.00352 0.667969 9.00352 0.667969H8.99648C8.99648 0.667969 5.21719 0.667969 2.7 0.850781C2.34844 0.892969 1.58203 0.896484 0.896484 1.61367C0.355078 2.15859 0.182812 3.39961 0.182812 3.39961C0.182812 3.39961 0 4.85859 0 6.31406V7.67812C0 9.13359 0.179297 10.5926 0.179297 10.5926C0.179297 10.5926 0.355078 11.8336 0.892969 12.3785C1.57852 13.0957 2.47852 13.0711 2.8793 13.1484C4.3207 13.2855 9 13.3277 9 13.3277C9 13.3277 12.7828 13.3207 15.3 13.1414C15.6516 13.0992 16.418 13.0957 17.1035 12.3785C17.6449 11.8336 17.8207 10.5926 17.8207 10.5926C17.8207 10.5926 18 9.13711 18 7.67812V6.31406C18 4.85859 17.8207 3.39961 17.8207 3.39961ZM7.14023 9.33398V4.275L12.0023 6.81328L7.14023 9.33398Z" fill="#F9ECEA"/>
-				</svg>
-				<span>REVOIR</span>
-			</a>
+		</div>
+		@if(!match.vodUrl && (match.streamUrl && match.score)) {
+			<span class="hidden md:block w-[126.53px]"></span>
 		}
+
 	</div>
+
 }
