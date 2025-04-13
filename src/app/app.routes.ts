@@ -8,6 +8,7 @@ import {PartnersComponent} from './pages/partners/partners.component';
 import {MatchsComponent} from './pages/matchs/matchs.component';
 import {ClubComponent} from './pages/club/club.component';
 import {RosterOverwatchComponent} from './pages/rosters/roster-overwatch/roster-overwatch.component';
+import {RosterMarvelRivalsComponent} from './pages/rosters/roster-marvel-rivals/roster-marvel-rivals.component';
 
 export const routes: Routes = [
 	{
@@ -32,7 +33,7 @@ export const routes: Routes = [
 			},
 			{
 				path: 'marvel-rivals',
-				component: TestComponent,
+				component: RosterMarvelRivalsComponent,
 			}
 		]
 	},
