@@ -1,10 +1,10 @@
 <div class="relative w-full overflow-hidden">
 	<div #sliderTrack class="flex w-full transition-transform duration-500 ease-in-out">
-		@for (item of items; track item) {
+		@for (slider of sliders; track slider.id) {
 			<picture class="w-screen h-auto flex-shrink-0">
-				<source [srcset]="item.images.lg" media="(min-width: 1024px)">
-				<source [srcset]="item.images.lg" media="(min-width: 768px)">
-				<img [src]="item.images.sm" class="w-full h-auto object-cover" alt="Image responsive" />
+				<source [srcset]="minioBaseUrl + slider.imageKey" media="(min-width: 1024px)">
+				<source [srcset]="minioBaseUrl + slider.imageKey" media="(min-width: 768px)">
+				<img [src]="minioBaseUrl + slider.mobileImageKey" class="w-full h-auto object-cover" alt="Image responsive" />
 			</picture>
 		}
 	</div>
@@ -25,9 +25,10 @@
 
 				<a
 					class="uppercase border-x border-x-peps-dark-700 text-peps-dark-700 bg-peps-gold p-3 cursor-pointer hover:bg-peps-yellow transition-colors duration-300"
-					[href]="items[currentIndex].link"
+					[href]="sliders[currentIndex]!.ctaLink"
+					target="_blank"
 				>
-					En savoir plus
+					{{ sliders[currentIndex]!.ctaLabel }}
 				</a>
 
 				<button
@@ -41,11 +42,11 @@
 			</div>
 
 			<div class="flex flex-row gap-2 justify-center items-center mt-2">
-				@for (item of items; track item.index) {
+				@for (slider of sliders; let i = $index; track slider.id) {
 					<div
 						class="h-2 bg-peps-dark-200 rounded-full transition-all duration-300 cursor-pointer ease-in-out"
-						[ngClass]="{'w-8 scale-110': currentIndex === item.index, 'w-2 scale-100' : currentIndex !== item.index}"
-						(click)="goToSlide(item.index)"
+						[ngClass]="{'w-8 scale-110': currentIndex === i, 'w-2 scale-100' : currentIndex !== i}"
+						(click)="goToSlide(i)"
 					></div>
 
 				}
