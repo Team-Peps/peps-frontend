@@ -11,6 +11,7 @@ import {isToday} from '../../core/utils/matchUtils';
 import {MatchGroupByDate} from '../../models/match';
 import {PageSelectorComponent} from '../../core/components/page-selector/page-selector.component';
 import {NoUpcomingMatchComponent} from '../../core/components/no-upcoming-match/no-upcoming-match.component';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-matchs',
@@ -33,6 +34,7 @@ export class MatchsComponent implements OnInit {
 	constructor(
 		private readonly matchService: MatchService,
 		private readonly cdr: ChangeDetectorRef,
+		private readonly titleService: Title,
 	) { }
 
 	protected readonly Game = Game;
@@ -51,6 +53,7 @@ export class MatchsComponent implements OnInit {
 	totalPages: number = 0;
 
 	ngOnInit(): void {
+		this.titleService.setTitle('Team Peps - Matchs');
 		this.loadUpcomingMatches();
 	}
 

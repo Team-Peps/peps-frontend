@@ -4,7 +4,7 @@ import {PartnerService} from '../../services/partner.service';
 import {Partner} from '../../models/partner';
 import {PartnerCardComponent} from '../../core/components/partner-card/partner-card.component';
 import {ButtonComponent} from '../../core/components/buttons/button/button.component';
-import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
+import {DomSanitizer, SafeResourceUrl, Title} from '@angular/platform-browser';
 import {environment} from '../../../environment/environment';
 
 @Component({
@@ -20,8 +20,9 @@ export class PartnersComponent implements OnInit {
 
 	constructor(
 		private readonly partnerService: PartnerService,
-		private sanitizer: DomSanitizer
-) {	}
+		private sanitizer: DomSanitizer,
+		private readonly titleService: Title,
+	) {	}
 
 	partners: Partner[] = [];
 	video: string = 'CLIP_SPONSO.mp4';
@@ -29,6 +30,7 @@ export class PartnersComponent implements OnInit {
 	minioBaseUrl = environment.minioBaseUrl;
 
 	ngOnInit(): void {
+		this.titleService.setTitle('Team Peps - Les partenaires');
 		this.loadPartners();
     }
 
