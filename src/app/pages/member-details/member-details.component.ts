@@ -9,6 +9,7 @@ import {determineRoleIcon} from '../../core/utils/memberUtils';
 import {AchievementRowComponent} from '../../core/components/achievement-row/achievement-row.component';
 import {MemberCardComponent} from '../../core/components/member-card/member-card.component';
 import {LoaderComponent} from '../../core/components/loader/loader.component';
+import {Title} from '@angular/platform-browser';
 
 @Component({
 	selector: 'app-member-details',
@@ -28,6 +29,7 @@ export class MemberDetailsComponent implements OnInit {
 		private readonly memberService: MemberService,
 		private readonly activateRoute: ActivatedRoute,
 		private readonly router: Router,
+		private readonly titleService: Title,
 	) {}
 
 	protected readonly determineRoleIcon = determineRoleIcon;
@@ -46,6 +48,7 @@ export class MemberDetailsComponent implements OnInit {
 		this.memberService.getMemberById(memberId).subscribe({
 			next: (member) => {
 				this.member = member;
+				this.titleService.setTitle('Team Peps - ' + member.pseudo.toString());
 				this.loadRoster();
 			},
 			error: (error) => {

@@ -13,6 +13,7 @@ import {UpcomingMatchsComponent} from '../../../core/components/upcoming-matchs/
 import {Match, MatchGroupByDate} from '../../../models/match';
 import {MatchService} from '../../../services/match.service';
 import {TitleComponent} from '../../../core/components/title/title.component';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-roster-marvel-rivals',
@@ -33,6 +34,7 @@ export class RosterMarvelRivalsComponent implements OnInit {
 		private readonly memberService: MemberService,
 		private readonly achievementService: AchievementService,
 		private readonly matchService: MatchService,
+		private readonly titleService: Title,
 	) { }
 
 	private membersSubject = new BehaviorSubject<MemberTiny[]>([]);
@@ -46,6 +48,7 @@ export class RosterMarvelRivalsComponent implements OnInit {
 	matches: MatchGroupByDate[] = [];
 
 	ngOnInit(): void {
+		this.titleService.setTitle('Team Peps - Marvel Rivals');
 		this.loadMembers();
 		this.loadAchievements();
 		this.loadMatches();
