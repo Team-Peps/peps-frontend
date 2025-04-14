@@ -12,5 +12,6 @@ import {NgClass} from '@angular/common';
 export class AchievementRowComponent {
 
 	@Input() achievements: Achievement[] = [];
+	@Input() type: 'member' | 'team' = 'team';
 
 }

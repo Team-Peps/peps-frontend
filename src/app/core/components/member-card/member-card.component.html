@@ -1,16 +1,20 @@
-<div class="relative w-36 h-[306px] mx-auto mt-10">
-	<div class="clip-shape bg-peps-dark-600 p-0.25 w-full h-full">
-		<img [src]="minioBaseUrl + member!.imageKey" alt="Illustration" class="w-full object-cover" />
-		<div class="bg-peps-dark-700 w-full h-1/2 flex flex-col items-center justify-center text-white text-lg pb-15 uppercase">
-			<span class="text-[22px]">{{ member?.pseudo }}</span>
-			@if(member?.role !== MemberRole.COACH){
-				<img [src]="determineRoleIcon(member!.role)" alt="" class="w-4 h-4 text-peps-text-10">
-			} @else {
-				<span class="text-[16px]">{{ member?.role }}</span>
-			}
-			@if(member?.isSubstitute){
-				<span class="text-[16px]">Remplaçant</span>
-			}
+<a [routerLink]="'/player/' + member?.id">
+	<div
+		class="relative w-36 h-[306px] mx-auto mt-10 cursor-pointer transition-transform transform duration-300 hover:-translate-y-10"
+	>
+		<div class="clip-shape bg-peps-dark-600 p-0.25 w-full h-full">
+			<img [src]="minioBaseUrl + member!.imageKey" alt="Illustration" class="w-full object-cover" />
+			<div class="bg-peps-dark-700 w-full h-1/2 flex flex-col items-center justify-center text-white text-lg pb-15 uppercase">
+				<span class="text-[22px]">{{ member?.pseudo }}</span>
+				@if(member?.role !== MemberRole.COACH){
+					<img [src]="determineRoleIcon(member!.role)" alt="" class="w-4 h-4 text-peps-text-10">
+				} @else {
+					<span class="text-[16px]">{{ member?.role }}</span>
+				}
+				@if(member?.isSubstitute){
+					<span class="text-[16px]">Remplaçant</span>
+				}
+			</div>
 		</div>
 	</div>
-</div>
+</a>
