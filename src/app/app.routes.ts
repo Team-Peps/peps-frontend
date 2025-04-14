@@ -9,6 +9,7 @@ import {ClubComponent} from './pages/club/club.component';
 import {RosterOverwatchComponent} from './pages/rosters/roster-overwatch/roster-overwatch.component';
 import {RosterMarvelRivalsComponent} from './pages/rosters/roster-marvel-rivals/roster-marvel-rivals.component';
 import {NotFoundComponent} from './pages/not-found/not-found.component';
+import {MemberDetailsComponent} from './pages/member-details/member-details.component';
 
 export const routes: Routes = [
 	{
@@ -32,6 +33,10 @@ export const routes: Routes = [
 				component: RosterMarvelRivalsComponent,
 			}
 		]
+	},
+	{
+		path: 'player/:memberId',
+		component: MemberDetailsComponent
 	},
 	{
 		path: 'news',

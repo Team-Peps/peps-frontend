@@ -1,0 +1,134 @@
+@if(member) {
+	<div class="flex flex-col gap-24 pt-32 pb-20">
+
+		<div class="flex flex-col lg:flex-row gap-8 lg:items-center justify-center">
+			<div class="relative w-screen h-auto aspect-[7/8.5] lg:w-[700px] lg:h-[850px] group">
+				<div
+					class="absolute inset-0 z-0 bg-cover bg-center member-clip-shape-background transition-all scale-[98%] duration-[1500ms] ease-in-out group-hover:scale-105 group-hover:brightness-75 group-hover:-rotate-1 -translate-y-8 -translate-x-8 group-hover:-translate-y-8 group-hover:translate-x-1"
+					style="background-image: url('/assets/images/member_details_background.png')"
+				></div>
+				<div
+					class="relative z-10 w-full h-full bg-cover bg-center member-clip-shape-foreground transition-all duration-[1500ms] ease-in-out group-hover:scale-105 group-hover:-rotate-1 group-hover:brightness-100"
+					[ngStyle]="{ 'background-image': 'url(' + minioBaseUrl + member.imageKey + ')' }"
+				></div>
+				<svg width="251" height="92" viewBox="0 0 251 92" fill="none" xmlns="http://www.w3.org/2000/svg" class="invisible lg:visible absolute -bottom-5 right-20 z-10 group-hover:-translate-x-40 group-hover:-translate-y-10 transition-transform transform duration-[1500ms]">
+					<path d="M191.743 57.8025L0.915671 0.840229L30.0065 16.5841L191.833 60.3166L191.743 57.8025Z" fill="#F9ECEA"/>
+					<path d="M245.824 91.9538L250.706 17.1007L217.004 36.7631L227.119 85.0694L245.824 91.9538Z" fill="#F9ECEA"/>
+				</svg>
+				<svg width="54" height="119" viewBox="0 0 54 119" fill="none" xmlns="http://www.w3.org/2000/svg" class="invisible lg:visible absolute top-65 -left-1 z-10 group-hover:translate-y-35 group-hover:translate-x-10 transition-transform transform duration-[1500ms]">
+					<path d="M53.139 84.2419L17.4362 0.767658L0.674113 48.3548L33.3844 118.51L53.139 84.2419Z" fill="#F9ECEA"/>
+				</svg>
+				<svg width="54" height="216" viewBox="0 0 54 216" fill="none" xmlns="http://www.w3.org/2000/svg" class="invisible lg:visible absolute transition-transform transform duration-[1500ms] right-15 top-28 z-10 group-hover:-translate-y-15">
+					<path d="M53.4199 0.785156L41.0523 195.056L21.6573 215.886L25.5517 113.378L0.142752 83.2387L4.81457 2.51935L53.4199 0.785156Z" fill="#F9ECEA"/>
+				</svg>
+
+			</div>
+
+			<div class="relative flex flex-col gap-8 px-8 lg:px-0 lg:pr-8 lg:items-start lg:w-1/2 z-20">
+				<div class="flex flex-col gap-2 lg:items-center lg:-translate-x-9">
+					<img src="/assets/icons/Overwatch_2_logo.svg" alt="" class="w-16">
+
+					<div class="flex lg:justify-start">
+						<div class="bg-[url(/assets/icons/title_image.svg)] bg-no-repeat w-32 h-36 flex flex-col justify-center lg:items-start text-peps-dark-200">
+							<h1 class="text-9xl z-30 text-left text-nowrap lg:translate-x-8 translate-y-8 uppercase">{{member.pseudo}}</h1>
+							<h2 class="text-[32px] z-30 text-left text-nowrap lg:translate-x-8 translate-y-4 uppercase">{{member.lastname}} {{member.firstname}}</h2>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="flex flex-col">
+					<span class="uppercase">Pays: {{member.nationality}}</span>
+					<span class="uppercase">âge: {{member.age}} ans</span>
+				</div>
+
+				<div class="flex flex-row w-fit gap-4 p-2 border border-peps-dark-600">
+					<img [src]="determineRoleIcon(member.role)" alt="" class="w-10 h-10">
+
+					<div class="flex flex-row gap-2">
+						@for (hero of member.favoriteHeroes; track hero.id) {
+							<img [src]="minioBaseUrl + hero.imageKey" alt="" class="w-10 h-10">
+						}
+					</div>
+
+				</div>
+
+				<span class="font-notosans text-justify w-full">
+					{{member.description}}
+				</span>
+
+				<div class="flex flex-row gap-4">
+					@if(member?.tiktokUsername) {
+						<a [href]="'https://www.tiktok.com/@'+member?.tiktokUsername" target="_blank">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M17.0725 0H13.0278V16.3478C13.0278 18.2957 11.4722 19.8957 9.53626 19.8957C7.60034 19.8957 6.04469 18.2957 6.04469 16.3478C6.04469 14.4348 7.56577 12.8695 9.43257 12.8V8.69567C5.31872 8.7652 2 12.1391 2 16.3478C2 20.5913 5.38786 24 9.57085 24C13.7538 24 17.1416 20.5565 17.1416 16.3478V7.9652C18.6627 9.07827 20.5295 9.73913 22.5 9.77393V5.66957C19.4579 5.56522 17.0725 3.06087 17.0725 0Z" fill="#F9ECEA"/>
+							</svg>
+						</a>
+					}
+
+					@if(member?.twitchUsername) {
+						<a [href]="'https://www.twitch.tv/'+member?.twitchUsername" target="_blank">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M6.00056 0L1.71484 4.28571V19.7143H6.8577V24L11.1434 19.7143H14.572L22.2863 12V0H6.00056ZM20.572 11.1429L17.1434 14.5714H13.7148L10.7148 17.5714V14.5714H6.8577V1.71429H20.572V11.1429Z" fill="#F9ECEA"/>
+								<path d="M18.0004 4.71387H16.2861V9.85672H18.0004V4.71387Z" fill="#F9ECEA"/>
+								<path d="M13.2866 4.71387H11.5723V9.85672H13.2866V4.71387Z" fill="#F9ECEA"/>
+							</svg>
+						</a>
+					}
+
+					@if(member?.youtubeUsername) {
+						<a [href]="'https://www.youtube.com/@'+member?.youtubeUsername" target="_blank">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M23.7609 7.1998C23.7609 7.1998 23.5266 5.54512 22.8047 4.81855C21.8906 3.8623 20.8688 3.85762 20.4 3.80137C17.0438 3.55762 12.0047 3.55762 12.0047 3.55762H11.9953C11.9953 3.55762 6.95625 3.55762 3.6 3.80137C3.13125 3.85762 2.10938 3.8623 1.19531 4.81855C0.473438 5.54512 0.24375 7.1998 0.24375 7.1998C0.24375 7.1998 0 9.14512 0 11.0857V12.9045C0 14.8451 0.239062 16.7904 0.239062 16.7904C0.239062 16.7904 0.473437 18.4451 1.19062 19.1717C2.10469 20.1279 3.30469 20.0951 3.83906 20.1982C5.76094 20.3811 12 20.4373 12 20.4373C12 20.4373 17.0438 20.4279 20.4 20.1889C20.8688 20.1326 21.8906 20.1279 22.8047 19.1717C23.5266 18.4451 23.7609 16.7904 23.7609 16.7904C23.7609 16.7904 24 14.8498 24 12.9045V11.0857C24 9.14512 23.7609 7.1998 23.7609 7.1998ZM9.52031 15.1123V8.36699L16.0031 11.7514L9.52031 15.1123Z" fill="#F9ECEA"/>
+							</svg>
+						</a>
+					}
+
+					@if(member?.xusername) {
+						<a [href]="'https://www.x.com/'+member?.xusername" target="_blank">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M18.3263 1.9043H21.6998L14.3297 10.3278L23 21.7903H16.2112L10.894 14.8383L4.80995 21.7903H1.43443L9.31743 12.7804L1 1.9043H7.96111L12.7674 8.25863L18.3263 1.9043ZM17.1423 19.7711H19.0116L6.94539 3.81743H4.93946L17.1423 19.7711Z" fill="#F9ECEA"/>
+							</svg>
+						</a>
+					}
+
+					@if(member?.instagramUsername) {
+						<a [href]="'https://www.instagram.com/'+member?.instagramUsername" target="_blank">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="24" height="24">
+								<path d="M7 2C4.239 2 2 4.239 2 7v10c0 2.761 2.239 5 5 5h10c2.761 0 5-2.239 5-5V7c0-2.761-2.239-5-5-5H7zm0 2h10c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3zm10 1.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
+							</svg>
+						</a>
+					}
+				</div>
+
+			</div>
+
+		</div>
+
+		<peps-achievement-row
+			[achievements]="member.achievements"
+			type="member"
+		></peps-achievement-row>
+
+		<div class="flex flex-col md:flex-row justify-around items-center gap-4">
+			<peps-title
+				subtitle="Le"
+				title="Roster"
+			></peps-title>
+			<span class="invisible sm:visible"></span>
+		</div>
+
+		<div class="flex flex-row flex-wrap gap-8 mx-8 justify-center">
+			@for(player of members; track player.id) {
+				@if(player.id !== member.id){
+					<peps-member-card
+						[member]="player"
+					></peps-member-card>
+				}
+			}
+		</div>
+
+	</div>
+} @else {
+	<span>Ca charge</span>
+}

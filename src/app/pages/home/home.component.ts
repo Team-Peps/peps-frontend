@@ -11,7 +11,6 @@ import {ArticleService} from '../../services/article.service';
 import {ArticleTiny} from '../../models/article';
 import {NewsCardComponent} from '../../core/components/news-card/news-card.component';
 import {Title} from '@angular/platform-browser';
-import {isToday} from '../../core/utils/matchUtils';
 import {UpcomingMatchsComponent} from '../../core/components/upcoming-matchs/upcoming-matchs.component';
 import {SliderService} from '../../services/slider.service';
 import {Slider} from '../../models/slider';

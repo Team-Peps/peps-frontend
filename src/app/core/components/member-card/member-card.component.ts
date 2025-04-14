@@ -3,10 +3,13 @@ import {MemberTiny} from '../../../models/member/member';
 import {environment} from '../../../../environment/environment';
 import {determineRoleIcon} from '../../utils/memberUtils';
 import {MemberRole} from '../../../models/member/memberRole';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'peps-member-card',
-  imports: [],
+	imports: [
+		RouterLink
+	],
   templateUrl: './member-card.component.html',
 	styleUrls: ['./member-card.component.css'],
 })
@@ -18,4 +21,5 @@ export class MemberCardComponent {
 
 	protected readonly determineRoleIcon = determineRoleIcon;
 	protected readonly MemberRole = MemberRole;
+
 }
