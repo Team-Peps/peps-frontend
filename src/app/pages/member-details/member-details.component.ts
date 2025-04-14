@@ -8,6 +8,7 @@ import {NgStyle} from '@angular/common';
 import {determineRoleIcon} from '../../core/utils/memberUtils';
 import {AchievementRowComponent} from '../../core/components/achievement-row/achievement-row.component';
 import {MemberCardComponent} from '../../core/components/member-card/member-card.component';
+import {LoaderComponent} from '../../core/components/loader/loader.component';
 
 @Component({
 	selector: 'app-member-details',
@@ -15,7 +16,8 @@ import {MemberCardComponent} from '../../core/components/member-card/member-card
 		NgStyle,
 		AchievementRowComponent,
 		TitleComponent,
-		MemberCardComponent
+		MemberCardComponent,
+		LoaderComponent
 	],
 	templateUrl: './member-details.component.html',
 	styleUrls: ['./member-details.component.css']
