@@ -5,18 +5,16 @@ import {TitleComponent} from '../../core/components/title/title.component';
 import {CheckboxComponent} from '../../core/components/checkbox/checkbox.component';
 import {MatchService} from '../../services/match.service';
 import {MatchGroupByDate} from '../../models/match';
-import {MatchRowComponent} from '../../core/components/match-row/match-row.component';
 import {Game} from '../../models/game';
-import {DatePipe, UpperCasePipe} from '@angular/common';
 import {ButtonComponent} from '../../core/components/buttons/button/button.component';
-import {Router} from '@angular/router';
 import {ArticleService} from '../../services/article.service';
 import {ArticleTiny} from '../../models/article';
 import {NewsCardComponent} from '../../core/components/news-card/news-card.component';
-import {RangePipe} from '../../pipes/range.pipe';
 import {Title} from '@angular/platform-browser';
 import {isToday} from '../../core/utils/matchUtils';
 import {UpcomingMatchsComponent} from '../../core/components/upcoming-matchs/upcoming-matchs.component';
+import {SliderService} from '../../services/slider.service';
+import {Slider} from '../../models/slider';
 
 @Component({
   selector: 'app-home',
@@ -25,12 +23,8 @@ import {UpcomingMatchsComponent} from '../../core/components/upcoming-matchs/upc
 		MaxButtonComponent,
 		TitleComponent,
 		CheckboxComponent,
-		MatchRowComponent,
-		DatePipe,
-		UpperCasePipe,
 		ButtonComponent,
 		NewsCardComponent,
-		RangePipe,
 		CheckboxComponent,
 		UpcomingMatchsComponent
 	],
@@ -40,31 +34,26 @@ export class HomeComponent implements OnInit {
 
 	constructor(
 		private readonly matchService: MatchService,
-		private readonly router: Router,
+		private readonly sliderService: SliderService,
 		private readonly articleService: ArticleService,
 		private readonly titleService: Title,
 	) {}
 
 	protected readonly Game = Game;
-	protected readonly isToday = isToday;
 
 	matchsUpcoming: MatchGroupByDate[] = [];
 	filteredMatches: MatchGroupByDate[] = [];
 
 	articles: ArticleTiny[] = [];
+	sliders: Slider[] = [];
 
 	selectedGames: string[] = [Game.MARVEL_RIVALS, Game.OVERWATCH];
-
-	itemsSlider = [
-		{ index: 0, link: "", images: { sm:'/assets/images/img1-mobile.png', lg:'assets/images/img1.png'} },
-		{ index: 1, link: "", images: { sm:'/assets/images/img1-mobile.png', lg:'assets/images/img1.png'} },
-		{ index: 2, link: "", images: { sm:'/assets/images/img1-mobile.png', lg:'assets/images/img1.png'} },
-	];
 
 	ngOnInit(): void {
 		this.titleService.setTitle('Team Peps');
 		this.loadMatches();
 		this.loadRecentArticles();
+		this.loadSliders();
     }
 
 	private loadMatches(): void {
@@ -77,6 +66,12 @@ export class HomeComponent implements OnInit {
 	private loadRecentArticles() {
 		this.articleService.getThreeRecentArticles().subscribe((data: ArticleTiny[]) => {
 			this.articles = data;
+		})
+	}
+
+	private loadSliders() {
+		this.sliderService.getAllActiveSlider().subscribe((data: Slider[]) => {
+			this.sliders = data;
 		})
 	}
 

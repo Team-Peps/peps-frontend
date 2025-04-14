@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import {TestComponent} from './pages/test/test.component';
 import {HomeComponent} from './pages/home/home.component';
 import {NewsComponent} from './pages/news/news.component';
 import {NewsDetailsComponent} from './pages/news-details/news-details.component';
@@ -12,10 +11,6 @@ import {RosterMarvelRivalsComponent} from './pages/rosters/roster-marvel-rivals/
 import {NotFoundComponent} from './pages/not-found/not-found.component';
 
 export const routes: Routes = [
-	{
-		path: 'test',
-		component: TestComponent,
-	},
 	{
 		path: '',
 		component: HomeComponent,
