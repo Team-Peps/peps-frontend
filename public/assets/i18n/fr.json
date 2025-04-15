@@ -1,4 +1,14 @@
 {
+	"common": {
+		"club": "Club",
+		"matches": {
+			"titlecase": "Matchs"
+		},
+		"news": "Actus",
+		"partners": "Partenaires",
+		"support-us": "Nous soutenir",
+		"watch": "Regarder"
+	},
 	"component": {
 		"achievement-row": {
 			"achievement": "Palmarès",
@@ -8,61 +18,34 @@
 			"more": {
 				"cgv": "CGV",
 				"contact": "Contact",
-				"faq": "FAQ",
-				"partners": "Partenaires",
-				"support-us": "Nous soutenir",
 				"title": "More"
 			},
 			"shop": {
 				"all-collections": "Toutes les collections",
 				"all-products": "Tous les produits",
-				"fulllife": "Fulllife",
 				"news": "Nouveautés",
 				"offers": "Promotions",
 				"title": "Boutique"
 			},
 			"socials": {
-				"discord": "Peps Family",
-				"title": "Retrouver la Team Peps",
-				"twitch": {
-					"fefe": "FefeGG",
-					"team-peps": "TeamPepsMAX"
-				},
-				"x": "TeamPepsMAX",
-				"youtube": "TeamPepsMAX"
-			},
-			"team-peps": {
-				"club": "Club",
-				"marvel-rivals": "Team Peps Marvel Rivals",
-				"matchs": "Matchs",
-				"news": "Actus",
-				"overwatch": "Team Peps Overwatch 2",
-				"title": "Team Peps"
+				"title": "Retrouver la Team Peps"
 			}
 		},
 		"headband-twitch": {
-			"title": "Un match est en cours, rejoins nous !",
-			"watch": "Regarder"
+			"title": "Un match est en cours, rejoins nous !"
 		},
 		"match-row": {
 			"review": "Revoir",
 			"start-in": "Début dans",
-			"team-name": "Team Peps",
-			"waiting": "Attendre",
-			"watch": "Regarder"
+			"waiting": "Attendre"
 		},
 		"member-card": {
 			"substitute": "Remplaçant"
 		},
 		"navbar": {
 			"ambassadors": "Ambassadeurs",
-			"club": "Club",
 			"login": "Connexion",
-			"matchs": "Matchs",
 			"merch": "Merch",
-			"news": "Actus",
-			"partners": "Partenaires",
-			"support-us": "Nous soutenir",
 			"team": {
 				"marvel-rivals": "Marvel Rivals",
 				"overwatch": "Overwatch",
@@ -85,6 +68,81 @@
 		"upcoming-matches": {
 			"today": "Aujourd'hui",
 			"view-all": "Tout voir"
+		}
+	},
+	"page": {
+		"ambassadors": {
+			"followers": {
+				"count": "2.8 millions",
+				"text": "Followers"
+			},
+			"text": "Lorem ipsum dolor sidt amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur sagittis, nisl nunc egestas nisi, vitae facilisis enim nunc eget nisi. Sed euismod, nisl eget consectetur sagittis, nisl nunc egestas nisi, vitae facilisis enim nunc eget nisi. Sed euismod, nisl eget consectetur sagittis, nisl nunc egestas nisi, vitae facilisis enim nunc eget nisi.",
+			"title": "Team Peps - Ambassadeurs"
+		},
+		"club": {
+			"become-partner": "devenir partenaire",
+			"big-text": {
+				"a": "une",
+				"club": "club",
+				"commu": "commu",
+				"more": "plus",
+				"than": "qu'un"
+			},
+			"description": "\t\t\t\t\t\tFondée en 2022 par Féfé avec pour objectif principal de soutenir la scène e-sport française, la team PEPS était au départ un projet pour mettre en avant la communauté Overwatch française souvent mise de côté. Le projet a très rapidement rencontré un grand succès, ce qui a poussé Féfé à porter le projet sur la scène internationale. Aujourd’hui, nous souhaitons permettre à des profils prometteurs d’avoir la reconnaissance qu’ils méritent, et montrer à tous l’engouement et la solidarité de la communauté française tout en proposant de grandes performances chaque saison.   permettre à des profils prometteurs d’avoir la reconnaissance qu’ils méritent, et montrer à tous l’engouement et la solidarité de la communauté française tout en proposant de grandes performances chaque saison. ",
+			"second-description": "Lorem ipsum dolor sit amet consectetur. Dapibus orci consequat libero lectus. Mauris tincidunt posuere sollicitudin ullamcorper blandit arcu aliquam euismod. Dolor morbi blandit quam quisque est. Amet sagittis nam donec et sagittis et. In sit convallis in adipiscing pellentesque consectetur lobortis. Tempor pulvinar at eu purus porttitor. Sed donec quis sit quis integer vulputate tellus rhoncus pellentesque. Elementum tristique amet etiam ipsum volutpat. Purus quis magna sed euismod purus. Felis metus sollicitudin pellentesque nulla elit neque praesent eu pharetra. Scelerisque mattis risus hac donec leo mattis sit neque. Vulputate maecenas tellus eget egestas congue. Ante in orci volutpat egestas eget. Malesuada vulputate sociis ullamcorper.",
+			"stats": {
+				"impressions": "impressions",
+				"views-live": "vues live/an",
+				"views-video": "vues/m"
+			},
+			"subtitle": "La main sur la peps",
+			"support-team-peps": "soutenir la team peps",
+			"title": "Team Peps - Club",
+			"viewers-text": "viewers uniques/an"
+		},
+		"home": {
+			"filter": "filtres",
+			"goto-news": "tout voir",
+			"news": {
+				"subtitle": "les",
+				"title": "actus"
+			},
+			"upcoming-matches": {
+				"subtitle": "prochains"
+			}
+		},
+		"matchs": {
+			"coming-soon": "à venir",
+			"follow-team-peps": "Retrouve la team peps sur twitch et youtube",
+			"result": "résultats",
+			"title": "Team Peps - Matchs",
+			"today": "aujourd'hui",
+			"view-score": "Voir les scores"
+		},
+		"member-details": {
+			"age": "âge: {{code}} ans",
+			"country": "pays"
+		},
+		"news": {
+			"filter-toast": "Vous devez garder au moins une catégorie d'article sélectionnée.",
+			"title": "Team Peps - Les Actus"
+		},
+		"news-details": {
+			"react": "Réagir",
+			"see-all-news": "Voir toutes les actus"
+		},
+		"not-found": {
+			"text-1": "Bon, t'énerve pas... Mais ce que tu cherches n'existe pas.",
+			"text-2": "(voilà c'est dit)",
+			"title": "Team Peps - Page introuvable"
+		},
+		"partners": {
+			"contact-us": "Nous contacter",
+			"subtitle": "nos",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur sagittis, nisl nunc egestas nisi, vitae facilisis enim nunc eget nisi. Sed euismod, nisl eget consectetur sagittis, nisl nunc egestas nisi, vitae facilisis enim nunc eget nisi. Sed euismod, nisl eget consectetur sagittis, nisl nunc egestas nisi, vitae facilisis enim nunc eget nisi.",
+			"title": "Team Peps - Partenaires",
+			"title-on-page": "partenaires",
+			"video-title": "Les arguments du CEO"
 		}
 	}
 }

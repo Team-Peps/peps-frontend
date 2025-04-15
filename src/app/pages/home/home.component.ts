@@ -14,7 +14,7 @@ import {SliderService} from '../../services/slider.service';
 import {Slider} from '../../models/slider';
 import {ArticleTiny} from '../../models/article/articleTiny';
 import {MatchGroupByDate} from '../../models/match/matchGroupByDate';
-import {TranslatePipe} from '@ngx-translate/core';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',

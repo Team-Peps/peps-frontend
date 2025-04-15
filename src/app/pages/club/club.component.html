@@ -9,20 +9,17 @@
 
 				<div class="flex flex-col text-peps-dark-200">
 					<div class="uppercase flex flex-col text-[66px] xs:text-8xl sm:text-9xl md:text-[142px] lg:text-[152px] leading-16 xs:leading-20 sm:leading-26 md:leading-30 lg:leading-32 text-right">
-						<span>plus</span>
-						<span>qu'un</span>
+						<span class="uppercase">{{ 'page.club.big-text.more' | translate }}</span>
+						<span class="uppercase">{{ 'page.club.big-text.than' | translate }}</span>
 						<div class="relative">
-							<span>club</span>
+							<span class="uppercase">{{ 'page.club.big-text.club' | translate }}</span>
 							<span class="absolute">.</span>
 						</div>
-						<span>une</span>
+						<span class="uppercase">{{ 'page.club.big-text.a' | translate }}</span>
 						<div class="relative">
-							<span>commu</span>
+							<span class="uppercase">{{ 'page.club.big-text.commu' | translate }}</span>
 							<span class="absolute">.</span>
 						</div>
-					</div>
-					<div>
-
 					</div>
 				</div>
 
@@ -38,10 +35,8 @@
 			<div class="flex flex-col lg:flex-row justify-center pt-22 xl:pt-16">
 				<img src="/assets/images/club/club_image_1.png" alt="Image illustration club" class="lg:w-1/2 z-10">
 				<div class="flex flex-col gap-8 -translate-y-5 pt-10 px-8 lg:w-2/3">
-					<span class="uppercase text-[32px]">La main sur la peps</span>
-					<span class="text-justify font-notosans">
-						Fondée en 2022 par Féfé avec pour objectif principal de soutenir la scène e-sport française, la team PEPS était au départ un projet pour mettre en avant la communauté Overwatch française souvent mise de côté. Le projet a très rapidement rencontré un grand succès, ce qui a poussé Féfé à porter le projet sur la scène internationale. Aujourd’hui, nous souhaitons permettre à des profils prometteurs d’avoir la reconnaissance qu’ils méritent, et montrer à tous l’engouement et la solidarité de la communauté française tout en proposant de grandes performances chaque saison.   permettre à des profils prometteurs d’avoir la reconnaissance qu’ils méritent, et montrer à tous l’engouement et la solidarité de la communauté française tout en proposant de grandes performances chaque saison.
-					</span>
+					<span class="uppercase text-[32px]">{{ 'page.club.subtitle' | translate }}</span>
+					<span class="text-justify font-notosans">{{ 'page.club.description' | translate }}</span>
 
 					<div class="flex flex-row gap-2">
 							<a href="https://www.tiktok.com/@teampepsmax" target="_blank">
@@ -81,7 +76,7 @@
 				<span class="text-7xl xs:text-8xl sm:text-9xl md:text-[200px]">650 000</span>
 				<div class="relative">
 					<div class="absolute flex flex-row gap-1 items-end -bottom-5 md:-bottom-8">
-						<span class="uppercase text-base xs:text-2xl sm:text-3xl md:text-5xl">viewers uniques/an</span>
+						<span class="uppercase text-base xs:text-2xl sm:text-3xl md:text-5xl">{{ 'page.club.viewers-text' | translate }}</span>
 						<img src="/assets/gifs/PEPS_flagbig.gif" alt="GIF peps big flag" class="h-14 xs:h-16 sm:h-20 md:h-32">
 					</div>
 				</div>
@@ -89,9 +84,7 @@
 		</div>
 
 		<span class="flex flex-row justify-center px-8 w-full md:w-6/12 mx-auto font-notosans text-justify mt-20">
-			Lorem ipsum dolor sit amet consectetur. Dapibus orci consequat libero lectus. Mauris tincidunt posuere sollicitudin ullamcorper blandit arcu aliquam euismod. Dolor morbi blandit quam quisque est. Amet sagittis nam donec et sagittis et. In sit convallis in adipiscing pellentesque consectetur lobortis. Tempor pulvinar at eu purus porttitor. Sed donec quis sit quis integer vulputate tellus rhoncus pellentesque. Elementum tristique amet etiam ipsum volutpat. Purus quis magna sed euismod purus. Felis metus sollicitudin pellentesque nulla elit neque praesent eu pharetra.
-
-			Scelerisque mattis risus hac donec leo mattis sit neque. Vulputate maecenas tellus eget egestas congue. Ante in orci volutpat egestas eget. Malesuada vulputate sociis ullamcorper.
+			{{ 'page.club.second-description' | translate }}
 		</span>
 
 		<div>
@@ -104,10 +97,10 @@
 						class="hidden lg:flex w-full transition-transform duration-500 ease-in-out pl-15 md:pl-52"
 						[style.transform]="'translateX(-' + currentSlide * slideWidth + '%)'"
 					>
-							<img src="/assets/images/club/club_slider_image_1.png" class="w-full md:w-[60%] object-cover" alt="Slide image"/>
-							<img src="/assets/images/club/club_slider_image_2.png" class="w-full md:w-[60%] object-cover -translate-x-18" alt="Slide image"/>
-							<img src="/assets/images/club/club_slider_image_3.png" class="w-full md:w-[60%] object-cover -translate-x-36" alt="Slide image"/>
-							<img src="/assets/images/club/club_slider_image_4.png" class="w-full md:w-[60%] object-cover -translate-x-54" alt="Slide image"/>
+						<img src="/assets/images/club/club_slider_image_1.png" class="w-full md:w-[60%] object-cover" alt="Slide image"/>
+						<img src="/assets/images/club/club_slider_image_2.png" class="w-full md:w-[60%] object-cover -translate-x-18" alt="Slide image"/>
+						<img src="/assets/images/club/club_slider_image_3.png" class="w-full md:w-[60%] object-cover -translate-x-36" alt="Slide image"/>
+						<img src="/assets/images/club/club_slider_image_4.png" class="w-full md:w-[60%] object-cover -translate-x-54" alt="Slide image"/>
 					</div>
 					<div
 						class="hidden md:flex lg:hidden w-full transition-transform duration-500 ease-in-out pl-15 md:pl-52"
@@ -165,7 +158,7 @@
 					</div>
 
 					<div class="flex flex-row items-center leading-[20px] md:leading-normal gap-2">
-						<span class="text-[32px] lg:text-[52px] xl:text-[62px] 2xl:-[72px] uppercase">vues live/an</span>
+						<span class="text-[32px] lg:text-[52px] xl:text-[62px] 2xl:-[72px] uppercase">{{ 'page.club.stats.views-live' | translate }}</span>
 						<div class="flex flex-row gap-2">
 							<svg class="w-8 h-8 md:w-10 md:h-10" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M12.0011 0L3.42969 8.57143V39.4286H13.7154V48L22.2868 39.4286H29.144L44.5725 24V0H12.0011ZM41.144 22.2857L34.2868 29.1429H27.4297L21.4297 35.1429V29.1429H13.7154V3.42857H41.144V22.2857Z" fill="#F9ECEA"/>
@@ -184,7 +177,7 @@
 					</div>
 
 					<div class="flex flex-row items-center leading-[20px] md:leading-normal gap-2">
-						<span class="text-[32px] lg:text-[52px] xl:text-[62px] 2xl:-[72px] uppercase">impressions</span>
+						<span class="text-[32px] lg:text-[52px] xl:text-[62px] 2xl:-[72px] uppercase">{{ 'page.club.stats.impressions' | translate }}</span>
 						<div class="flex flex-row gap-2">
 							<svg class="w-8 h-8 md:w-10 md:h-10" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M36.6526 3.80762H43.3995L28.6594 20.6546L46 43.5796H32.4225L21.7881 29.6757L9.61989 43.5796H2.86886L18.6349 25.5598L2 3.80762H15.9222L25.5348 16.5163L36.6526 3.80762ZM34.2846 39.5412H38.0232L13.8908 7.63388H9.87892L34.2846 39.5412Z" fill="#F9ECEA"/>
@@ -199,7 +192,7 @@
 					</div>
 
 					<div class="flex flex-row items-center leading-[20px] md:leading-normal gap-2">
-						<span class="text-[32px] lg:text-[52px] xl:text-[62px] 2xl:-[72px] uppercase">vues/m</span>
+						<span class="text-[32px] lg:text-[52px] xl:text-[62px] 2xl:-[72px] uppercase">{{ 'page.club.stats.views-video' | translate }}</span>
 						<div class="flex flex-row gap-2">
 							<svg class="w-8 h-8 md:w-10 md:h-10" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M34.1451 0H26.0556V32.6956C26.0556 36.5913 22.9444 39.7913 19.0725 39.7913C15.2007 39.7913 12.0894 36.5913 12.0894 32.6956C12.0894 28.8696 15.1315 25.7391 18.8651 25.6V17.3913C10.6374 17.5304 4 24.2783 4 32.6956C4 41.1827 10.7757 48 19.1417 48C27.5075 48 34.2833 41.1131 34.2833 32.6956V15.9304C37.3255 18.1565 41.059 19.4783 45 19.5479V11.3391C38.9157 11.1304 34.1451 6.12173 34.1451 0Z" fill="#F9ECEA"/>
@@ -217,11 +210,11 @@
 		</div>
 		<div class="mx-auto flex flex-col md:flex-row gap-8 justify-center items-center">
 			<peps-button-small
-				text="Devenir partenaire"
+				[text]="'page.club.become-partner' | translate"
 				[link]="'/partners'"
 			></peps-button-small>
 			<peps-button
-				text="Soutenir la team peps"
+				[text]="'page.club.support-team-peps' | translate"
 				[hrefLink]="'https://fr.tipeee.com/teampeps'"
 			></peps-button>
 

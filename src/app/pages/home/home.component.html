@@ -18,11 +18,11 @@
 	<div class="flex flex-col gap-16 justify-center -translate-y-5 3xl:-translate-y-20">
 		<div class="flex flex-col md:flex-row justify-around items-center gap-4">
 			<peps-title
-				subtitle="Prochains"
-				title="Matchs"
+				[subtitle]="'page.home.upcoming-matches.subtitle' | translate"
+				[title]="'page.home.upcoming-matches.title' | translate"
 			></peps-title>
 			<div class="border border-peps-dark-600 flex flex-col gap-2 py-3 px-6">
-				<span class="text-base tracking-tight text-center font-dinpro-medium">FILTRES</span>
+				<span class="text-base tracking-tight text-center font-dinpro-medium">{{ 'page.home.filter' | translate }}</span>
 				<div class="flex flex-row gap-2 items-center justify-center">
 					<peps-checkbox
 						[checked]="selectedGames.includes(Game.OVERWATCH)"
@@ -44,8 +44,8 @@
 		<div class="flex flex-col gap-10">
 			<div class="flex flex-col md:flex-row justify-around items-center gap-4">
 				<peps-title
-					subtitle="Les"
-					title="Actus"
+					[subtitle]="'page.home.news.subtitle' | translate"
+					[title]="'page.home.news.title' | translate"
 				></peps-title>
 				<span class="invisible sm:visible"></span>
 			</div>
@@ -62,7 +62,7 @@
 
 		<div class="flex justify-center">
 			<peps-button
-				text="Tout voir"
+				[text]="'page.home.goto-news' | translate"
 				link="news"
 			></peps-button>
 		</div>
