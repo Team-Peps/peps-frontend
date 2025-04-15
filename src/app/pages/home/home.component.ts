@@ -4,16 +4,16 @@ import {MaxButtonComponent} from '../../core/components/buttons/max-button/max-b
 import {TitleComponent} from '../../core/components/title/title.component';
 import {CheckboxComponent} from '../../core/components/checkbox/checkbox.component';
 import {MatchService} from '../../services/match.service';
-import {MatchGroupByDate} from '../../models/match';
 import {Game} from '../../models/game';
 import {ButtonComponent} from '../../core/components/buttons/button/button.component';
 import {ArticleService} from '../../services/article.service';
-import {ArticleTiny} from '../../models/article';
 import {NewsCardComponent} from '../../core/components/news-card/news-card.component';
 import {Title} from '@angular/platform-browser';
 import {UpcomingMatchsComponent} from '../../core/components/upcoming-matchs/upcoming-matchs.component';
 import {SliderService} from '../../services/slider.service';
 import {Slider} from '../../models/slider';
+import {ArticleTiny} from '../../models/article/articleTiny';
+import {MatchGroupByDate} from '../../models/match/matchGroupByDate';
 
 @Component({
   selector: 'app-home',

@@ -2,10 +2,11 @@ import { environment } from "../../environment/environment";
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {Match, MatchGroupByDate} from '../models/match';
+import {Match} from '../models/match/match';
 import {Cacheable, LocalStorageStrategy} from 'ts-cacheable';
 import {Page} from '../models/page';
 import {Game} from '../models/game';
+import {MatchGroupByDate} from '../models/match/matchGroupByDate';
 
 @Injectable({
 	providedIn: 'root'

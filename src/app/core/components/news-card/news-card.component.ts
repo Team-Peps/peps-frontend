@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {ButtonSmallComponent} from '../buttons/button-small/button-small.component';
 import {environment} from '../../../../environment/environment';
-import {ArticleTiny} from '../../../models/article';
+import {ArticleTiny} from '../../../models/article/articleTiny';
 
 @Component({
 	selector: 'peps-news-card',

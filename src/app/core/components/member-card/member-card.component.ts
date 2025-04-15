@@ -1,9 +1,9 @@
 import {Component, Input} from '@angular/core';
-import {MemberTiny} from '../../../models/member/member';
 import {environment} from '../../../../environment/environment';
 import {determineRoleIcon} from '../../utils/memberUtils';
 import {MemberRole} from '../../../models/member/memberRole';
 import {RouterLink} from '@angular/router';
+import {MemberTiny} from '../../../models/member/memberTiny';
 
 @Component({
   selector: 'peps-member-card',

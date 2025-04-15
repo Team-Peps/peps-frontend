@@ -8,10 +8,10 @@ import {MatchService} from '../../services/match.service';
 import {MatchRowComponent} from '../../core/components/match-row/match-row.component';
 import {RangePipe} from '../../pipes/range.pipe';
 import {isToday} from '../../core/utils/matchUtils';
-import {MatchGroupByDate} from '../../models/match';
 import {PageSelectorComponent} from '../../core/components/page-selector/page-selector.component';
 import {NoUpcomingMatchComponent} from '../../core/components/no-upcoming-match/no-upcoming-match.component';
 import {Title} from '@angular/platform-browser';
+import {MatchGroupByDate} from '../../models/match/matchGroupByDate';
 
 @Component({
   selector: 'app-matchs',

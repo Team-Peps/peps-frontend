@@ -2,9 +2,10 @@ import { environment } from "../../environment/environment";
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {Article, ArticleTiny} from '../models/article';
+import {Article} from '../models/article/article';
 import {Page} from '../models/page';
 import {Cacheable, LocalStorageStrategy} from 'ts-cacheable';
+import {ArticleTiny} from '../models/article/articleTiny';
 
 @Injectable({
 	providedIn: 'root'

@@ -1,7 +1,7 @@
 import {MemberRole} from './memberRole';
 import {Game} from '../game';
 import {Achievement} from '../achievement';
-import {Heroe} from '../heroe';
+import {Heroe} from '../heroe/heroe';
 
 export interface Member {
 	id: string;
@@ -24,12 +24,3 @@ export interface Member {
 	achievements: Achievement[];
 	favoriteHeroes: Heroe[];
 }
-
-export interface MemberTiny {
-	id: string;
-	pseudo: string;
-	role: MemberRole;
-	imageKey: string;
-	isSubstitute: boolean;
-}
-
