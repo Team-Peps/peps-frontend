@@ -1,7 +1,7 @@
 <div class="flex flex-col md:flex-row gap-8 mx-auto items-center justify-center">
 	<div class="bg-peps-dark-700 border border-peps-dark-600 p-8 w-fit flex flex-row flex-wrap gap-4 items-center h-fit">
 		<div class="flex flex-col gap-4">
-			<span class="text-peps-gold uppercase text-[40px] leading-10">Palmarès</span>
+			<span class="text-peps-gold uppercase text-[40px] leading-10">{{ 'component.achievement-row.achievement' | translate }}</span>
 			<div class="flex flex-row gap-4">
 
 				@for(achievement of achievements; track achievement.id) {
@@ -24,11 +24,7 @@
 	</div>
 	@if(type === 'team') {
 		<div class="w-full md:w-3/12">
-			<p class="text-justify font-notosans px-8">
-				Ut scelerisque erat vel eros accumsan, nec imperdiet mi bibendum. In vel porta tellus. Phasellus sed tellus quis tortor blandit semper. Ut scelerisque erat vel eros accumsan, nec imperdiet mi bibendum. In vel porta tellus.
-
-				Phasellus sed tellus quis tortor blandit semper.
-			</p>
+			<p class="text-justify font-notosans px-8">{{'component.achievement-row.text' | translate}}</p>
 		</div>
 	}
 </div>

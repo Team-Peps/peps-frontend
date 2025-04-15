@@ -12,7 +12,7 @@
 							<span>{{ groupByDate.date | date: 'EEEE' | uppercase }}</span>
 							<span>{{ groupByDate.date | date: 'd MMM' | uppercase }}</span>
 							@if (isToday(groupByDate.date)) {
-								<span class="px-1 py-0.5 bg-peps-gold text-peps-dark-700 text-sm">AUJOURD'HUI</span>
+								<span class="px-1 py-0.5 bg-peps-gold text-peps-dark-700 text-sm uppercase">{{ 'component.upcoming-matches.today' | translate }}</span>
 							}
 						</div>
 
@@ -43,7 +43,10 @@
 		</div>
 
 		<div class="flex justify-center">
-			<peps-button text="Tout voir" link="/matchs"></peps-button>
+			<peps-button
+				[text]="'component.upcoming-matches.view-all' | translate"
+				link="/matchs"
+			></peps-button>
 		</div>
 
 	}

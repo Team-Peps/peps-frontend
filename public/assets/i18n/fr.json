@@ -1,53 +1,90 @@
 {
-	"footer": {
-		"more": {
-			"cgv": "CGV",
-			"contact": "Contact",
-			"faq": "FAQ",
+	"component": {
+		"achievement-row": {
+			"achievement": "Palmarès",
+			"text": "\t\t\t\tUt scelerisque erat vel eros accumsan, nec imperdiet mi bibendum. In vel porta tellus. Phasellus sed tellus quis tortor blandit semper. Ut scelerisque erat vel eros accumsan, nec imperdiet mi bibendum. In vel porta tellus. Phasellus sed tellus quis tortor blandit semper. "
+		},
+		"footer": {
+			"more": {
+				"cgv": "CGV",
+				"contact": "Contact",
+				"faq": "FAQ",
+				"partners": "Partenaires",
+				"support-us": "Nous soutenir",
+				"title": "More"
+			},
+			"shop": {
+				"all-collections": "Toutes les collections",
+				"all-products": "Tous les produits",
+				"fulllife": "Fulllife",
+				"news": "Nouveautés",
+				"offers": "Promotions",
+				"title": "Boutique"
+			},
+			"socials": {
+				"discord": "Peps Family",
+				"title": "Retrouver la Team Peps",
+				"twitch": {
+					"fefe": "FefeGG",
+					"team-peps": "TeamPepsMAX"
+				},
+				"x": "TeamPepsMAX",
+				"youtube": "TeamPepsMAX"
+			},
+			"team-peps": {
+				"club": "Club",
+				"marvel-rivals": "Team Peps Marvel Rivals",
+				"matchs": "Matchs",
+				"news": "Actus",
+				"overwatch": "Team Peps Overwatch 2",
+				"title": "Team Peps"
+			}
+		},
+		"headband-twitch": {
+			"title": "Un match est en cours, rejoins nous !",
+			"watch": "Regarder"
+		},
+		"match-row": {
+			"review": "Revoir",
+			"start-in": "Début dans",
+			"team-name": "Team Peps",
+			"waiting": "Attendre",
+			"watch": "Regarder"
+		},
+		"member-card": {
+			"substitute": "Remplaçant"
+		},
+		"navbar": {
+			"ambassadors": "Ambassadeurs",
+			"club": "Club",
+			"login": "Connexion",
+			"matchs": "Matchs",
+			"merch": "Merch",
+			"news": "Actus",
 			"partners": "Partenaires",
 			"support-us": "Nous soutenir",
-			"title": "More"
+			"team": {
+				"marvel-rivals": "Marvel Rivals",
+				"overwatch": "Overwatch",
+				"title": "Équipe"
+			}
 		},
-		"shop": {
-			"all-collections": "Toutes les collections",
-			"all-products": "Tous les produits",
-			"fulllife": "Fulllife",
-			"news": "Nouveautés",
-			"offers": "Promotions",
-			"title": "Boutique"
+		"news-card": {
+			"read-more": "Lire la suite"
 		},
-		"socials": {
-			"discord": "Peps Family",
-			"title": "Retrouver la Team Peps",
-			"twitch": {
-				"fefe": "FefeGG",
-				"team-peps": "TeamPepsMAX"
+		"no-upcoming-match": {
+			"text": "aaargh... Aucun match n’est prévu pour le moment"
+		},
+		"partner-card": {
+			"clipboard": {
+				"error": "Le code n'a pas été copié !",
+				"success": "Code {{code}} copié !"
 			},
-			"x": "TeamPepsMAX",
-			"youtube": "TeamPepsMAX"
+			"take-offer": "Profiter de l'offre"
 		},
-		"team-peps": {
-			"club": "Club",
-			"marvel-rivals": "Team Peps Marvel Rivals",
-			"matchs": "Matchs",
-			"news": "Actus",
-			"overwatch": "Team Peps Overwatch 2",
-			"title": "Team Peps"
-		}
-	},
-	"navbar": {
-		"ambassadors": "Ambassadeurs",
-		"club": "Club",
-		"login": "Connexion",
-		"matchs": "Matchs",
-		"merch": "Merch",
-		"news": "Actus",
-		"partners": "Partenaires",
-		"support-us": "Nous soutenir",
-		"team": {
-			"marvel-rivals": "Marvel Rivals",
-			"overwatch": "Overwatch",
-			"title": "Équipe"
+		"upcoming-matches": {
+			"today": "Aujourd'hui",
+			"view-all": "Tout voir"
 		}
 	}
 }

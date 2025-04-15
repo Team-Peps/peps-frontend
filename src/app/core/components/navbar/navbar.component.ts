@@ -7,7 +7,6 @@ import {ButtonSimpleComponent} from '../buttons/button-simple/button-simple.comp
 import {NgClass} from '@angular/common';
 import {NavigationEnd, Router} from '@angular/router';
 import {TranslatePipe, TranslateService} from '@ngx-translate/core';
-import { marker as _ } from '@colsen1991/ngx-translate-extract-marker';
 import {Subscription} from 'rxjs';
 
 @Component({
@@ -82,12 +81,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
 	initDropdown(): void {
 		this.itemsDropdownGames = [
 			{
-				label: this.translate.instant('navbar.team.overwatch'),
+				label: this.translate.instant('component.navbar.team.overwatch'),
 				action: () => this.toOverwatch(),
 				image: 'assets/icons/Overwatch_2_logo.svg',
 			},
 			{
-				label: this.translate.instant('navbar.team.marvel-rivals'),
+				label: this.translate.instant('component.navbar.team.marvel-rivals'),
 				action: () => this.toMarvelRivals(),
 				image: 'assets/icons/Marvel_Rivals_logo.svg',
 			}

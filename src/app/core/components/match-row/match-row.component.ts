@@ -5,6 +5,7 @@ import {environment} from '../../../../environment/environment';
 import {DatePipe, NgClass} from '@angular/common';
 import {CountdownPipe} from '../../../pipes/countdown.pipe';
 import {isLoose, isNumeric, isPastDate, isSuperiorOf, isWin} from '../../utils/matchUtils';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'peps-match-row',
@@ -12,7 +13,8 @@ import {isLoose, isNumeric, isPastDate, isSuperiorOf, isWin} from '../../utils/m
 		LogoComponent,
 		DatePipe,
 		CountdownPipe,
-		NgClass
+		NgClass,
+		TranslatePipe
 	],
   templateUrl: './match-row.component.html',
 })
