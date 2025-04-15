@@ -16,7 +16,9 @@ export class MemberService {
 
 	@Cacheable({
 		maxAge: 12 * 60 * 60 * 1000,
-		storageStrategy: LocalStorageStrategy
+		storageStrategy: LocalStorageStrategy,
+		cacheKey: 'membersByGame',
+		maxCacheCount: 2
 	})
 	getMembers(game: String): Observable<Record<string, Member[]>> {
 		return this.http.get<Record<string, Member[]>>(`${environment.backendUrl}/member/game/` + game);
@@ -24,7 +26,9 @@ export class MemberService {
 
 	@Cacheable({
 		maxAge: 12 * 60 * 60 * 1000,
-		storageStrategy: LocalStorageStrategy
+		storageStrategy: LocalStorageStrategy,
+		cacheKey: 'membersByGameAndType',
+		maxCacheCount: 20
 	})
 	getMemberById(id: string): Observable<Member> {
 		return this.http.get<Member>(`${environment.backendUrl}/member/${id}`);

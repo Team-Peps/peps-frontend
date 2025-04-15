@@ -58,7 +58,7 @@ export class MatchsComponent implements OnInit {
 	}
 
 	loadUpcomingMatches(): void {
-		this.matchService.getUpcomingMatches(this.page, this.selectedGames).subscribe({
+		this.matchService.getUpcomingMatches(this.page, this.selectedGames.sort((a, b) => a.localeCompare(b))).subscribe({
 			next: (matches) => {
 				this.matchsUpcoming = matches.content;
 				this.totalPages = matches.totalPages;
@@ -68,7 +68,7 @@ export class MatchsComponent implements OnInit {
 	}
 
 	loadResultMatches(): void {
-		this.matchService.getResultMatches(this.page, this.selectedGames).subscribe({
+		this.matchService.getResultMatches(this.page, this.selectedGames.sort((a, b) => a.localeCompare(b))).subscribe({
 			next: (matches) => {
 				this.matchsResult = matches.content;
 				this.totalPages = matches.totalPages;

@@ -16,7 +16,8 @@ export class PartnerService {
 
 	@Cacheable({
 		maxAge: 5 * 24 * 60 * 60 * 1000,
-		storageStrategy: LocalStorageStrategy
+		storageStrategy: LocalStorageStrategy,
+		cacheKey: 'partners'
 	})
 	getPartners(): Observable<Partner[]> {
 		return this.http.get<Partner[]>(`${environment.backendUrl}/partner/active`);

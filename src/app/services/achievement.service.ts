@@ -17,7 +17,9 @@ export class AchievementService {
 
 	@Cacheable({
 		maxAge: 7 * 24 * 60 * 60 * 1000,
-		storageStrategy: LocalStorageStrategy
+		storageStrategy: LocalStorageStrategy,
+		cacheKey: 'allAchievementsByGame',
+		maxCacheCount: 2
 	})
 	getAllAchievementByGame(game: Game): Observable<Achievement[]> {
 		return this.http.get<Achievement[]>(`${environment.backendUrl}/achievement/game/${game}`);

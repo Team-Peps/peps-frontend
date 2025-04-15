@@ -41,7 +41,7 @@ export class NewsComponent implements OnInit {
 	}
 
 	loadArticles(): void {
-		this.articleService.getArticles(this.page, this.filter).subscribe(response => {
+		this.articleService.getArticles(this.page, this.filter.sort((a, b) => a.localeCompare(b))).subscribe(response => {
 			this.articles = response.content;
 			this.totalPages = response.totalPages;
 		});

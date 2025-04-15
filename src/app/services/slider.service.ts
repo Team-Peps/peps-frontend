@@ -16,7 +16,8 @@ export class SliderService {
 
 	@Cacheable({
 		maxAge: 2 * 24 * 60 * 60 * 1000,
-		storageStrategy: LocalStorageStrategy
+		storageStrategy: LocalStorageStrategy,
+		cacheKey: 'sliders',
 	})
 	getAllActiveSlider(): Observable<Slider[]> {
 		return this.http.get<Slider[]>(`${environment.backendUrl}/slider/active`);

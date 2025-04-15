@@ -16,7 +16,8 @@ export class AmbassadorService {
 
 	@Cacheable({
 		maxAge: 7 * 24 * 60 * 60 * 1000,
-		storageStrategy: LocalStorageStrategy
+		storageStrategy: LocalStorageStrategy,
+		cacheKey: 'allAmbassadors',
 	})
 	getAllAmbassadors(): Observable<Ambassador[]> {
 		return this.http.get<Ambassador[]>(`${environment.backendUrl}/ambassador`);
