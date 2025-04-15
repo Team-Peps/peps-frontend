@@ -17,7 +17,8 @@ export class ArticleService {
 
 	@Cacheable({
 		maxAge: 60 * 60 * 1000,
-		storageStrategy: LocalStorageStrategy
+		storageStrategy: LocalStorageStrategy,
+		cacheKey: 'threeRecentArticles',
 	})
 	getThreeRecentArticles(): Observable<ArticleTiny[]> {
 		return this.http.get<ArticleTiny[]>(`${environment.backendUrl}/article/recent`);
@@ -25,15 +26,19 @@ export class ArticleService {
 
 	@Cacheable({
 		maxAge: 24 * 60 * 60 * 1000,
-		storageStrategy: LocalStorageStrategy
+		storageStrategy: LocalStorageStrategy,
+		cacheKey: 'allArticles',
+		maxCacheCount: 20
 	})
 	getArticles(page: number, filter: string[]): Observable<Page<ArticleTiny>> {
 		return this.http.get<Page<ArticleTiny>>(`${environment.backendUrl}/article?page=${page}&filter=${filter}`);
 	}
 
 	@Cacheable({
-		maxAge: 7 * 24 * 60 * 60 * 1000,
-		storageStrategy: LocalStorageStrategy
+		maxAge: 24 * 60 * 60 * 1000,
+		storageStrategy: LocalStorageStrategy,
+		cacheKey: 'article',
+		maxCacheCount: 20
 	})
 	getArticle(articleId: string): Observable<Article> {
 		return this.http.get<Article>(`${environment.backendUrl}/article/${articleId}`);

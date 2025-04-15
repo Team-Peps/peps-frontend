@@ -43,9 +43,8 @@ export class AmbassadorsComponent implements OnInit {
 	scrollSlider(direction: 1 | -1) {
 		const slider = this.sliderRef.nativeElement as HTMLElement;
 
-		// scroll by the width of 1 card + gap
 		const cardWidth = slider.querySelector('div')?.clientWidth || 300;
-		const gap = 16; // px, comme gap-x-4
+		const gap = 16;
 		const scrollAmount = cardWidth + gap;
 
 		slider.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });

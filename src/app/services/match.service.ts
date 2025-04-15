@@ -18,7 +18,8 @@ export class MatchService {
 
 	@Cacheable({
 		maxAge: 60 * 60 * 1000,
-		storageStrategy: LocalStorageStrategy
+		storageStrategy: LocalStorageStrategy,
+		cacheKey: 'currentMatch',
 	})
 	getCurrentMatch(): Observable<Match> {
 		return this.http.get<Match>(`${environment.backendUrl}/match/current`);
@@ -26,7 +27,8 @@ export class MatchService {
 
 	@Cacheable({
 		maxAge: 6 * 60 * 60 * 1000,
-		storageStrategy: LocalStorageStrategy
+		storageStrategy: LocalStorageStrategy,
+		cacheKey: '5upcomingMatches',
 	})
 	get5UpcomingMatches(): Observable<MatchGroupByDate[]> {
 		return this.http.get<MatchGroupByDate[]>(`${environment.backendUrl}/match/upcoming/5`);
@@ -34,7 +36,9 @@ export class MatchService {
 
 	@Cacheable({
 		maxAge: 6 * 60 * 60 * 1000,
-		storageStrategy: LocalStorageStrategy
+		storageStrategy: LocalStorageStrategy,
+		cacheKey: 'upcomingMatches',
+		maxCacheCount: 10
 	})
 	getUpcomingMatches(page: number, filter: string[]): Observable<Page<MatchGroupByDate>> {
 		return this.http.get<Page<MatchGroupByDate>>(`${environment.backendUrl}/match/upcoming?page=${page}&filter=${filter}`);
@@ -43,6 +47,8 @@ export class MatchService {
 	@Cacheable({
 		maxAge: 6 * 60 * 60 * 1000,
 		storageStrategy: LocalStorageStrategy,
+		cacheKey: 'resultMatches',
+		maxCacheCount: 10
 	})
 	getResultMatches(page: number, filter: string[]): Observable<Page<MatchGroupByDate>> {
 		return this.http.get<Page<MatchGroupByDate>>(`${environment.backendUrl}/match/result?page=${page}&filter=${filter}`);
@@ -50,7 +56,9 @@ export class MatchService {
 
 	@Cacheable({
 		maxAge: 6 * 60 * 60 * 1000,
-		storageStrategy: LocalStorageStrategy
+		storageStrategy: LocalStorageStrategy,
+		cacheKey: 'resultMatchesByGame',
+		maxCacheCount: 2
 	})
 	getUpcomingMatchesByGame(game: Game): Observable<MatchGroupByDate[]> {
 		return this.http.get<MatchGroupByDate[]>(`${environment.backendUrl}/match/upcoming/game/${game}`);
