@@ -1,0 +1,8 @@
+export enum HeroeRole {
+	TANK = "TANK",
+	DAMAGE = "DAMAGE",
+	SUPPORT = "SUPPORT",
+	VANGUARD = "VANGUARD",
+	STRATEGIST = "STRATEGIST",
+	DUELIST = "DUELIST"
+}

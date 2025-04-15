@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {ArticleTiny} from '../../models/article';
 import {ArticleService} from '../../services/article.service';
 import {NewsCardComponent} from '../../core/components/news-card/news-card.component';
 import {TitleComponent} from '../../core/components/title/title.component';
 import {PageSelectorComponent} from '../../core/components/page-selector/page-selector.component';
 import {CheckboxComponent} from '../../core/components/checkbox/checkbox.component';
-import {ArticleType} from '../../models/articleType';
+import {ArticleType} from '../../models/article/articleType';
 import {ToastService} from '../../services/toast.service';
 import {Title} from '@angular/platform-browser';
+import {ArticleTiny} from '../../models/article/articleTiny';
 
 @Component({
   selector: 'app-news',

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HeadbandTwitchComponent} from '../headband-twitch/headband-twitch.component';
 import {MatchService} from '../../../services/match.service';
-import {Match} from '../../../models/match';
+import {Match} from '../../../models/match/match';
 import {DropdownButtonComponent} from '../buttons/dropdown-button/dropdown-button.component';
 import {ButtonSimpleComponent} from '../buttons/button-simple/button-simple.component';
 import {NgClass} from '@angular/common';

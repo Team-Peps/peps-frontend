@@ -1,13 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {ArticleService} from '../../services/article.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Article} from '../../models/article';
+import {Article} from '../../models/article/article';
 import {DomSanitizer, SafeHtml, Title} from '@angular/platform-browser';
 import {environment} from '../../../environment/environment';
 import {DatePipe} from '@angular/common';
 import {ButtonSmallComponent} from '../../core/components/buttons/button-small/button-small.component';
 import {ToastService} from '../../services/toast.service';
 import {SeparatorComponent} from '../../core/components/separator/separator.component';
+import {getImageByArticleType} from '../../core/utils/articleUtils';
 
 @Component({
   selector: 'app-news-details',
@@ -34,6 +35,8 @@ export class NewsDetailsComponent implements OnInit {
 	article: Article | null = null;
 	safeHtml: SafeHtml = '';
 
+	protected readonly getImageByArticleType = getImageByArticleType;
+
 	ngOnInit(): void {
 		this.activatedRoute.paramMap.subscribe(paramMap => {
 			this.articleId = paramMap.get('articleId');
@@ -58,16 +61,4 @@ export class NewsDetailsComponent implements OnInit {
 		}
 	}
 
-	getImageByArticleType(articleType: string): string {
-		switch (articleType) {
-			case 'MARVEL_RIVALS':
-				return '/assets/icons/Marvel_Rivals_logo.svg';
-			case 'OVERWATCH':
-				return '/assets/icons/Overwatch_2_logo.svg';
-			case 'TEAM_PEPS':
-				return '/assets/images/team_peps_logo.png';
-			default:
-				return '/assets/images/team_peps_logo.png';
-		}
-	}
 }

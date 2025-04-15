@@ -28,3 +28,14 @@ export function isWin(a: string): boolean {
 export function isLoose(a: string): boolean {
 	return a.includes('FF') || a.includes('L');
 }
+
+/**
+ * Check if the match is in the past
+ * @param date
+ * @returns {boolean}
+ */
+export function isPastDate(date: string): boolean {
+	const currentDate = new Date();
+	const matchDate = new Date(date);
+	return matchDate < currentDate;
+}

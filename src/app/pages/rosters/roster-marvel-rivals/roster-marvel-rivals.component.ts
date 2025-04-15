@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MemberService} from '../../../services/member.service';
 import {BehaviorSubject, Observable} from 'rxjs';
-import {MemberTiny} from '../../../models/member/member';
 import {SeparatorComponent} from '../../../core/components/separator/separator.component';
 import {Game} from '../../../models/game';
 import {MemberCardComponent} from '../../../core/components/member-card/member-card.component';
@@ -10,10 +9,11 @@ import {AchievementService} from '../../../services/achievement.service';
 import {Achievement} from '../../../models/achievement';
 import {AchievementRowComponent} from '../../../core/components/achievement-row/achievement-row.component';
 import {UpcomingMatchsComponent} from '../../../core/components/upcoming-matchs/upcoming-matchs.component';
-import {Match, MatchGroupByDate} from '../../../models/match';
 import {MatchService} from '../../../services/match.service';
 import {TitleComponent} from '../../../core/components/title/title.component';
 import {Title} from '@angular/platform-browser';
+import {MemberTiny} from '../../../models/member/memberTiny';
+import {MatchGroupByDate} from '../../../models/match/matchGroupByDate';
 
 @Component({
   selector: 'app-roster-marvel-rivals',
@@ -24,7 +24,6 @@ import {Title} from '@angular/platform-browser';
 		AchievementRowComponent,
 		UpcomingMatchsComponent,
 		TitleComponent
-
 	],
   templateUrl: './roster-marvel-rivals.component.html',
 })
@@ -89,6 +88,5 @@ export class RosterMarvelRivalsComponent implements OnInit {
 				console.error('Error fetching matches:', error);
 			}
 		})
-
 	}
 }

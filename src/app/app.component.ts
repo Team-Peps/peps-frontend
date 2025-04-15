@@ -11,5 +11,5 @@ import {ToastContainerComponent} from './core/components/toast-container/toast-c
 	styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'peps-frontend';
+  title = 'Team Peps';
 }
