@@ -1,0 +1,53 @@
+{
+	"footer": {
+		"more": {
+			"cgv": "CGV",
+			"contact": "Contact",
+			"faq": "FAQ",
+			"partners": "Partenaires",
+			"support-us": "Nous soutenir",
+			"title": "More"
+		},
+		"shop": {
+			"all-collections": "Toutes les collections",
+			"all-products": "Tous les produits",
+			"fulllife": "Fulllife",
+			"news": "Nouveautés",
+			"offers": "Promotions",
+			"title": "Boutique"
+		},
+		"socials": {
+			"discord": "Peps Family",
+			"title": "Retrouver la Team Peps",
+			"twitch": {
+				"fefe": "FefeGG",
+				"team-peps": "TeamPepsMAX"
+			},
+			"x": "TeamPepsMAX",
+			"youtube": "TeamPepsMAX"
+		},
+		"team-peps": {
+			"club": "Club",
+			"marvel-rivals": "Team Peps Marvel Rivals",
+			"matchs": "Matchs",
+			"news": "Actus",
+			"overwatch": "Team Peps Overwatch 2",
+			"title": "Team Peps"
+		}
+	},
+	"navbar": {
+		"ambassadors": "Ambassadeurs",
+		"club": "Club",
+		"login": "Connexion",
+		"matchs": "Matchs",
+		"merch": "Merch",
+		"news": "Actus",
+		"partners": "Partenaires",
+		"support-us": "Nous soutenir",
+		"team": {
+			"marvel-rivals": "Marvel Rivals",
+			"overwatch": "Overwatch",
+			"title": "Équipe"
+		}
+	}
+}

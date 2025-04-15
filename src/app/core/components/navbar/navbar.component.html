@@ -37,31 +37,31 @@
 				<div class="hidden lg:ml-6 lg:flex items-center">
 					<div class="flex items-center gap-4 text-xl">
 						<peps-dropdown-button
-							text="Equipes"
+							[text]="'navbar.team.title' | translate"
 							[items]="itemsDropdownGames"
 						></peps-dropdown-button>
 						<peps-button-simple
-							text="Club"
+							[text]="'navbar.club' | translate"
 							(click)="toClub()"
 						></peps-button-simple>
 						<peps-button-simple
-							text="Matchs"
+							[text]="'navbar.matchs' | translate"
 							(click)="toMatches()"
 						></peps-button-simple>
 						<peps-button-simple
-							text="Actu"
+							[text]="'navbar.news' | translate"
 							(click)="toNews()"
 						></peps-button-simple>
 						<peps-button-simple
-							text="Ambassadeurs"
+							[text]="'navbar.ambassadors' | translate"
 							(click)="toAmbassadors()"
 						></peps-button-simple>
 						<peps-button-simple
-							text="Partenaires"
+							[text]="'navbar.partners' | translate"
 							(click)="toPartners()"
 						></peps-button-simple>
 						<peps-button-simple
-							text="Nous soutenir"
+							[text]="'navbar.support-us' | translate"
 						></peps-button-simple>
 					</div>
 				</div>
@@ -73,23 +73,23 @@
 				<div class="relative ml-3 flex flex-row gap-4 items-center">
 
 					<peps-dropdown-button
-						text="FR"
+						[text]="translate.currentLang.toUpperCase()"
 						[items]="itemsDropdownLang"
 					></peps-dropdown-button>
 
 					<button
-						class="text-peps-dark-700 bg-peps-gold py-1 px-4 cursor-pointer hover:bg-peps-yellow transition-colors duration-300 hidden lg:block"
-					>CONNEXION</button>
+						class="text-peps-dark-700 bg-peps-gold py-1 px-4 cursor-pointer hover:bg-peps-yellow transition-colors duration-300 hidden lg:block uppercase"
+					>{{ 'navbar.login' | translate }}</button>
 					<button
-						class="text-peps-dark-700 bg-peps-dark-200 rounded-sm py-1 px-3 cursor-pointer transition-colors duration-300 hidden lg:block"
-					>K</button>
+						class="text-peps-dark-700 bg-peps-dark-200 rounded-sm py-1 px-3 cursor-pointer transition-colors duration-300 hidden lg:block uppercase"
+					>S</button>
 
 					<div class="bg-[url(/assets/images/merch_btn.png)] flex w-28 h-20 bg-cover bg-center relative cursor-pointer">
 						<a
-							class="text-2xl text-peps-dark-700 translate-y-1/4 translate-x-2/4"
+							class="text-2xl text-peps-dark-700 translate-y-1/4 translate-x-2/4 uppercase"
 							target="_blank"
 							href="https://full.life/team-peps-soon-tshirt"
-						>MERCH</a>
+						>{{ 'navbar.merch' | translate }}</a>
 					</div>
 
 				</div>
@@ -103,7 +103,8 @@
 		<div
 			class="fixed w-full h-full inset-y-0 left-0 bg-peps-dark-700 z-[100] lg:hidden transform transition-transform duration-300 ease-in-out"
 			[ngClass]="{'translate-x-0': isMobileMenuOpen, '-translate-x-full': !isMobileMenuOpen}"
-			id="mobile-menu">
+			id="mobile-menu"
+		>
 			<div class="flex flex-row justify-between items-center pr-6">
 
 				<button
@@ -117,42 +118,42 @@
 				</button>
 				<div>
 					<button
-						class="text-peps-dark-700 bg-peps-gold py-1 px-4 cursor-pointer hover:bg-peps-yellow transition-colors duration-300"
-					>CONNEXION</button>
+						class="text-peps-dark-700 bg-peps-gold py-1 px-4 cursor-pointer hover:bg-peps-yellow transition-colors duration-300 uppercase"
+					>{{ 'navbar.login' | translate }}</button>
 					<button
-						class="text-peps-dark-700 bg-peps-dark-200 rounded-sm py-1 px-3 cursor-pointer transition-colors duration-300"
-					>K</button>
+						class="text-peps-dark-700 bg-peps-dark-200 rounded-sm py-1 px-3 cursor-pointer transition-colors duration-300 uppercase"
+					>S</button>
 				</div>
 
 			</div>
 			<div class="flex flex-col gap-4 text-2xl px-12 py-6">
 				<peps-dropdown-button
-					text="Equipes"
+					[text]="'navbar.team.title' | translate"
 					[items]="itemsDropdownGames"
 					[isMobileNavbar]="true"
 				></peps-dropdown-button>
 				<peps-button-simple
-					text="Club"
+					[text]="'navbar.club' | translate"
 					(click)="toClub()"
 				></peps-button-simple>
 				<peps-button-simple
-					text="Matchs"
+					[text]="'navbar.matchs' | translate"
 					(click)="toMatches()"
 				></peps-button-simple>
 				<peps-button-simple
-					text="Actu"
+					[text]="'navbar.news' | translate"
 					(click)="toNews()"
 				></peps-button-simple>
 				<peps-button-simple
-					text="Ambassadeurs"
+					[text]="'navbar.ambassadors' | translate"
 					(click)="toAmbassadors()"
 				></peps-button-simple>
 				<peps-button-simple
-					text="Partenaires"
+					[text]="'navbar.partners' | translate"
 					(click)="toPartners()"
 				></peps-button-simple>
 				<peps-button-simple
-					text="Nous soutenir"
+					[text]="'navbar.support-us' | translate"
 				></peps-button-simple>
 			</div>
 		</div>
