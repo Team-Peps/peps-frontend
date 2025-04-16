@@ -12,6 +12,7 @@ import {PageSelectorComponent} from '../../core/components/page-selector/page-se
 import {NoUpcomingMatchComponent} from '../../core/components/no-upcoming-match/no-upcoming-match.component';
 import {Title} from '@angular/platform-browser';
 import {MatchGroupByDate} from '../../models/match/matchGroupByDate';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-matchs',
@@ -25,7 +26,8 @@ import {MatchGroupByDate} from '../../models/match/matchGroupByDate';
 		RangePipe,
 		UpperCasePipe,
 		PageSelectorComponent,
-		NoUpcomingMatchComponent
+		NoUpcomingMatchComponent,
+		TranslatePipe
 	],
   templateUrl: './matchs.component.html',
 })
@@ -35,6 +37,7 @@ export class MatchsComponent implements OnInit {
 		private readonly matchService: MatchService,
 		private readonly cdr: ChangeDetectorRef,
 		private readonly titleService: Title,
+		private readonly translate: TranslateService
 	) { }
 
 	protected readonly Game = Game;
@@ -53,7 +56,7 @@ export class MatchsComponent implements OnInit {
 	totalPages: number = 0;
 
 	ngOnInit(): void {
-		this.titleService.setTitle('Team Peps - Matchs');
+		this.titleService.setTitle(this.translate.instant('page.matchs.title'));
 		this.loadUpcomingMatches();
 	}
 

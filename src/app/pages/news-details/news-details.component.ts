@@ -6,16 +6,17 @@ import {DomSanitizer, SafeHtml, Title} from '@angular/platform-browser';
 import {environment} from '../../../environment/environment';
 import {DatePipe} from '@angular/common';
 import {ButtonSmallComponent} from '../../core/components/buttons/button-small/button-small.component';
-import {ToastService} from '../../services/toast.service';
 import {SeparatorComponent} from '../../core/components/separator/separator.component';
 import {getImageByArticleType} from '../../core/utils/articleUtils';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-news-details',
 	imports: [
 		DatePipe,
 		ButtonSmallComponent,
-		SeparatorComponent
+		SeparatorComponent,
+		TranslatePipe
 	],
   templateUrl: './news-details.component.html',
 })
@@ -26,7 +27,6 @@ export class NewsDetailsComponent implements OnInit {
 		private readonly activatedRoute: ActivatedRoute,
 		private readonly sanitizer: DomSanitizer,
 		private readonly router: Router,
-		protected readonly toastService: ToastService,
 		private readonly titleService: Title,
 	) { }
 
@@ -54,8 +54,7 @@ export class NewsDetailsComponent implements OnInit {
 					this.safeHtml = this.sanitizer.bypassSecurityTrustHtml(article.content)
 				},
 				error: () => {
-					this.toastService.show("L'article n'existe pas", 'error');
-					this.router.navigate(['/news']);
+					this.router.navigate(['/not-found']);
 				}
 			});
 		}

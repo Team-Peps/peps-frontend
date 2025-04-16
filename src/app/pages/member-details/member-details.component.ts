@@ -10,6 +10,7 @@ import {AchievementRowComponent} from '../../core/components/achievement-row/ach
 import {MemberCardComponent} from '../../core/components/member-card/member-card.component';
 import {LoaderComponent} from '../../core/components/loader/loader.component';
 import {Title} from '@angular/platform-browser';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
 	selector: 'app-member-details',
@@ -18,7 +19,8 @@ import {Title} from '@angular/platform-browser';
 		AchievementRowComponent,
 		TitleComponent,
 		MemberCardComponent,
-		LoaderComponent
+		LoaderComponent,
+		TranslatePipe
 	],
 	templateUrl: './member-details.component.html',
 	styleUrls: ['./member-details.component.css']
@@ -49,6 +51,7 @@ export class MemberDetailsComponent implements OnInit {
 			next: (member) => {
 				this.member = member;
 				this.titleService.setTitle('Team Peps - ' + member.pseudo.toString());
+
 				this.loadRoster();
 			},
 			error: (error) => {

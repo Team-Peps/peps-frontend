@@ -3,13 +3,15 @@ import {SeparatorComponent} from '../../core/components/separator/separator.comp
 import {ButtonComponent} from '../../core/components/buttons/button/button.component';
 import {ButtonSmallComponent} from '../../core/components/buttons/button-small/button-small.component';
 import {Title} from '@angular/platform-browser';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
 	selector: 'app-club',
 	imports: [
 		SeparatorComponent,
 		ButtonComponent,
-		ButtonSmallComponent
+		ButtonSmallComponent,
+		TranslatePipe
 	],
 	templateUrl: './club.component.html',
 	styleUrls: ['./club.component.css']
@@ -18,10 +20,11 @@ export class ClubComponent implements OnInit {
 
 	constructor(
 		private readonly titleService: Title,
+		protected readonly translate: TranslateService
 	) {}
 
 	ngOnInit(): void {
-		this.titleService.setTitle('Team Peps - Club');
+		this.titleService.setTitle(this.translate.instant('page.club.title'));
 	}
 
 	currentSlide = 0;

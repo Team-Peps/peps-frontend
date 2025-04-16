@@ -6,6 +6,7 @@ import {PartnerCardComponent} from '../../core/components/partner-card/partner-c
 import {ButtonComponent} from '../../core/components/buttons/button/button.component';
 import {DomSanitizer, SafeResourceUrl, Title} from '@angular/platform-browser';
 import {environment} from '../../../environment/environment';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-partners',
@@ -13,6 +14,7 @@ import {environment} from '../../../environment/environment';
 		TitleComponent,
 		PartnerCardComponent,
 		ButtonComponent,
+		TranslatePipe,
 	],
   templateUrl: './partners.component.html',
 })
@@ -22,6 +24,7 @@ export class PartnersComponent implements OnInit {
 		private readonly partnerService: PartnerService,
 		private sanitizer: DomSanitizer,
 		private readonly titleService: Title,
+		private readonly translate: TranslateService,
 	) {	}
 
 	partners: Partner[] = [];
@@ -30,7 +33,7 @@ export class PartnersComponent implements OnInit {
 	minioBaseUrl = environment.minioBaseUrl;
 
 	ngOnInit(): void {
-		this.titleService.setTitle('Team Peps - Les partenaires');
+		this.titleService.setTitle(this.translate.instant('page.partners.title'));
 		this.loadPartners();
     }
 

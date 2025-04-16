@@ -8,6 +8,7 @@ import {ArticleType} from '../../models/article/articleType';
 import {ToastService} from '../../services/toast.service';
 import {Title} from '@angular/platform-browser';
 import {ArticleTiny} from '../../models/article/articleTiny';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-news',
@@ -15,7 +16,8 @@ import {ArticleTiny} from '../../models/article/articleTiny';
 		NewsCardComponent,
 		TitleComponent,
 		PageSelectorComponent,
-		CheckboxComponent
+		CheckboxComponent,
+		TranslatePipe
 	],
   templateUrl: './news.component.html',
 })
@@ -25,6 +27,7 @@ export class NewsComponent implements OnInit {
 		private readonly articleService: ArticleService,
 		private readonly toastService: ToastService,
 		private readonly titleService: Title,
+		private readonly translate: TranslateService
 	) {}
 
 	protected readonly ArticleType = ArticleType;
@@ -36,7 +39,7 @@ export class NewsComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.loadArticles();
-		this.titleService.setTitle('Team Peps - Les Actus');
+		this.titleService.setTitle(this.translate.instant('page.news.title'));
 		window.scrollTo({ top: 0, behavior: 'smooth' });
 	}
 
@@ -64,7 +67,7 @@ export class NewsComponent implements OnInit {
 
 			if (updatedFilter.length === 0) {
 				this.filter = [ArticleType.TEAM_PEPS];
-				this.toastService.show('Vous devez garder au moins une catégorie d\'article sélectionnée.', 'info');
+				this.toastService.show(this.translate.instant('page.news.filter-toast'), 'info');
 				this.loadArticles();
 				return;
 			}

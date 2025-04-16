@@ -4,12 +4,14 @@ import {Ambassador} from '../../models/ambassador';
 import {AmbassadorService} from '../../services/ambassador.service';
 import {AmbassadorCardComponent} from '../../core/components/ambassador-card/ambassador-card.component';
 import {Title} from '@angular/platform-browser';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-ambassadors',
 	imports: [
 		SeparatorComponent,
-		AmbassadorCardComponent
+		AmbassadorCardComponent,
+		TranslatePipe
 	],
   templateUrl: './ambassadors.component.html',
 })
@@ -18,6 +20,7 @@ export class AmbassadorsComponent implements OnInit {
 	  constructor(
 		private readonly ambassadorService: AmbassadorService,
 		private readonly titleService: Title,
+		protected readonly translate: TranslateService
 	  ) {}
 
 	@ViewChild('slider', { static: true }) sliderRef!: ElementRef;
@@ -25,7 +28,7 @@ export class AmbassadorsComponent implements OnInit {
 	ambassadors: Ambassador[] = [];
 
 	ngOnInit(): void {
-		this.titleService.setTitle('Team Peps - Ambassadeurs');
+		this.titleService.setTitle(this.translate.instant('page.ambassadors.title'));
 		this.loadAmbassadors();
 	}
 

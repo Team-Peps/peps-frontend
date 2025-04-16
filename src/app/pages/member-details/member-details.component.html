@@ -38,8 +38,8 @@
 				</div>
 
 				<div class="flex flex-col">
-					<span class="uppercase">Pays: {{member.nationality}}</span>
-					<span class="uppercase">âge: {{member.age}} ans</span>
+					<span class="uppercase">{{ 'page.member-details.country' | translate }}: {{member.nationality}}</span>
+					<span class="uppercase">{{ 'page.member-details.age' | translate:{ age: member.age } }}</span>
 				</div>
 
 				<div class="flex flex-row w-fit gap-4 p-2 border border-peps-dark-600">

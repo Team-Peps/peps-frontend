@@ -25,7 +25,7 @@
 		<span class="text-xl font-notosans text-justify">{{ partner?.description }}</span>
 		<peps-button-small
 			[ngClass]="{'ml-auto': !isEven, 'mr-auto': isEven}"
-			text="Profiter de l'offre"
+			[text]="'component.partner-card.take-offer' | translate"
 			[hrefLink]="partner!.link"
 		></peps-button-small>
 	</div>

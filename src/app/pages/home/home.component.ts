@@ -14,6 +14,7 @@ import {SliderService} from '../../services/slider.service';
 import {Slider} from '../../models/slider';
 import {ArticleTiny} from '../../models/article/articleTiny';
 import {MatchGroupByDate} from '../../models/match/matchGroupByDate';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -25,7 +26,8 @@ import {MatchGroupByDate} from '../../models/match/matchGroupByDate';
 		ButtonComponent,
 		NewsCardComponent,
 		CheckboxComponent,
-		UpcomingMatchsComponent
+		UpcomingMatchsComponent,
+		TranslatePipe
 	],
   templateUrl: './home.component.html',
 })

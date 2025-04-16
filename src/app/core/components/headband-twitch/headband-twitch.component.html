@@ -1,16 +1,16 @@
 @if(isShown) {
 	<div class="w-full bg-peps-purple flex items-center justify-between px-6 md:py-3 relative h-22 md:h-14 z-50">
 		<div class="absolute left-1/2 transform -translate-x-1/2 text-center font-semibold text-lg flex items-center gap-1 sm:gap-4 flex-col sm:flex-row">
-			<span class="font-extrabold text-nowrap sm:text-wrap">UN MATCH EST EN COURS, REJOINS NOUS !</span>
+			<span class="font-extrabold text-nowrap sm:text-wrap uppercase">{{ 'component.headband-twitch.title' | translate}}</span>
 			<a
-				class="flex flex-row items-center gap-2 border py-1 px-2 font-bold cursor-pointer bg-peps-purple hover:bg-peps-purple-hover"
+				class="flex flex-row items-center gap-2 border py-1 px-2 font-bold cursor-pointer bg-peps-purple hover:bg-peps-purple-hover uppercase"
 				[href]="link" target="_blank">
 				<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M4.49972 0L1.64258 2.85714V13.1429H5.07115V16L7.92829 13.1429H10.214L15.3569 8V0H4.49972ZM14.214 7.42857L11.9283 9.71429H9.64258L7.64258 11.7143V9.71429H5.07115V1.14286H14.214V7.42857Z" fill="#F9ECEA"/>
 					<path d="M12.5003 3.14258H11.3574V6.57115H12.5003V3.14258Z" fill="#F9ECEA"/>
 					<path d="M9.3577 3.14258H8.21484V6.57115H9.3577V3.14258Z" fill="#F9ECEA"/>
 				</svg>
-				REGARDER
+				{{ 'common.watch' | translate }}
 			</a>
 		</div>
 

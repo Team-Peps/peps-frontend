@@ -17,7 +17,7 @@
 	<div class="pt-38 xs:pt-28 w-10/12 mx-auto font-notosans" [innerHTML]="safeHtml"></div>
 	<div class="mx-auto flex flex-col md:flex-row gap-8 justify-center mt-20 items-center">
 		<peps-button-small
-			text="Voir toutes les actus"
+			[text]="'page.news-details.see-all-news' | translate"
 			[link]="'/news'"
 		></peps-button-small>
 		<a
@@ -34,7 +34,7 @@
 					</clipPath>
 				</defs>
 			</svg>
-			Réagir
+			{{ 'page.news-details.react' | translate }}
 		</a>
 
 	</div>

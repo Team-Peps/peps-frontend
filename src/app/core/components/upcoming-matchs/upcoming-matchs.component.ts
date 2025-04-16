@@ -7,6 +7,7 @@ import {RangePipe} from '../../../pipes/range.pipe';
 import {Game} from '../../../models/game';
 import {NoUpcomingMatchComponent} from '../no-upcoming-match/no-upcoming-match.component';
 import {MatchGroupByDate} from '../../../models/match/matchGroupByDate';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'peps-upcoming-matchs',
@@ -16,7 +17,8 @@ import {MatchGroupByDate} from '../../../models/match/matchGroupByDate';
 		MatchRowComponent,
 		ButtonComponent,
 		RangePipe,
-		NoUpcomingMatchComponent
+		NoUpcomingMatchComponent,
+		TranslatePipe
 	],
   templateUrl: './upcoming-matchs.component.html',
 })

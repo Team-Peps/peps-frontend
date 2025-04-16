@@ -1,0 +1,148 @@
+{
+	"common": {
+		"club": "Club",
+		"matches": {
+			"titlecase": "Matches"
+		},
+		"news": "News",
+		"partners": "Partners",
+		"support-us": "Support us",
+		"watch": "Watch"
+	},
+	"component": {
+		"achievement-row": {
+			"achievement": "Awards",
+			"text": "\t\t\t\tUt scelerisque erat vel eros accumsan, nec imperdiet mi bibendum. In vel porta tellus. Phasellus sed tellus quis tortor blandit semper. Ut scelerisque erat vel eros accumsan, nec imperdiet mi bibendum. In vel porta tellus. Phasellus sed tellus quis tortor blandit semper. "
+		},
+		"footer": {
+			"more": {
+				"cgv": "CGV",
+				"contact": "Contact",
+				"title": "More"
+			},
+			"shop": {
+				"all-collections": "All collections",
+				"all-products": "All products",
+				"news": "News",
+				"offers": "Offers",
+				"title": "Shop"
+			},
+			"socials": {
+				"title": "Meet Team Peps"
+			}
+		},
+		"headband-twitch": {
+			"title": "There's a match on, come and join us!"
+		},
+		"match-row": {
+			"review": "Review",
+			"start-in": "Start in",
+			"waiting": "Waiting"
+		},
+		"member-card": {
+			"substitute": "Substitute"
+		},
+		"navbar": {
+			"ambassadors": "Ambassadors",
+			"login": "Login",
+			"merch": "Merch",
+			"team": {
+				"marvel-rivals": "Marvel Rivals",
+				"overwatch": "Overwatch",
+				"title": "Teams"
+			}
+		},
+		"news-card": {
+			"read-more": "Read more"
+		},
+		"no-upcoming-match": {
+			"text": "aaargh... No matches scheduled for the moment"
+		},
+		"partner-card": {
+			"clipboard": {
+				"error": "The code has not been copied!",
+				"success": "Code {{code}} copied !"
+			},
+			"take-offer": "Take advantage of the offer"
+		},
+		"upcoming-matches": {
+			"today": "Today",
+			"view-all": "View all"
+		}
+	},
+	"page": {
+		"ambassadors": {
+			"followers": {
+				"count": "2.8 millions",
+				"text": "Followers"
+			},
+			"text": "Lorem ipsum dodlor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur sagittis, nisl nunc egestas nisi, vitae facilisis enim nunc eget nisi. Sed euismod, nisl eget consectetur sagittis, nisl nunc egestas nisi, vitae facilisis enim nunc eget nisi. Sed euismod, nisl eget consectetur sagittis, nisl nunc egestas nisi, vitae facilisis enim nunc eget nisi.",
+			"title": "Team Peps - Ambassadors"
+		},
+		"club": {
+			"become-partner": "become a partner",
+			"big-text": {
+				"a": "a",
+				"club": "club",
+				"commu": "commu",
+				"more": "more",
+				"than": "than"
+			},
+			"description": "\t\t\t\t\t\tFounded in 2022 by Féfé with the main aim of supporting the French e-sport scene, the PEPS team was initially a project to highlight the often sidelined French Overwatch community. The project quickly met with great success, prompting Féfé to take the project to the international stage. Today, we want to give promising profiles the recognition they deserve, and show everyone the enthusiasm and solidarity of the French community, while putting in some great performances every season. give promising profiles the recognition they deserve, and show everyone the enthusiasm and solidarity of the French community, while putting in some great performances every season. ",
+			"second-description": "Lorem ipsum dolor sit amet consectetur. Dapibus orci consequat libero lectus. Mauris tincidunt posuere sollicitudin ullamcorper blandit arcu aliquam euismod. Dolor morbi blandit quam quisque est. Amet sagittis nam donec et sagittis et. In sit convallis in adipiscing pellentesque consectetur lobortis. Tempor pulvinar at eu purus porttitor. Sed donec quis sit quis integer vulputate tellus rhoncus pellentesque. Elementum tristique amet etiam ipsum volutpat. Purus quis magna sed euismod purus. Felis metus sollicitudin pellentesque nulla elit neque praesent eu pharetra. Scelerisque mattis risus hac donec leo mattis sit neque. Vulputate maecenas tellus eget egestas congue. Ante in orci volutpat egestas eget. Malesuada vulputate sociis ullamcorper.",
+			"stats": {
+				"impressions": "impressions",
+				"views-live": "live views/year ",
+				"views-video": "views/m"
+			},
+			"subtitle": "The hand on the peps",
+			"support-team-peps": "support team peps",
+			"title": "Team Peps - Club",
+			"viewers-text": "unique viewers/year"
+		},
+		"home": {
+			"filter": "filters",
+			"goto-news": "view all",
+			"news": {
+				"subtitle": "the",
+				"title": "news"
+			},
+			"upcoming-matches": {
+				"subtitle": "upcoming"
+			}
+		},
+		"matchs": {
+			"coming-soon": "coming soon",
+			"follow-team-peps": "Follow the peps team on twitch and youtube",
+			"result": "results",
+			"title": "Team Peps - Matches",
+			"today": "today",
+			"view-score": "View scores"
+		},
+		"member-details": {
+			"age": "age: {{age}} years old",
+			"country": "country"
+		},
+		"news": {
+			"filter-toast": "You must keep at least one item category selected.",
+			"title": "Team Peps - News"
+		},
+		"news-details": {
+			"react": "React",
+			"see-all-news": "See all the news"
+		},
+		"not-found": {
+			"text-1": "Well, don't get worked up... But what you're looking for doesn't exist",
+			"text-2": "(there you have it)",
+			"title": "Team Peps - Not found"
+		},
+		"partners": {
+			"contact-us": "Contact us",
+			"subtitle": "our",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur sagittis, nisl nunc edgestas nisi, vitae facilisis enim nunc eget nisi. Sed euismod, nisl eget consectetur sagittis, nisl nunc egestas nisi, vitae facilisis enim nunc eget nisi. Sed euismod, nisl eget consectetur sagittis, nisl nunc egestas nisi, vitae facilisis enim nunc eget nisi.",
+			"title": "Team Peps - Partners",
+			"title-on-page": "partners",
+			"video-title": "The CEO's arguments"
+		}
+	}
+}

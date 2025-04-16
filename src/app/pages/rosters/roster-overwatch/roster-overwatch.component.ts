@@ -14,6 +14,7 @@ import {TitleComponent} from '../../../core/components/title/title.component';
 import {Title} from '@angular/platform-browser';
 import {MemberTiny} from '../../../models/member/memberTiny';
 import {MatchGroupByDate} from '../../../models/match/matchGroupByDate';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-roster-overwatch',
@@ -23,7 +24,8 @@ import {MatchGroupByDate} from '../../../models/match/matchGroupByDate';
 		AsyncPipe,
 		AchievementRowComponent,
 		UpcomingMatchsComponent,
-		TitleComponent
+		TitleComponent,
+		TranslatePipe
 	],
   templateUrl: './roster-overwatch.component.html',
 })

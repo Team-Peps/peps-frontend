@@ -1,10 +1,10 @@
 <div class="flex flex-col gap-12 md:gap-24 pt-32 pb-20">
 	<div class="flex flex-col md:flex-row justify-around items-center gap-4">
 		<peps-title
-			title="Matchs"
+			[title]="'page.matchs.matchs.title' | translate"
 		></peps-title>
 		<div class="flex flex-col gap-4 p-4 border border-peps-dark-600 bg-peps-dark-700">
-			<span class="uppercase">Retrouve la team peps sur twitch et youtube</span>
+			<span class="uppercase">{{ 'page.matchs.follow-team-peps' | translate }}</span>
 			<div class="flex flex-row gap-4 justify-center">
 				<a
 					class="uppercase group cursor-pointer text-peps-purple transition-colors duration-300 pb-4 border-b-2 hover:text-peps-purple-hover hover:border-b-peps-purple-hover flex flex-row items-center gap-2 w-fit text-xl"
@@ -61,10 +61,10 @@
 				class="uppercase cursor-pointer p-4 relative overflow-hidden text-white transition-colors duration-300"
 				(click)="toggleTypeOfMatch('upcoming')"
 			>
-					<span
-						[ngClass]="{'text-peps-gold': selectedTypeOfMatch === 'upcoming'}"
-						class="relative z-10 transition-colors duration-300"
-					>à venir</span>
+				<span
+					[ngClass]="{'text-peps-gold': selectedTypeOfMatch === 'upcoming'}"
+					class="relative z-10 transition-colors duration-300"
+				>{{ 'page.matchs.coming-soon' | translate }}</span>
 				<div
 					class="absolute inset-0 bg-peps-dark-600 transition-transform duration-300 origin-right scale-x-0"
 					[ngClass]="{ 'scale-x-100': selectedTypeOfMatch === 'upcoming' }"
@@ -75,10 +75,10 @@
 				class="uppercase cursor-pointer p-4 relative overflow-hidden text-white transition-colors duration-300"
 				(click)="toggleTypeOfMatch('result')"
 			>
-					<span
-						class="relative z-10 transition-colors duration-300"
-						[ngClass]="{'text-peps-gold': selectedTypeOfMatch === 'result'}"
-					>résultats</span>
+				<span
+					class="relative z-10 transition-colors duration-300"
+					[ngClass]="{'text-peps-gold': selectedTypeOfMatch === 'result'}"
+				>{{ 'page.matchs.result' | translate }}</span>
 				<div
 					class="absolute inset-0 bg-peps-dark-600 transition-transform duration-300 origin-left scale-x-0"
 					[ngClass]="{ 'scale-x-100': selectedTypeOfMatch === 'result' }"
@@ -106,7 +106,7 @@
 					<span
 						[ngClass]="{'text-peps-gold': selectedTypeOfMatch === 'upcoming'}"
 						class="relative z-10 transition-colors duration-300"
-					>à venir</span>
+					>{{ 'page.matchs.coming-soon' | translate }}</span>
 					<div
 						class="absolute inset-0 bg-peps-dark-600 transition-transform duration-300 origin-right scale-x-0"
 						[ngClass]="{ 'scale-x-100': selectedTypeOfMatch === 'upcoming' }"
@@ -120,7 +120,7 @@
 					<span
 						class="relative z-10 transition-colors duration-300"
 						[ngClass]="{'text-peps-gold': selectedTypeOfMatch === 'result'}"
-					>résultats</span>
+					>{{ 'page.matchs.result' | translate }}</span>
 					<div
 						class="absolute inset-0 bg-peps-dark-600 transition-transform duration-300 origin-left scale-x-0"
 						[ngClass]="{ 'scale-x-100': selectedTypeOfMatch === 'result' }"
@@ -128,7 +128,7 @@
 				</button>
 			</div>
 			<div class="flex flex-row gap-2">
-				<span class="font-notosans text-base">Voir les scores</span>
+				<span class="font-notosans text-base">{{ 'page.matchs.view-score' | translate }}</span>
 				<peps-toggle
 					[checked]="isShowingScore"
 					(checkedChange)="toggleScoreVisibility($event)"
@@ -148,7 +148,7 @@
 							<span>{{ groupByDate.date | date:'EEEE' | uppercase}}</span>
 							<span>{{ groupByDate.date | date:'d MMM' | uppercase}}</span>
 							@if (isToday(groupByDate.date)) {
-								<span class="px-1 py-0.5 bg-peps-gold text-peps-dark-700 text-sm">AUJOURD'HUI</span>
+								<span class="px-1 py-0.5 bg-peps-gold text-peps-dark-700 text-sm uppercase">{{ 'page.matchs.today' | translate }}</span>
 							}
 						</div>
 

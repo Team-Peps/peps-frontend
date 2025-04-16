@@ -9,6 +9,7 @@
 			<p class="text-peps-dark-200 font-notosans text-base leading-[100%]">{{ article?.shortContent }}</p>
 			<peps-button-small
 				text="Lire la suite"
+				[text]="'component.news-card.read-more' | translate"
 				[link]="'/news/'+article!.id"
 			></peps-button-small>
 		</div>
