@@ -20,7 +20,7 @@ import {TranslatePipe} from '@ngx-translate/core';
 		TitleComponent,
 		MemberCardComponent,
 		LoaderComponent,
-		TranslatePipe
+		TranslatePipe,
 	],
 	templateUrl: './member-details.component.html',
 	styleUrls: ['./member-details.component.css']

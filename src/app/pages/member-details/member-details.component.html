@@ -43,11 +43,27 @@
 				</div>
 
 				<div class="flex flex-row w-fit gap-4 p-2 border border-peps-dark-600">
-					<img [src]="determineRoleIcon(member.role)" alt="" class="w-10 h-10">
+					<div class="relative group inline-block">
+						<img [src]="determineRoleIcon(member.role)" alt="" class="w-10 h-10">
+						<div
+							class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 opacity-0 group-hover:opacity-100 transition bg-peps-gold text-peps-dark-700 font-semibold text-xs rounded px-2 py-1 z-10 whitespace-nowrap font-notosans uppercase">
+							{{ member.role }}
+						</div>
+					</div>
 
 					<div class="flex flex-row gap-2">
 						@for (hero of member.favoriteHeroes; track hero.id) {
-							<img [src]="minioBaseUrl + hero.imageKey" alt="" class="w-10 h-10">
+							<div class="relative group inline-block">
+								<img
+									[src]="minioBaseUrl + hero.imageKey"
+									alt=""
+									class="w-10 h-10">
+
+								<div
+									class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 opacity-0 group-hover:opacity-100 transition bg-peps-gold text-peps-dark-700 font-semibold text-xs rounded px-2 py-1 z-10 whitespace-nowrap font-notosans uppercase">
+									{{ hero.name }}
+								</div>
+							</div>
 						}
 					</div>
 
@@ -112,8 +128,8 @@
 
 		<div class="flex flex-col md:flex-row justify-around items-center gap-4">
 			<peps-title
-				subtitle="Le"
-				title="Roster"
+				[subtitle]="'page.member-details.the' | translate"
+				[title]="'page.member-details.roster' | translate"
 			></peps-title>
 			<span class="invisible sm:visible"></span>
 		</div>
