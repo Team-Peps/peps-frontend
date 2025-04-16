@@ -2,6 +2,7 @@
 	"common": {
 		"club": "Club",
 		"matches": {
+			"lowercase": "matches",
 			"titlecase": "Matches"
 		},
 		"news": "News",
@@ -121,7 +122,9 @@
 		},
 		"member-details": {
 			"age": "age: {{age}} years old",
-			"country": "country"
+			"country": "country",
+			"roster": "roster",
+			"the": "the"
 		},
 		"news": {
 			"filter-toast": "You must keep at least one item category selected.",

@@ -2,6 +2,7 @@
 	"common": {
 		"club": "Club",
 		"matches": {
+			"lowercase": "matchs",
 			"titlecase": "Matchs"
 		},
 		"news": "Actus",
@@ -120,8 +121,10 @@
 			"view-score": "Voir les scores"
 		},
 		"member-details": {
-			"age": "âge: {{code}} ans",
-			"country": "pays"
+			"age": "âge: {{age}} ans",
+			"country": "pays",
+			"roster": "roster",
+			"the": "le"
 		},
 		"news": {
 			"filter-toast": "Vous devez garder au moins une catégorie d'article sélectionnée.",
