@@ -77,13 +77,18 @@
 						[items]="itemsDropdownLang"
 					></peps-dropdown-button>
 
-					<button
-						class="text-peps-dark-700 bg-peps-gold py-1 px-4 cursor-pointer hover:bg-peps-yellow transition-colors duration-300 hidden lg:block uppercase"
-					>{{ 'component.navbar.login' | translate }}</button>
-					<button
-						class="text-peps-dark-700 bg-peps-dark-200 rounded-sm py-1 px-3 cursor-pointer transition-colors duration-300 hidden lg:block uppercase"
-					>S</button>
-
+					@if(!authService.isAuthenticated()){
+						<a
+							[href]="discordUrl"
+							class="text-peps-dark-700 bg-peps-gold py-1 px-4 cursor-pointer hover:bg-peps-yellow transition-colors duration-300 hidden lg:block uppercase"
+						>{{ 'component.navbar.login' | translate }}</a>
+					} @else {
+                        <peps-navbar-profile-button
+                                class="hidden lg:block"
+                                [text]="authService.getUsername().at(0)!.toUpperCase()"
+                                [items]="itemsDropdownProfile"
+                        ></peps-navbar-profile-button>
+					}
 					<div class="bg-[url(/assets/images/merch_btn.png)] flex w-28 h-20 bg-cover bg-center relative cursor-pointer">
 						<a
 							class="text-2xl text-peps-dark-700 translate-y-1/4 translate-x-2/4 uppercase"
@@ -117,12 +122,17 @@
 					</svg>
 				</button>
 				<div>
-					<button
-						class="text-peps-dark-700 bg-peps-gold py-1 px-4 cursor-pointer hover:bg-peps-yellow transition-colors duration-300 uppercase"
-					>{{ 'component.navbar.login' | translate }}</button>
-					<button
-						class="text-peps-dark-700 bg-peps-dark-200 rounded-sm py-1 px-3 cursor-pointer transition-colors duration-300 uppercase"
-					>S</button>
+					@if(!authService.isAuthenticated()){
+						<a
+							[href]="discordUrl"
+							class="text-peps-dark-700 bg-peps-gold py-1 px-4 cursor-pointer hover:bg-peps-yellow transition-colors duration-300 uppercase"
+						>{{ 'component.navbar.login' | translate }}</a>
+					} @else {
+                        <peps-navbar-profile-button
+                            [text]="authService.getUsername().at(0)!.toUpperCase()"
+                            [items]="itemsDropdownProfile"
+                        ></peps-navbar-profile-button>
+					}
 				</div>
 
 			</div>

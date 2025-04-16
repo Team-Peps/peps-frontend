@@ -1,21 +1,19 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {NgClass, UpperCasePipe} from '@angular/common';
+import {UpperCasePipe} from '@angular/common';
 
 @Component({
-  selector: 'peps-dropdown-button',
+	selector: 'peps-navbar-profile-button',
 	imports: [
-		UpperCasePipe,
-		NgClass
+		UpperCasePipe
 	],
-  templateUrl: './dropdown-button.component.html',
+	templateUrl: './navbar-profile-button.component.html',
 })
-export class DropdownButtonComponent implements OnInit, OnDestroy {
+export class NavbarProfileButtonComponent implements OnInit, OnDestroy {
 
-  	constructor() {}
+	constructor() {}
 
 	@Input() text: string = '';
-	@Input() items: { label: string; action: () => void; image?: string }[] = [];
-	@Input() isMobileNavbar = false;
+	@Input() items: { label: string; action: () => void}[] = [];
 
 	isOpen = false;
 	isMobile = false;
@@ -41,5 +39,4 @@ export class DropdownButtonComponent implements OnInit, OnDestroy {
 	handleClick() {
 		if (this.isMobile) this.isOpen = !this.isOpen;
 	}
-
 }
