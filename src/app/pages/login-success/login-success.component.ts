@@ -1,11 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AuthService} from '../../services/auth.service';
+import {LoaderComponent} from '../../core/components/loader/loader.component';
 
 @Component({
-  selector: 'app-login-success',
-  imports: [],
-  templateUrl: './login-success.component.html',
+	selector: 'app-login-success',
+	imports: [
+		LoaderComponent
+	],
+	templateUrl: './login-success.component.html',
 })
 export class LoginSuccessComponent implements OnInit {
 	constructor(
@@ -23,7 +26,7 @@ export class LoginSuccessComponent implements OnInit {
 				this.authService.storeTokens(accessToken, refreshToken);
 				this.router.navigate(['/profile']);
 			} else {
-				this.router.navigate(['/login']);
+				this.router.navigate(['/']);
 			}
 		});
 	}

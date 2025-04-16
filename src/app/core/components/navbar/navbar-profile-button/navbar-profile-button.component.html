@@ -1,0 +1,43 @@
+<div class="relative inline-block text-left group py-2">
+	<button
+		class="text-peps-dark-700 bg-peps-dark-200 py-1 px-3 cursor-pointer rounded-sm transition-colors duration-300 block"
+		(click)="handleClick()"
+	>
+		<span>{{ text | uppercase }}</span>
+	</button>
+
+	@if (isMobile && isOpen) {
+		<div
+			class="z-20 bg-peps-dark-700 transition duration-200 w-max min-w-full absolute right-0 border border-peps-dark-600 mt-2">
+			<ul >
+				@for (item of items; track item.label) {
+					<li>
+						<button
+							(click)="select(item.action)"
+							class="flex items-center gap-2 px-4 py-4 w-full text-left cursor-pointer whitespace-nowrap hover:bg-peps-dark-500 transition-colors duration-300"
+						>{{ item.label | uppercase }}
+						</button>
+					</li>
+				}
+			</ul>
+		</div>
+	}
+
+	<div
+		class="absolute z-20 bg-peps-dark-700 invisible opacity-0 group-hover:opacity-100 group-hover:visible transition duration-200 w-max min-w-full hidden lg:block border border-peps-dark-600 mt-2 "
+	>
+		<ul >
+			@for (item of items; track item.label) {
+				<li>
+					<button
+						(click)="select(item.action)"
+						class="flex items-center gap-2 px-4 py-4 w-full text-left cursor-pointer whitespace-nowrap hover:bg-peps-dark-500 transition-colors duration-300"
+					>
+						{{ item.label | uppercase }}
+					</button>
+				</li>
+			}
+		</ul>
+	</div>
+
+</div>

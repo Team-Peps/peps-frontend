@@ -46,7 +46,9 @@
 		"navbar": {
 			"ambassadors": "Ambassadeurs",
 			"login": "Connexion",
+			"logout": "Déconnexion",
 			"merch": "Merch",
+			"profile": "Profil",
 			"team": {
 				"marvel-rivals": "Marvel Rivals",
 				"overwatch": "Overwatch",

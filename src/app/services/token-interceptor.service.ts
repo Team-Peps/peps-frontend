@@ -22,7 +22,7 @@ export class TokenInterceptorService implements HttpInterceptor {
 
 		if (!excludedUrls.some(url => request.url.includes(url))) {
 			if (this.authService.getToken()) {
-				request = this.addToken(request, this.authService.getToken());
+				request = this.addToken(request, this.authService.getToken()!);
 			}
 
 			return next.handle(request).pipe(catchError(error => {

@@ -8,6 +8,9 @@ import {NgClass} from '@angular/common';
 import {NavigationEnd, Router} from '@angular/router';
 import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 import {Subscription} from 'rxjs';
+import {environment} from "../../../../environment/environment";
+import {AuthService} from "../../../services/auth.service";
+import {NavbarProfileButtonComponent} from "./navbar-profile-button/navbar-profile-button.component";
 
 @Component({
   selector: 'peps-navbar',
@@ -16,7 +19,8 @@ import {Subscription} from 'rxjs';
 		DropdownButtonComponent,
 		ButtonSimpleComponent,
 		NgClass,
-		TranslatePipe
+		TranslatePipe,
+		NavbarProfileButtonComponent
 	],
   templateUrl: './navbar.component.html',
 })
@@ -26,8 +30,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
 		private readonly matchService: MatchService,
 		private readonly router: Router,
 		protected readonly translate: TranslateService,
-		private readonly cdr: ChangeDetectorRef
-	) {	}
+		private readonly cdr: ChangeDetectorRef,
+		protected readonly authService: AuthService,
+	) {
+		this.itemsDropdownProfile = [
+			{ label: this.translate.instant('component.navbar.profile'), action: () => this.toProfile()},
+			{ label: this.translate.instant('component.navbar.logout'), action: () => this.authService.logout()},
+		]
+	}
 
 	currentMatch: Match | null = null;
 
@@ -40,8 +50,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
 		{ label: 'EN', action: () => this.useLanguage('en'), image: 'assets/icons/flags/flag_en.svg' },
 	];
 
+	itemsDropdownProfile: { label: any; action: () => void }[] = [];
+
 	itemsDropdownGames: { label: any; action: () => void; image: string }[] = [];
 	langChangeSub!: Subscription;
+
+	discordUrl = environment.discordLoginUrl;
 
 	ngOnInit(): void {
 		this.initDropdown()
@@ -144,6 +158,11 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
 	toMarvelRivals() {
 		this.router.navigate(['/roster/marvel-rivals']);
+		this.resetMobileMenu();
+	}
+
+	toProfile() {
+		this.router.navigate(['/profile']);
 		this.resetMobileMenu();
 	}
 }

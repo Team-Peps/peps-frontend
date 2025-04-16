@@ -6,6 +6,7 @@ import {Observable, tap} from 'rxjs';
 import {User} from '../models/user';
 import {catchError} from 'rxjs/operators';
 import {Authenticate} from '../models/authenticate';
+import {jwtDecode} from 'jwt-decode';
 
 @Injectable({
 	providedIn: 'root'
@@ -26,7 +27,7 @@ export class AuthService {
 		sessionStorage.setItem('refresh_token', refreshToken);
 	}
 
-	public getToken(): string {
+	public getToken(): string | null {
 		return <string>sessionStorage.getItem('access_token');
 	}
 
@@ -34,15 +35,40 @@ export class AuthService {
 		return <string>sessionStorage.getItem('refresh_token');
 	}
 
-	public isLoggedIn(): boolean {
-		return !!this.getToken();
+	public isAuthenticated(): boolean {
+		const token = this.getToken();
+		if (!token) return false;
+
+		try {
+			const payload: any = jwtDecode(token);
+			const now = Date.now().valueOf() / 1000;
+			return payload.exp && payload.exp > now;
+		} catch (e) {
+			return false;
+		}
+	}
+
+	public getUsername(): string {
+		const token = this.getToken();
+		if (!token) {
+			this.logout();
+			return '';
+		}
+
+		try {
+			const payload: any = jwtDecode(token);
+			return payload.sub;
+		} catch (e) {
+			this.logout();
+			return '';
+		}
 	}
 
 	public logout() {
 		this.http.post(`${environment.backendUrl}/auth/logout`, {}).subscribe(
 			() => {
 				this.destroyToken();
-				this.router.navigate(['/login']);
+				this.router.navigate(['/']);
 			}
 		);
 	}
