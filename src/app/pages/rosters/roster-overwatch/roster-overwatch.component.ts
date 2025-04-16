@@ -56,7 +56,7 @@ export class RosterOverwatchComponent implements OnInit {
 	}
 
 	loadMembers() {
-		this.memberService.getMembers(Game.OVERWATCH).subscribe({
+		this.memberService.getActiveMembers(Game.OVERWATCH).subscribe({
 			next: (members) => {
 				this.membersSubject.next(members['members']);
 				this.coachesSubstitutesSubject.next([

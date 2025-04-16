@@ -20,8 +20,8 @@ export class MemberService {
 		cacheKey: 'membersByGame',
 		maxCacheCount: 2
 	})
-	getMembers(game: String): Observable<Record<string, Member[]>> {
-		return this.http.get<Record<string, Member[]>>(`${environment.backendUrl}/member/game/` + game);
+	getActiveMembers(game: String): Observable<Record<string, Member[]>> {
+		return this.http.get<Record<string, Member[]>>(`${environment.backendUrl}/member/game/` + game + '/active');
 	}
 
 	@Cacheable({

@@ -56,7 +56,7 @@ export class RosterMarvelRivalsComponent implements OnInit {
 	}
 
 	loadMembers() {
-		this.memberService.getMembers(Game.MARVEL_RIVALS).subscribe({
+		this.memberService.getActiveMembers(Game.MARVEL_RIVALS).subscribe({
 			next: (members) => {
 				this.membersSubject.next(members['members']);
 				this.coachesSubstitutesSubject.next([
