@@ -62,7 +62,7 @@ export class MemberDetailsComponent implements OnInit {
 	}
 
 	loadRoster(): void {
-		this.memberService.getMembers(this.member!.game).subscribe({
+		this.memberService.getActiveMembers(this.member!.game).subscribe({
 			next: (members) => {
 				this.members = [...members['members'], ...members['substitutes'], ...members['coaches']];
 			},
