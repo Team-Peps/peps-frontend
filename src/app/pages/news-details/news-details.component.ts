@@ -3,7 +3,7 @@ import {ArticleService} from '../../services/article.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Article} from '../../models/article/article';
 import {DomSanitizer, SafeHtml, Title} from '@angular/platform-browser';
-import {environment} from '../../../environment/environment';
+import {environment} from '@/environments/environment';
 import {DatePipe} from '@angular/common';
 import {ButtonSmallComponent} from '../../core/components/buttons/button-small/button-small.component';
 import {SeparatorComponent} from '../../core/components/separator/separator.component';

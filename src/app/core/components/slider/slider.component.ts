@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { Slider } from '../../../models/slider';
-import {environment} from '../../../../environment/environment';
+import {environment} from '@/environments/environment';
 
 @Component({
 	selector: 'peps-slider',

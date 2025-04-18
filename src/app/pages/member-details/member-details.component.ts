@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MemberService} from '../../services/member.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Member} from '../../models/member/member';
-import {environment} from '../../../environment/environment';
+import {environment} from '@/environments/environment';
 import {TitleComponent} from '../../core/components/title/title.component';
 import {NgStyle} from '@angular/common';
 import {determineRoleIcon} from '../../core/utils/memberUtils';

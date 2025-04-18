@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Partner} from '../../../models/partner';
-import {environment} from '../../../../environment/environment';
+import {environment} from '@/environments/environment';
 import {ButtonSmallComponent} from '../buttons/button-small/button-small.component';
 import {NgClass} from '@angular/common';
 import {ToastService} from '../../../services/toast.service';

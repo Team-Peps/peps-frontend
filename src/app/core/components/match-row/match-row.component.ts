@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {LogoComponent} from '../logo/logo.component';
 import {Match} from '../../../models/match/match';
-import {environment} from '../../../../environment/environment';
+import {environment} from '@/environments/environment';
 import {DatePipe, NgClass} from '@angular/common';
 import {CountdownPipe} from '../../../pipes/countdown.pipe';
 import {isLoose, isNumeric, isPastDate, isSuperiorOf, isWin} from '../../utils/matchUtils';

@@ -5,7 +5,7 @@ import {Partner} from '../../models/partner';
 import {PartnerCardComponent} from '../../core/components/partner-card/partner-card.component';
 import {ButtonComponent} from '../../core/components/buttons/button/button.component';
 import {DomSanitizer, SafeResourceUrl, Title} from '@angular/platform-browser';
-import {environment} from '../../../environment/environment';
+import {environment} from '@/environments/environment';
 import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({

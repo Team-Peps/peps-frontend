@@ -8,7 +8,7 @@ import {NgClass} from '@angular/common';
 import {NavigationEnd, Router} from '@angular/router';
 import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 import {Subscription} from 'rxjs';
-import {environment} from "../../../../environment/environment";
+import {environment} from '@/environments/environment';
 import {AuthService} from "../../../services/auth.service";
 import {NavbarProfileButtonComponent} from "./navbar-profile-button/navbar-profile-button.component";
 

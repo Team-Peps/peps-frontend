@@ -13,11 +13,11 @@ export class MaxButtonComponent {
 	) {}
 
 	toOverwatch() {
-		this.router.navigate(['/rosters/overwatch']);
+		this.router.navigate(['/roster/overwatch']);
 	}
 
 	toMarvelRivals() {
-		this.router.navigate(['/rosters/marvel-rivals']);
+		this.router.navigate(['/roster/marvel-rivals']);
 	}
 
 }

@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import {environment} from '../../environment/environment';
 import {Partner} from '../models/partner';
 import {Cacheable, LocalStorageStrategy} from 'ts-cacheable';
+import {environment} from '@/environments/environment';
 
 @Injectable({
 	providedIn: 'root'

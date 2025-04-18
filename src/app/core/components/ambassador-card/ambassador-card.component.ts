@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Ambassador} from '../../../models/ambassador';
-import {environment} from '../../../../environment/environment';
+import {environment} from '@/environments/environment';
 
 @Component({
   selector: 'peps-ambassador-card',

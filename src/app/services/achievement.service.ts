@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Cacheable, LocalStorageStrategy} from 'ts-cacheable';
 import {Observable} from 'rxjs';
-import {environment} from '../../environment/environment';
+import {environment} from '@/environments/environment';
 import {Game} from '../models/game';
 import {Achievement} from '../models/achievement';
 

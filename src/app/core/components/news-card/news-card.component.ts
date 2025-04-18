@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {ButtonSmallComponent} from '../buttons/button-small/button-small.component';
-import {environment} from '../../../../environment/environment';
+import {environment} from '@/environments/environment';
 import {ArticleTiny} from '../../../models/article/articleTiny';
 import {TranslatePipe} from '@ngx-translate/core';
 

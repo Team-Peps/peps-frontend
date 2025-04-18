@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {environment} from '../../../../environment/environment';
+import {environment} from '@/environments/environment';
 import {determineRoleIcon} from '../../utils/memberUtils';
 import {MemberRole} from '../../../models/member/memberRole';
 import {RouterLink} from '@angular/router';
