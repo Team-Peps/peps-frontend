@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {MemberService} from '../../services/member.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Member} from '../../models/member/member';
@@ -25,7 +25,7 @@ import {TranslatePipe} from '@ngx-translate/core';
 	templateUrl: './member-details.component.html',
 	styleUrls: ['./member-details.component.css']
 })
-export class MemberDetailsComponent implements OnInit {
+export class MemberDetailsComponent implements OnInit, OnChanges {
 
 	constructor(
 		private readonly memberService: MemberService,
@@ -42,16 +42,21 @@ export class MemberDetailsComponent implements OnInit {
 	members: Member[] = [];
 
 	ngOnInit(): void {
-		const id = this.activateRoute.snapshot.paramMap.get('memberId')!;
-		this.loadMember(id);
+		this.activateRoute.params.subscribe(params => {
+			const memberId = params['memberId'];
+			this.loadMember(memberId);
+		})
     }
+
+	ngOnChanges(): void {
+		console.log('Changes detected:');
+	}
 
 	loadMember(memberId: string): void {
 		this.memberService.getMemberById(memberId).subscribe({
 			next: (member) => {
 				this.member = member;
 				this.titleService.setTitle('Team Peps - ' + member.pseudo.toString());
-
 				this.loadRoster();
 			},
 			error: (error) => {
