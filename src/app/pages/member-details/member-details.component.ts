@@ -1,4 +1,4 @@
-import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MemberService} from '../../services/member.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Member} from '../../models/member/member';
@@ -25,7 +25,7 @@ import {TranslatePipe} from '@ngx-translate/core';
 	templateUrl: './member-details.component.html',
 	styleUrls: ['./member-details.component.css']
 })
-export class MemberDetailsComponent implements OnInit, OnChanges {
+export class MemberDetailsComponent implements OnInit {
 
 	constructor(
 		private readonly memberService: MemberService,
@@ -47,10 +47,6 @@ export class MemberDetailsComponent implements OnInit, OnChanges {
 			this.loadMember(memberId);
 		})
     }
-
-	ngOnChanges(): void {
-		console.log('Changes detected:');
-	}
 
 	loadMember(memberId: string): void {
 		this.memberService.getMemberById(memberId).subscribe({
