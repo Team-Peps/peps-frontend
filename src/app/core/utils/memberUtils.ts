@@ -1,4 +1,4 @@
-import {MemberRole} from '../../models/member/memberRole';
+import {MemberRole} from '@models/member/memberRole';
 
 export function determineRoleIcon(role: MemberRole): string {
 	switch (role) {

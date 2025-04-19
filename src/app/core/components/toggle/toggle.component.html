@@ -1,5 +1,5 @@
 <label class="relative inline-flex items-center cursor-pointer">
-	<input type="checkbox" class="sr-only peer" (click)="toggle()">
+	<input type="checkbox" class="sr-only peer" (click)="toggle()" (keydown.enter)="toggle()">
 	<div
 		class="w-10 h-6 bg-peps-dark-700 peer rounded-sm peer-checked:bg-peps-gold transition-colors duration-300 border border-peps-dark-600"
 	></div>

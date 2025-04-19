@@ -3,8 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {Cacheable, LocalStorageStrategy} from 'ts-cacheable';
 import {Observable} from 'rxjs';
 import {environment} from '@/environments/environment';
-import {Game} from '../models/game';
-import {Achievement} from '../models/achievement';
+import {Game} from '@models/game';
+import {Achievement} from '@models/achievement';
 
 @Injectable({
 	providedIn: 'root'
@@ -12,7 +12,7 @@ import {Achievement} from '../models/achievement';
 export class AchievementService {
 
 	constructor(
-		private http: HttpClient
+		private readonly http: HttpClient
 	) {}
 
 	@Cacheable({

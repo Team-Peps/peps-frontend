@@ -2,10 +2,10 @@ import {environment} from '@/environments/environment';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {Article} from '../models/article/article';
-import {Page} from '../models/page';
+import {Article} from '@models/article/article';
+import {Page} from '@models/page';
 import {Cacheable, LocalStorageStrategy} from 'ts-cacheable';
-import {ArticleTiny} from '../models/article/articleTiny';
+import {ArticleTiny} from '@models/article/articleTiny';
 
 @Injectable({
 	providedIn: 'root'
@@ -13,7 +13,7 @@ import {ArticleTiny} from '../models/article/articleTiny';
 export class ArticleService {
 
 	constructor(
-		private http: HttpClient
+		private readonly http: HttpClient
 	) {}
 
 	@Cacheable({

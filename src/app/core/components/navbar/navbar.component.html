@@ -15,6 +15,7 @@
 					type="button"
 					class="relative inline-flex items-center justify-center rounded-md p-2 ml-4 cursor-pointer"
 					(click)="toggleMobileMenu()"
+					(keydown.enter)="toggleMobileMenu()"
 					aria-controls="mobile-menu" aria-expanded="false">
 					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -43,22 +44,27 @@
 						<peps-button-simple
 							[text]="'common.club' | translate"
 							(click)="toClub()"
+							(keydown.enter)="toClub()"
 						></peps-button-simple>
 						<peps-button-simple
 							[text]="'common.matches.titlecase' | translate"
 							(click)="toMatches()"
+							(keydown.enter)="toMatches()"
 						></peps-button-simple>
 						<peps-button-simple
 							[text]="'common.news' | translate"
 							(click)="toNews()"
+							(keydown.enter)="toNews()"
 						></peps-button-simple>
 						<peps-button-simple
 							[text]="'component.navbar.ambassadors' | translate"
 							(click)="toAmbassadors()"
+							(keydown.enter)="toAmbassadors()"
 						></peps-button-simple>
 						<peps-button-simple
 							[text]="'common.partners' | translate"
 							(click)="toPartners()"
+							(keydown.enter)="toPartners()"
 						></peps-button-simple>
 						<peps-button-simple
 							[text]="'common.support-us' | translate"
@@ -66,7 +72,6 @@
 					</div>
 				</div>
 			</div>
-
 
 			<div class="absolute inset-y-0 right-0 flex items-center lg:static lg:inset-auto lg:ml-6 lg:pr-0">
 
@@ -116,6 +121,7 @@
 					type="button"
 					class="relative inline-flex items-center justify-center rounded-md p-2 pt-4 ml-4 cursor-pointer"
 					(click)="toggleMobileMenu()"
+					(keydown.enter)="toggleMobileMenu()"
 					aria-controls="mobile-menu" aria-expanded="false">
 					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -145,22 +151,27 @@
 				<peps-button-simple
 					[text]="'common.club' | translate"
 					(click)="toClub()"
+					(keydown.enter)="toClub()"
 				></peps-button-simple>
 				<peps-button-simple
 					[text]="'common.matches.titlecase' | translate"
 					(click)="toMatches()"
+					(keydown.enter)="toMatches()"
 				></peps-button-simple>
 				<peps-button-simple
 					[text]="'common.news' | translate"
 					(click)="toNews()"
+					(keydown.enter)="toNews()"
 				></peps-button-simple>
 				<peps-button-simple
 					[text]="'component.navbar.ambassadors' | translate"
 					(click)="toAmbassadors()"
+					(keydown.enter)="toAmbassadors()"
 				></peps-button-simple>
 				<peps-button-simple
 					[text]="'common.partners' | translate"
 					(click)="toPartners()"
+					(keydown.enter)="toPartners()"
 				></peps-button-simple>
 				<peps-button-simple
 					[text]="'common.support-us' | translate"

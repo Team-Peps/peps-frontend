@@ -8,7 +8,10 @@ export class CountdownPipe implements PipeTransform {
 	private value: string | null = null;
 	private timer: any;
 
-	constructor(private ref: ChangeDetectorRef, private zone: NgZone) {}
+	constructor(
+		private readonly ref: ChangeDetectorRef,
+		private readonly zone: NgZone
+	) {}
 
 	/**
 	 * Transform the target date into a countdown string

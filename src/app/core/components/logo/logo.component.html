@@ -4,5 +4,6 @@
 	[height]="height"
 	[width]="width"
 	(click)="onClick()"
-	[ngClass]="{'cursor-pointer  hover:brightness-110 transition duration-200': hover}"
+	(keydown.enter)="onClick()"
+	[ngClass]="{'cursor-pointer hover:brightness-110 transition duration-200': hover}"
 />

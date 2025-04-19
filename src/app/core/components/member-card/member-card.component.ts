@@ -1,9 +1,9 @@
 import {Component, Input} from '@angular/core';
 import {environment} from '@/environments/environment';
 import {determineRoleIcon} from '../../utils/memberUtils';
-import {MemberRole} from '../../../models/member/memberRole';
+import {MemberRole} from '@models/member/memberRole';
 import {RouterLink} from '@angular/router';
-import {MemberTiny} from '../../../models/member/memberTiny';
+import {MemberTiny} from '@models/member/memberTiny';
 import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({

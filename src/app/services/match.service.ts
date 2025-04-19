@@ -2,11 +2,11 @@ import {environment} from '@/environments/environment';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {Match} from '../models/match/match';
+import {Match} from '@models/match/match';
 import {Cacheable, LocalStorageStrategy} from 'ts-cacheable';
-import {Page} from '../models/page';
-import {Game} from '../models/game';
-import {MatchGroupByDate} from '../models/match/matchGroupByDate';
+import {Page} from '@models/page';
+import {Game} from '@models/game';
+import {MatchGroupByDate} from '@models/match/matchGroupByDate';
 
 @Injectable({
 	providedIn: 'root'
@@ -14,7 +14,7 @@ import {MatchGroupByDate} from '../models/match/matchGroupByDate';
 export class MatchService {
 
 	constructor(
-		private http: HttpClient
+		private readonly http: HttpClient
 	) {}
 
 	@Cacheable({

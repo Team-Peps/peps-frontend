@@ -4,7 +4,7 @@
 			<picture class="w-screen h-auto flex-shrink-0">
 				<source [srcset]="minioBaseUrl + slider.imageKey" media="(min-width: 1024px)">
 				<source [srcset]="minioBaseUrl + slider.imageKey" media="(min-width: 768px)">
-				<img [src]="minioBaseUrl + slider.mobileImageKey" class="w-full h-auto object-cover" alt="Image responsive" />
+				<img [src]="minioBaseUrl + slider.mobileImageKey" class="w-full h-auto object-cover" [alt]="'Slider ' + slider.order" />
 			</picture>
 		}
 	</div>
@@ -47,6 +47,7 @@
 						class="h-2 bg-peps-dark-200 rounded-full transition-all duration-300 cursor-pointer ease-in-out"
 						[ngClass]="{'w-8 scale-110': currentIndex === i, 'w-2 scale-100' : currentIndex !== i}"
 						(click)="goToSlide(i)"
+						(keydown.enter)="goToSlide(i)"
 					></div>
 
 				}

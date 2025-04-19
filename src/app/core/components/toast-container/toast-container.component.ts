@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ToastService} from '../../../services/toast.service';
+import {ToastService} from '@services/toast.service';
 import {AsyncPipe, NgClass} from '@angular/common';
 
 @Component({

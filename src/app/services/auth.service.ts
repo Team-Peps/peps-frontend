@@ -3,9 +3,9 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {environment} from '@/environments/environment';
 import {Observable, tap} from 'rxjs';
-import {User} from '../models/user';
+import {User} from '@models/user';
 import {catchError} from 'rxjs/operators';
-import {Authenticate} from '../models/authenticate';
+import {Authenticate} from '@models/authenticate';
 import {jwtDecode} from 'jwt-decode';
 
 @Injectable({
@@ -14,7 +14,7 @@ import {jwtDecode} from 'jwt-decode';
 export class AuthService {
 
 	constructor(
-		private http: HttpClient,
+		private readonly http: HttpClient,
 		private readonly router: Router,
 	) {}
 
@@ -44,6 +44,8 @@ export class AuthService {
 			const now = Date.now().valueOf() / 1000;
 			return payload.exp && payload.exp > now;
 		} catch (e) {
+			console.error('Error decoding token', e);
+			this.logout()
 			return false;
 		}
 	}
@@ -59,6 +61,7 @@ export class AuthService {
 			const payload: any = jwtDecode(token);
 			return payload.sub;
 		} catch (e) {
+			console.error('Error decoding token', e);
 			this.logout();
 			return '';
 		}

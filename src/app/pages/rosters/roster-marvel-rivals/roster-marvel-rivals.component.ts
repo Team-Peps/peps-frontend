@@ -1,19 +1,19 @@
 import {Component, OnInit} from '@angular/core';
-import {MemberService} from '../../../services/member.service';
+import {MemberService} from '@services/member.service';
 import {BehaviorSubject, Observable} from 'rxjs';
-import {SeparatorComponent} from '../../../core/components/separator/separator.component';
-import {Game} from '../../../models/game';
-import {MemberCardComponent} from '../../../core/components/member-card/member-card.component';
+import {SeparatorComponent} from '@components/separator/separator.component';
+import {Game} from '@/app/models/game';
+import {MemberCardComponent} from '@components/member-card/member-card.component';
 import {AsyncPipe} from '@angular/common';
-import {AchievementService} from '../../../services/achievement.service';
-import {Achievement} from '../../../models/achievement';
-import {AchievementRowComponent} from '../../../core/components/achievement-row/achievement-row.component';
-import {UpcomingMatchsComponent} from '../../../core/components/upcoming-matchs/upcoming-matchs.component';
-import {MatchService} from '../../../services/match.service';
-import {TitleComponent} from '../../../core/components/title/title.component';
+import {AchievementService} from '@services/achievement.service';
+import {Achievement} from '@/app/models/achievement';
+import {AchievementRowComponent} from '@components/achievement-row/achievement-row.component';
+import {UpcomingMatchsComponent} from '@components/upcoming-matchs/upcoming-matchs.component';
+import {MatchService} from '@services/match.service';
+import {TitleComponent} from '@components/title/title.component';
 import {Title} from '@angular/platform-browser';
-import {MemberTiny} from '../../../models/member/memberTiny';
-import {MatchGroupByDate} from '../../../models/match/matchGroupByDate';
+import {MemberTiny} from '@/app/models/member/memberTiny';
+import {MatchGroupByDate} from '@models/match/matchGroupByDate';
 import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
@@ -38,8 +38,8 @@ export class RosterMarvelRivalsComponent implements OnInit {
 		private readonly titleService: Title,
 	) { }
 
-	private membersSubject = new BehaviorSubject<MemberTiny[]>([]);
-	private coachesSubstitutesSubject = new BehaviorSubject<MemberTiny[]>([]);
+	private readonly membersSubject = new BehaviorSubject<MemberTiny[]>([]);
+	private readonly coachesSubstitutesSubject = new BehaviorSubject<MemberTiny[]>([]);
 
 	members$: Observable<MemberTiny[]> = this.membersSubject.asObservable();
 	coachesSubstitutes$: Observable<MemberTiny[]> = this.coachesSubstitutesSubject.asObservable();

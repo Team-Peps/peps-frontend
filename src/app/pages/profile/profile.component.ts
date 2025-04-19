@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from '../../services/auth.service';
+import {AuthService} from '@services/auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -11,7 +11,7 @@ export class ProfileComponent implements OnInit {
 	error: string | null = null;
 
 	constructor(
-		private authService: AuthService
+		private readonly authService: AuthService
 	) {}
 
 	ngOnInit(): void {
@@ -20,7 +20,7 @@ export class ProfileComponent implements OnInit {
 				this.user = data;
 			},
 			error: (error) => {
-				this.error = error.error.message || 'Failed to load user profile';
+				this.error = error.error.message ?? 'Failed to load user profile';
 			}
 		});
 	}

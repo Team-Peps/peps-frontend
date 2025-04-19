@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '@/environments/environment';
 import {Observable} from 'rxjs';
-import {Member} from '../models/member/member';
+import {Member} from '@models/member/member';
 import {Cacheable, LocalStorageStrategy} from 'ts-cacheable';
 
 @Injectable({
@@ -11,7 +11,7 @@ import {Cacheable, LocalStorageStrategy} from 'ts-cacheable';
 export class MemberService {
 
 	constructor(
-		private http: HttpClient
+		private readonly http: HttpClient
 	) {}
 
 	@Cacheable({
@@ -20,7 +20,7 @@ export class MemberService {
 		cacheKey: 'membersByGame',
 		maxCacheCount: 2
 	})
-	getActiveMembers(game: String): Observable<Record<string, Member[]>> {
+	getActiveMembers(game: string): Observable<Record<string, Member[]>> {
 		return this.http.get<Record<string, Member[]>>(`${environment.backendUrl}/member/game/` + game + '/active');
 	}
 

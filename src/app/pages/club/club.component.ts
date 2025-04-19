@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {SeparatorComponent} from '../../core/components/separator/separator.component';
-import {ButtonComponent} from '../../core/components/buttons/button/button.component';
-import {ButtonSmallComponent} from '../../core/components/buttons/button-small/button-small.component';
+import {SeparatorComponent} from '@components/separator/separator.component';
+import {ButtonComponent} from '@components/buttons/button/button.component';
+import {ButtonSmallComponent} from '@components/buttons/button-small/button-small.component';
 import {Title} from '@angular/platform-browser';
 import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
@@ -14,7 +14,6 @@ import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 		TranslatePipe
 	],
 	templateUrl: './club.component.html',
-	styleUrls: ['./club.component.css']
 })
 export class ClubComponent implements OnInit {
 

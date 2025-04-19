@@ -2,7 +2,7 @@
 	class="flex gap-x-8 flex-col"
 	[ngClass]="{'lg:flex-row-reverse': !isEven, 'lg:flex-row': isEven}"
 >
-	<img [src]="minioBaseUrl + partner?.imageKey" alt="Image du partenaire {{ partner?.name }}" class="w-1/2 mx-auto lg:my-auto">
+	<img [src]="minioBaseUrl + partner?.imageKey" alt="Partenaire {{ partner?.name }}" class="w-1/2 mx-auto lg:my-auto">
 	<div class="flex flex-col gap-8">
 		<div class="flex flex-col">
 			<span

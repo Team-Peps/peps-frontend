@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import {Partner} from '../models/partner';
+import {Partner} from '@models/partner';
 import {Cacheable, LocalStorageStrategy} from 'ts-cacheable';
 import {environment} from '@/environments/environment';
 
@@ -11,7 +11,7 @@ import {environment} from '@/environments/environment';
 export class PartnerService {
 
 	constructor(
-		private http: HttpClient
+		private readonly http: HttpClient
 	) {	}
 
 	@Cacheable({
