@@ -1,14 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {MemberService} from '../../services/member.service';
+import {MemberService} from '@services/member.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Member} from '../../models/member/member';
+import {Member} from '@models/member/member';
 import {environment} from '@/environments/environment';
-import {TitleComponent} from '../../core/components/title/title.component';
+import {TitleComponent} from '@components/title/title.component';
 import {NgStyle} from '@angular/common';
 import {determineRoleIcon} from '../../core/utils/memberUtils';
-import {AchievementRowComponent} from '../../core/components/achievement-row/achievement-row.component';
-import {MemberCardComponent} from '../../core/components/member-card/member-card.component';
-import {LoaderComponent} from '../../core/components/loader/loader.component';
+import {AchievementRowComponent} from '@components/achievement-row/achievement-row.component';
+import {MemberCardComponent} from '@components/member-card/member-card.component';
+import {LoaderComponent} from '@components/loader/loader.component';
 import {Title} from '@angular/platform-browser';
 import {TranslatePipe} from '@ngx-translate/core';
 

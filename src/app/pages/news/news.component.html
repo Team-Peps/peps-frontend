@@ -11,16 +11,19 @@
 					[checked]="filter.includes(ArticleType.OVERWATCH)"
 					(onCheckChange)="filterArticles(ArticleType.OVERWATCH, $event)"
 					image="assets/icons/Overwatch_2_logo.svg"
+					alt="Overwatch 2 logo"
 				></peps-checkbox>
 				<peps-checkbox
 					[checked]="filter.includes(ArticleType.MARVEL_RIVALS)"
 					(onCheckChange)="filterArticles(ArticleType.MARVEL_RIVALS, $event)"
 					image="assets/icons/Marvel_Rivals_logo.svg"
+					alt="Marvel Rivals logo"
 				></peps-checkbox>
 				<peps-checkbox
 					[checked]="filter.includes(ArticleType.TEAM_PEPS)"
 					(onCheckChange)="filterArticles(ArticleType.TEAM_PEPS, $event)"
 					image="assets/images/team_peps_logo.png"
+					alt="Team Peps logo"
 				></peps-checkbox>
 			</div>
 		</div>

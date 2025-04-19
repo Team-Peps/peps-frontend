@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {TitleComponent} from '../../core/components/title/title.component';
-import {PartnerService} from '../../services/partner.service';
-import {Partner} from '../../models/partner';
-import {PartnerCardComponent} from '../../core/components/partner-card/partner-card.component';
-import {ButtonComponent} from '../../core/components/buttons/button/button.component';
+import {TitleComponent} from '@components/title/title.component';
+import {PartnerService} from '@services/partner.service';
+import {Partner} from '@models/partner';
+import {PartnerCardComponent} from '@components/partner-card/partner-card.component';
+import {ButtonComponent} from '@components/buttons/button/button.component';
 import {DomSanitizer, SafeResourceUrl, Title} from '@angular/platform-browser';
 import {environment} from '@/environments/environment';
 import {TranslatePipe, TranslateService} from '@ngx-translate/core';
@@ -22,7 +22,7 @@ export class PartnersComponent implements OnInit {
 
 	constructor(
 		private readonly partnerService: PartnerService,
-		private sanitizer: DomSanitizer,
+		private readonly sanitizer: DomSanitizer,
 		private readonly titleService: Title,
 		private readonly translate: TranslateService,
 	) {	}

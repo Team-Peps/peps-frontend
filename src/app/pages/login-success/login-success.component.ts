@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AuthService} from '../../services/auth.service';
-import {LoaderComponent} from '../../core/components/loader/loader.component';
+import {AuthService} from '@services/auth.service';
+import {LoaderComponent} from '@components/loader/loader.component';
 
 @Component({
 	selector: 'app-login-success',
@@ -12,9 +12,9 @@ import {LoaderComponent} from '../../core/components/loader/loader.component';
 })
 export class LoginSuccessComponent implements OnInit {
 	constructor(
-		private route: ActivatedRoute,
-		private router: Router,
-		private authService: AuthService
+		private readonly route: ActivatedRoute,
+		private readonly router: Router,
+		private readonly authService: AuthService
 	) {}
 
 	ngOnInit(): void {

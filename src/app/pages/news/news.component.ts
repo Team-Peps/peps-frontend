@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {ArticleService} from '../../services/article.service';
-import {NewsCardComponent} from '../../core/components/news-card/news-card.component';
-import {TitleComponent} from '../../core/components/title/title.component';
-import {PageSelectorComponent} from '../../core/components/page-selector/page-selector.component';
-import {CheckboxComponent} from '../../core/components/checkbox/checkbox.component';
-import {ArticleType} from '../../models/article/articleType';
-import {ToastService} from '../../services/toast.service';
+import {ArticleService} from '@services/article.service';
+import {NewsCardComponent} from '@components/news-card/news-card.component';
+import {TitleComponent} from '@components/title/title.component';
+import {PageSelectorComponent} from '@components/page-selector/page-selector.component';
+import {CheckboxComponent} from '@components/checkbox/checkbox.component';
+import {ArticleType} from '@models/article/articleType';
+import {ToastService} from '@services/toast.service';
 import {Title} from '@angular/platform-browser';
-import {ArticleTiny} from '../../models/article/articleTiny';
+import {ArticleTiny} from '@models/article/articleTiny';
 import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
@@ -44,7 +44,7 @@ export class NewsComponent implements OnInit {
 	}
 
 	loadArticles(): void {
-		this.articleService.getArticles(this.page, this.filter.sort((a, b) => a.localeCompare(b))).subscribe(response => {
+		this.articleService.getArticles(this.page, this.filter.toSorted((a, b) => a.localeCompare(b))).subscribe(response => {
 			this.articles = response.content;
 			this.totalPages = response.totalPages;
 		});

@@ -1,8 +1,8 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {SeparatorComponent} from '../../core/components/separator/separator.component';
-import {Ambassador} from '../../models/ambassador';
-import {AmbassadorService} from '../../services/ambassador.service';
-import {AmbassadorCardComponent} from '../../core/components/ambassador-card/ambassador-card.component';
+import {SeparatorComponent} from '@components/separator/separator.component';
+import {Ambassador} from '@models/ambassador';
+import {AmbassadorService} from '@services/ambassador.service';
+import {AmbassadorCardComponent} from '@components/ambassador-card/ambassador-card.component';
 import {Title} from '@angular/platform-browser';
 import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
@@ -46,7 +46,7 @@ export class AmbassadorsComponent implements OnInit {
 	scrollSlider(direction: 1 | -1) {
 		const slider = this.sliderRef.nativeElement as HTMLElement;
 
-		const cardWidth = slider.querySelector('div')?.clientWidth || 300;
+		const cardWidth = slider.querySelector('div')?.clientWidth ?? 300;
 		const gap = 16;
 		const scrollAmount = cardWidth + gap;
 

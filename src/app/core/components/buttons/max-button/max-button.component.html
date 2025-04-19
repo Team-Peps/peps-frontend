@@ -1,5 +1,5 @@
 <div class="flex flex-row w-full justify-between gap-y-20">
-	<div class="relative group cursor-pointer mx-auto translate-y-10" (click)="toOverwatch()">
+	<div class="relative group cursor-pointer mx-auto translate-y-10" (click)="toOverwatch()" (keydown.enter)="toOverwatch()">
 		<img src="/assets/images/max_button/max_button_overwatch_background.png" alt=""
 			 class="transition transform duration-300 absolute top-0 z-[-999] scale-[102%] group-hover:brightness-200 group-hover:-translate-y-5 translate-y-4 translate-x-0.5" />
 
@@ -31,7 +31,7 @@
 			<path d="M42 153L17 4.5L0 0L31.5 137L42 153Z" fill="#F9ECEA"/>
 		</svg>
 	</div>
-	<div class="relative group cursor-pointer mx-auto " (click)="toMarvelRivals()">
+	<div class="relative group cursor-pointer mx-auto " (click)="toMarvelRivals()" (keydown.enter)="toMarvelRivals()">
 		<img src="/assets/images/max_button/max_button_marvel_rivals_background.png" alt=""
 			 class="transition transform duration-300 absolute top-0 z-[-999] scale-[102%] group-hover:brightness-200 group-hover:-translate-y-12 -translate-y-2 -translate-x-1" />
 

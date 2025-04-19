@@ -3,10 +3,10 @@ import {DatePipe, UpperCasePipe} from '@angular/common';
 import {MatchRowComponent} from '../match-row/match-row.component';
 import {isToday} from '../../utils/matchUtils';
 import {ButtonComponent} from '../buttons/button/button.component';
-import {RangePipe} from '../../../pipes/range.pipe';
-import {Game} from '../../../models/game';
+import {RangePipe} from '@/app/pipes/range.pipe';
+import {Game} from '@models/game';
 import {NoUpcomingMatchComponent} from '../no-upcoming-match/no-upcoming-match.component';
-import {MatchGroupByDate} from '../../../models/match/matchGroupByDate';
+import {MatchGroupByDate} from '@models/match/matchGroupByDate';
 import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {NavbarComponent} from './core/components/navbar/navbar.component';
-import {FooterComponent} from './core/components/footer/footer.component';
-import {ToastContainerComponent} from './core/components/toast-container/toast-container.component';
+import {NavbarComponent} from '@components/navbar/navbar.component';
+import {FooterComponent} from '@components/footer/footer.component';
+import {ToastContainerComponent} from '@components/toast-container/toast-container.component';
 import {TranslateService} from '@ngx-translate/core';
 import defaultLanguage from	'../../public/assets/i18n/fr.json';
 
@@ -15,7 +15,7 @@ import defaultLanguage from	'../../public/assets/i18n/fr.json';
 export class AppComponent {
 
 	constructor(
-		private translate: TranslateService
+		private readonly translate: TranslateService
 	) {
 		translate.setTranslation('fr', defaultLanguage);
 		translate.addLangs(['fr', 'en']);
@@ -24,7 +24,7 @@ export class AppComponent {
 		const storedLang = localStorage.getItem('lang');
 		const browserLang = translate.getBrowserLang();
 
-		const langToUse = storedLang || (browserLang && translate.getLangs().includes(browserLang) ? browserLang : 'fr');
+		const langToUse = storedLang ?? (browserLang && translate.getLangs().includes(browserLang) ? browserLang : 'fr');
 
 		translate.use(langToUse);
 		localStorage.setItem('lang', langToUse);

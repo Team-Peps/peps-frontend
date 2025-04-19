@@ -1,5 +1,5 @@
 <div class="flex flex-col mx-auto">
-	<img [src]="minioBaseUrl + ambassador?.imageKey" alt="Photo de {{ ambassador?.name }}">
+	<img [src]="minioBaseUrl + ambassador?.imageKey" alt="{{ ambassador?.name }}">
 	<div class="flex flex-col gap-8 -translate-y-5">
 		<span class="uppercase text-6xl">{{ ambassador?.name }}</span>
 		<span class="text-justify font-notosans">{{ ambassador?.description }}</span>

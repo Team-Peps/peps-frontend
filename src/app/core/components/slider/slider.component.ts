@@ -7,7 +7,7 @@ import {
 	ViewChild
 } from '@angular/core';
 import { NgClass } from '@angular/common';
-import { Slider } from '../../../models/slider';
+import { Slider } from '@models/slider';
 import {environment} from '@/environments/environment';
 
 @Component({
